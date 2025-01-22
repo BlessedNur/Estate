@@ -1,9 +1,30 @@
 import { ChevronDown, ShoppingCart, Menu } from "lucide-react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import React, { useState } from "react";
 
 function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const pathname = usePathname();
+
+  const isActive = (path: string) => {
+    if (path === "/") {
+      return pathname === path;
+    }
+    return pathname.startsWith(path);
+  };
+
+  const getLinkClassName = (path: string) => {
+    return `text-sm font-semibold ${
+      isActive(path) ? "text-orange-600" : "text-gray-700 hover:text-orange-600"
+    } transition-colors`;
+  };
+
+  const getMobileLinkClassName = (path: string) => {
+    return `text-lg font-semibold ${
+      isActive(path) ? "text-orange-600" : "text-gray-700"
+    }`;
+  };
 
   return (
     <div className="sticky top-0 z-50 bg-white shadow-sm">
@@ -21,26 +42,21 @@ function Navbar() {
 
         {/* Desktop Navigation */}
         <div className="hidden lg:flex items-center gap-8">
-          <Link
-            className="text-sm font-semibold text-orange-600 hover:text-orange-700 transition-colors"
-            href="/"
-          >
+          <Link className={getLinkClassName("/")} href="/">
             Home
           </Link>
-          <Link
-            className="text-sm font-semibold text-gray-700 hover:text-orange-600 transition-colors"
-            href="/shop"
-          >
+          <Link className={getLinkClassName("/shop")} href="/shop">
             Shop
           </Link>
-          <Link
-            className="text-sm font-semibold text-gray-700 hover:text-orange-600 transition-colors"
-            href="/contact"
-          >
+          <Link className={getLinkClassName("/contact")} href="/contact">
             Contact us
           </Link>
           <div className="group relative">
-            <button className="flex items-center gap-1 text-sm font-semibold text-gray-700 hover:text-orange-600 transition-colors">
+            <button
+              className={`flex items-center gap-1 ${getLinkClassName(
+                "/important-info"
+              )}`}
+            >
               Important Info
               <ChevronDown
                 size={14}
@@ -52,19 +68,31 @@ function Navbar() {
               <div className="py-2">
                 <Link
                   href="/faq"
-                  className="block px-4 py-2 text-sm text-gray-700 hover:bg-orange-50 hover:text-orange-600"
+                  className={`block px-4 py-2 text-sm ${
+                    isActive("/faq")
+                      ? "text-orange-600 bg-orange-50"
+                      : "text-gray-700 hover:bg-orange-50 hover:text-orange-600"
+                  }`}
                 >
                   FAQ
                 </Link>
                 <Link
                   href="/warranty"
-                  className="block px-4 py-2 text-sm text-gray-700 hover:bg-orange-50 hover:text-orange-600"
+                  className={`block px-4 py-2 text-sm ${
+                    isActive("/warranty")
+                      ? "text-orange-600 bg-orange-50"
+                      : "text-gray-700 hover:bg-orange-50 hover:text-orange-600"
+                  }`}
                 >
                   Warranty
                 </Link>
                 <Link
                   href="/returns"
-                  className="block px-4 py-2 text-sm text-gray-700 hover:bg-orange-50 hover:text-orange-600"
+                  className={`block px-4 py-2 text-sm ${
+                    isActive("/returns")
+                      ? "text-orange-600 bg-orange-50"
+                      : "text-gray-700 hover:bg-orange-50 hover:text-orange-600"
+                  }`}
                 >
                   Returns Policy
                 </Link>
@@ -104,21 +132,21 @@ function Navbar() {
             </button>
             <div className="flex flex-col gap-4">
               <Link
-                className="text-lg font-semibold text-orange-600"
+                className={getMobileLinkClassName("/")}
                 href="/"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Home
               </Link>
               <Link
-                className="text-lg font-semibold text-gray-700"
+                className={getMobileLinkClassName("/shop")}
                 href="/shop"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Shop
               </Link>
               <Link
-                className="text-lg font-semibold text-gray-700"
+                className={getMobileLinkClassName("/contact")}
                 href="/contact"
                 onClick={() => setIsMenuOpen(false)}
               >
@@ -131,21 +159,29 @@ function Navbar() {
                 <div className="flex flex-col gap-2 pl-4">
                   <Link
                     href="/faq"
-                    className="text-gray-600"
+                    className={`${
+                      isActive("/faq") ? "text-orange-600" : "text-gray-600"
+                    }`}
                     onClick={() => setIsMenuOpen(false)}
                   >
                     FAQ
                   </Link>
                   <Link
-                    href="/shipping"
-                    className="text-gray-600"
+                    href="/warranty"
+                    className={`${
+                      isActive("/warranty")
+                        ? "text-orange-600"
+                        : "text-gray-600"
+                    }`}
                     onClick={() => setIsMenuOpen(false)}
                   >
-                    Shipping Info
+                    Warranty
                   </Link>
                   <Link
                     href="/returns"
-                    className="text-gray-600"
+                    className={`${
+                      isActive("/returns") ? "text-orange-600" : "text-gray-600"
+                    }`}
                     onClick={() => setIsMenuOpen(false)}
                   >
                     Returns Policy
