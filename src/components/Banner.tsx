@@ -20,7 +20,7 @@ function Banner() {
         {/* Background container */}
         <div className="w-full h-full relative overflow-hidden">
           <Image
-            src="/images/pexels-pixabay-209296.jpg"
+            src="https://cdn.shopify.com/s/files/1/1561/8759/files/4_Modern_Bohemian_Tiny_House_on_Wheels_by_Summit_Tiny_Homes_1024x1024.png?v=1575315236"
             alt="Luxury Tiny Home"
             fill
             priority
