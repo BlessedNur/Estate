@@ -1,30 +1,36 @@
-
-"use client"
+"use client";
 import Image from "next/image";
 import React from "react";
 import { ArrowRight } from "lucide-react";
+import { useRouter } from "next/navigation";
 
 function Banner() {
+  const router = useRouter();
+
+  const scrollToQuote = () => {
+    const quoteSection = document.getElementById("quote");
+    if (quoteSection) {
+      quoteSection.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <div className="h-[100svh] bg-[#FAF5EF] relative">
       <div className="max-w-[1300px] h-full relative mx-auto">
         {/* Background container */}
         <div className="w-full h-full relative overflow-hidden">
-          {/* Image with cover effect */}
           <Image
             src="/images/pexels-pixabay-209296.jpg"
             alt="Luxury Tiny Home"
-            layout="fill"
-            objectFit="cover"
+            fill
             priority
-            className="absolute inset-0 transform scale-105 hover:scale-100 transition-transform duration-700"
+            className="object-cover absolute inset-0 transform scale-105 hover:scale-100 transition-transform duration-700"
           />
           {/* Gradient overlay for better contrast */}
-          <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/70"></div>
+          <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/70" />
 
           {/* Main content container */}
           <div className="relative h-full flex flex-col items-center justify-center px-4">
-            {/* Header text with animation */}
             <div className="text-center transform translate-y-[-50%] space-y-4">
               <h4 className="text-blue-400 font-semibold tracking-wider uppercase text-lg md:text-xl mb-2 animate-fade-in">
                 Homes on wheels
@@ -32,7 +38,7 @@ function Banner() {
               <h1 className="text-white text-4xl md:text-6xl lg:text-[80px] font-bold tracking-tight whitespace-nowrap animate-slide-up">
                 TINY HOMES
               </h1>
-              <div className="w-24 h-1 bg-blue-500 mx-auto mt-4 animate-expand"></div>
+              <div className="w-24 h-1 bg-blue-500 mx-auto mt-4 animate-expand" />
             </div>
           </div>
         </div>
@@ -51,7 +57,10 @@ function Banner() {
               </p>
             </div>
             <div className="mt-6 md:mt-0 md:pl-10 md:border-l border-gray-200">
-              <button className="group bg-[#D37643] hover:bg-[#C26532] text-white px-8 py-4 rounded-md transition-all duration-300 flex items-center space-x-2">
+              <button
+                onClick={scrollToQuote}
+                className="group bg-[#D37643] hover:bg-[#C26532] text-white px-8 py-4 rounded-md transition-all duration-300 flex items-center space-x-2"
+              >
                 <span className="uppercase font-semibold tracking-wide">
                   Request Quote
                 </span>
@@ -62,7 +71,6 @@ function Banner() {
         </div>
       </div>
 
-      {/* Add some CSS animations */}
       <style jsx>{`
         @keyframes fade-in {
           from {

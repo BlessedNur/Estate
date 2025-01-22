@@ -86,7 +86,7 @@ const TinyHomesSection = () => {
             <div className="aspect-square rounded-2xl overflow-hidden shadow-2xl">
               <div className="absolute inset-0 bg-gradient-to-tr from-blue-600/20 to-transparent" />
               <img
-                src="/tiny-home-image.jpg"
+                src="https://tinyhousetalk.com/wp-content/uploads/Breezeway-Tiny-House-on-Wheels-by-Tiny-Heirloom-001.jpg"
                 alt="Modern Tiny Home"
                 className="w-full h-full object-cover"
               />

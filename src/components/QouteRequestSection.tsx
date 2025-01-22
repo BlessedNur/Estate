@@ -296,7 +296,7 @@ const QuoteRequestSection: React.FC = () => {
   };
 
   return (
-    <section className="max-w-[1300px] mx-auto py-20 px-4 lg:px-8">
+    <section className="max-w-[1300px] mx-auto py-20 px-4 lg:px-8" id="quote">
       <div className="bg-white rounded-2xl shadow-xl p-8 lg:p-12">
         <div className="max-w-3xl mx-auto">
           <div className="text-center mb-12">

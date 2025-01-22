@@ -12,6 +12,9 @@
   box-sizing: border-box;
   font-family: var(--font-montserrat);
 }
+html{
+  scroll-behavior: smooth;
+}
 
 .products {
   display: grid;
