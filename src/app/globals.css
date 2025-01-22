@@ -1,6 +1,3 @@
-/* Importing Fonts and Icons */
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
-
 /* Tailwind CSS Directives */
 @tailwind base;
 @tailwind components;
@@ -13,7 +10,7 @@
   font-size: 15px;
   font-optical-sizing: auto;
   box-sizing: border-box;
-  font-family: "Montserrat";
+  font-family: var(--font-montserrat);
 }
 
 .products {
