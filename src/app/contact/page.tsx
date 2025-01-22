@@ -1,0 +1,240 @@
+"use client";
+import React from "react";
+import { Mail, MapPin, Clock, Phone, Send, ExternalLink } from "lucide-react";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+
+const ContactPage = () => {
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // Handle form submission
+  };
+
+  return (
+    <div className="min-h-screen bg-gray-50">
+      <Navbar />
+      {/* Hero Section with Background Image */}
+      <div className="relative">
+        <div className="absolute inset-0">
+          <img
+            src="https://containerx-press.com/wp-content/uploads/2024/06/441887605_972558447604383_85966219333880355_n.jpg"
+            alt="Container Home Banner"
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-black bg-opacity-60"></div>
+        </div>
+        <div className="relative py-20">
+          <div className="max-w-7xl mx-auto px-4">
+            <h1 className="text-5xl font-bold mb-6 text-center text-white">
+              Get In Touch
+            </h1>
+            <p className="text-xl text-center text-gray-200 max-w-2xl mx-auto">
+              Have questions about our tiny homes? We're here to help you 24/7.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      {/* Main Content */}
+      <div className="max-w-7xl mx-auto px-4 py-16">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16">
+          {/* Contact Info Cards */}
+          <div className="bg-white rounded-xl p-8 shadow-lg border border-gray-100 hover:border-blue-500 transition-all">
+            <div className="w-16 h-16 bg-blue-50 rounded-full flex items-center justify-center mb-6">
+              <Mail className="w-8 h-8 text-blue-600" />
+            </div>
+            <h3 className="text-xl font-bold mb-2">Email Us</h3>
+            <p className="text-gray-600 mb-4">
+              Available 24/7 for your inquiries
+            </p>
+            <a
+              href="mailto:info@tinyhomes.com"
+              className="text-blue-600 hover:text-blue-700 font-semibold flex items-center gap-2"
+            >
+              info@tinyhomes.com
+              <ExternalLink className="w-4 h-4" />
+            </a>
+          </div>
+
+          <div className="bg-white rounded-xl p-8 shadow-lg border border-gray-100 hover:border-blue-500 transition-all">
+            <div className="w-16 h-16 bg-blue-50 rounded-full flex items-center justify-center mb-6">
+              <MapPin className="w-8 h-8 text-blue-600" />
+            </div>
+            <h3 className="text-xl font-bold mb-2">Visit Us</h3>
+            <p className="text-gray-600 mb-4">Our Showroom Location</p>
+            <address className="text-gray-600 not-italic">
+              2852 Christensen Rd
+              <br />
+              Cheyenne, Wyoming 82007
+            </address>
+          </div>
+
+          <div className="bg-white rounded-xl p-8 shadow-lg border border-gray-100 hover:border-blue-500 transition-all">
+            <div className="w-16 h-16 bg-blue-50 rounded-full flex items-center justify-center mb-6">
+              <Clock className="w-8 h-8 text-blue-600" />
+            </div>
+            <h3 className="text-xl font-bold mb-2">Working Hours</h3>
+            <div className="space-y-2">
+              <p className="text-gray-600">
+                <span className="font-semibold">Mon - Fri:</span> 8:00 am - 5:00
+                pm
+              </p>
+              <p className="text-gray-600">
+                <span className="font-semibold">Customer Support:</span> 24/7
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
+          {/* Contact Form */}
+          <div className="bg-white rounded-xl p-8 shadow-lg border border-gray-100">
+            <h2 className="text-3xl font-bold mb-8">Send Us a Message</h2>
+            <form onSubmit={handleSubmit} className="space-y-6">
+              <div>
+                <label
+                  htmlFor="name"
+                  className="block text-sm font-medium text-gray-700 mb-2"
+                >
+                  Full Name *
+                </label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  required
+                  className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all"
+                  placeholder="Enter your full name"
+                />
+              </div>
+
+              <div>
+                <label
+                  htmlFor="email"
+                  className="block text-sm font-medium text-gray-700 mb-2"
+                >
+                  Email Address *
+                </label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  required
+                  className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all"
+                  placeholder="Enter your email"
+                />
+              </div>
+
+              <div>
+                <label
+                  htmlFor="phone"
+                  className="block text-sm font-medium text-gray-700 mb-2"
+                >
+                  Phone Number *
+                </label>
+                <input
+                  type="tel"
+                  id="phone"
+                  name="phone"
+                  required
+                  className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all"
+                  placeholder="Enter your phone number"
+                />
+              </div>
+
+              <div>
+                <label
+                  htmlFor="message"
+                  className="block text-sm font-medium text-gray-700 mb-2"
+                >
+                  Message *
+                </label>
+                <textarea
+                  id="message"
+                  name="message"
+                  required
+                  rows={6}
+                  className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all resize-none"
+                  placeholder="How can we help you?"
+                ></textarea>
+              </div>
+
+              <button
+                type="submit"
+                className="w-full bg-blue-600 text-white py-4 px-6 rounded-lg hover:bg-blue-700 transition-colors flex items-center justify-center gap-2 text-lg font-semibold"
+              >
+                <Send className="w-5 h-5" />
+                Send Message
+              </button>
+            </form>
+          </div>
+
+          {/* Map Section */}
+          <div className="space-y-8">
+            <div className="bg-white rounded-xl p-8 shadow-lg border border-gray-100">
+              <h2 className="text-3xl font-bold mb-8">Find Us</h2>
+              {/* Replace with actual map component */}
+              <div className="aspect-video bg-gray-100 rounded-lg mb-6">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3019.7329865187416!2d-104.8741135!3d41.1335995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x876f3b8c8f69d35f%3A0x7c7d2b2b2b2b2b2b!2s2852%20Christensen%20Rd%2C%20Cheyenne%2C%20WY%2082007!5e0!3m2!1sen!2sus!4v1629299999999!5m2!1sen!2sus"
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0 }}
+                  allowFullScreen
+                  loading="lazy"
+                  className="rounded-lg"
+                ></iframe>
+              </div>
+              <div className="flex items-center gap-4">
+                <div className="w-12 h-12 bg-blue-50 rounded-full flex items-center justify-center flex-shrink-0">
+                  <MapPin className="w-6 h-6 text-blue-600" />
+                </div>
+                <div>
+                  <h3 className="font-semibold text-lg">Our Address</h3>
+                  <p className="text-gray-600">
+                    2852 Christensen Rd, Cheyenne, Wyoming 82007
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Quick Contact */}
+            <div className="bg-white rounded-xl p-8 shadow-lg border border-gray-100">
+              <h2 className="text-3xl font-bold mb-8">Quick Contact</h2>
+              <div className="space-y-6">
+                <div className="flex items-center gap-4">
+                  <div className="w-12 h-12 bg-blue-50 rounded-full flex items-center justify-center flex-shrink-0">
+                    <Phone className="w-6 h-6 text-blue-600" />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-lg">Phone Support</h3>
+                    <p className="text-gray-600">
+                      24/7 Customer Support Available
+                    </p>
+                  </div>
+                </div>
+                <div className="flex items-center gap-4">
+                  <div className="w-12 h-12 bg-blue-50 rounded-full flex items-center justify-center flex-shrink-0">
+                    <Mail className="w-6 h-6 text-blue-600" />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-lg">Email Support</h3>
+                    <a
+                      href="mailto:info@tinyhomes.com"
+                      className="text-blue-600 hover:text-blue-700"
+                    >
+                      info@tinyhomes.com
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <Footer />
+    </div>
+  );
+};
+
+export default ContactPage;
