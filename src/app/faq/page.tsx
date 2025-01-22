@@ -77,7 +77,7 @@ const FAQPage = () => {
     }))
     .filter((category) => category.questions.length > 0);
 
-  const toggleAccordion = (index) => {
+  const toggleAccordion = (index:any) => {
     setActiveIndex(activeIndex === index ? null : index);
   };
 
