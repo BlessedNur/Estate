@@ -3,6 +3,7 @@ import React from "react";
 import { Trash2, ShoppingCart, RefreshCw } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import Link from "next/link";
 
 const CartPage = () => {
   return (
@@ -27,12 +28,12 @@ const CartPage = () => {
             <p className="text-lg text-gray-600">
               Your cart is currently empty.
             </p>
-            <a
+            <Link
               href="/shop"
               className="inline-block bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors font-semibold"
             >
               Return to shop
-            </a>
+            </Link>
           </div>
         </div>
 
@@ -112,12 +113,12 @@ const CartPage = () => {
                 <span>Total</span>
                 <span>$49,999.00</span>
               </div>
-              <a
+              <Link
                 href="/checkout"
                 className="block w-full bg-blue-600 text-white text-center px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors font-semibold mt-4"
               >
                 Proceed to checkout
-              </a>
+              </Link>
             </div>
           </div>
         </div>
