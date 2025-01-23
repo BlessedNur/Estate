@@ -33,8 +33,10 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${montserrat.variable}`}
       >
+
         {children}
         <Toaster richColors position="top-right" expand />
+        <script src="//code.tidio.co/7hywgajb6pgvx6yxvtk3vbcmm8orrvqr.js" async></script>
       </body>
     </html>
   );
