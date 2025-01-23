@@ -184,7 +184,7 @@ const ProductReviews = () => {
       <div className="max-w-[1300px] mx-auto px-4 py-12">
         <div className="bg-white rounded-lg border">
           <div className="p-6 border-b">
-            <div className="flex items-center justify-between mb-6">
+            <div className="flex-col flex gap-2 md:flex-row md:flex md:items-center justify-between mb-6">
               <div className="flex items-center gap-3">
                 <GoogleLogo />
                 <div>
