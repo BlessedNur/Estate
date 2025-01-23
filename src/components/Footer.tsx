@@ -22,7 +22,7 @@ function Footer() {
             <ul className="space-y-3">
               <li>
                 <Link
-                  href="/return-policy"
+                  href="/returns"
                   className="text-gray-400 hover:text-orange-500 transition-colors"
                 >
                   Return Policy
@@ -30,7 +30,7 @@ function Footer() {
               </li>
               <li>
                 <Link
-                  href="/refund-policy"
+                  href="/returns"
                   className="text-gray-400 hover:text-orange-500 transition-colors"
                 >
                   Refund Policy
