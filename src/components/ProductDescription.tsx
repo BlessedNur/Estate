@@ -1,168 +1,192 @@
 import React, { useState } from "react";
+import type {
+  Product,
+  FeatureCategory,
+  SpecificationCategory,
+} from "@/libs/products";
 
-const ProductDescription = () => {
-  const [activeTab, setActiveTab] = useState<string>("description");
+interface ProductDescriptionProps {
+  product: Product;
+}
 
-  const tabContent: { [key: string]: any } = {
-    description: (
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-        <div>
-          <h3 className="text-xl font-bold mb-4">Construction Features</h3>
-          <ul className="space-y-3 text-gray-600">
-            <li>• Vaulted Ceiling Throughout</li>
-            <li>• 2×4 Exterior Walls</li>
-            <li>• 2×6 Floor Joists (16" on center)</li>
-            <li>• 30# Roof Load Capacity</li>
-            <li>• R-22 Ceiling Insulation</li>
-            <li>• R-13 Wall Insulation</li>
-            <li>• R-11 Floor Insulation</li>
-            <li>• 5/8" Tongue and Groove Floor Decking</li>
-            <li>• 7-Year Limited Warranty on Flooring</li>
-          </ul>
+type TabType = "description" | "additionalInfo";
 
-          <h3 className="text-xl font-bold mb-4 mt-8">Exterior Features</h3>
-          <ul className="space-y-3 text-gray-600">
-            <li>• Sliding Glass Entry Door</li>
-            <li>• Deluxe Porch Light</li>
-            <li>• Class A Shingles</li>
-            <li>• Cemplank Vertical Siding</li>
-            <li>• Low "E" Dual Glaze Windows</li>
-            <li>• 4" Cemplank Window Trim</li>
+interface TabContentProps {
+  product: Product;
+}
+
+const FeatureList: React.FC<{ category: FeatureCategory }> = ({ category }) => (
+  <div>
+    <h3 className="text-xl font-bold mb-4">{category.category}</h3>
+    <ul className="space-y-3 text-gray-600">
+      {category.items.map((item: any, index: any) => (
+        <li key={index}>• {item}</li>
+      ))}
+    </ul>
+  </div>
+);
+
+const SpecificationTable: React.FC<{ specs: SpecificationCategory }> = ({
+  specs,
+}) => (
+  <div className="space-y-6">
+    <h3 className="text-xl font-bold mb-6">{specs.category}</h3>
+    <table className="w-full border-collapse mb-8">
+      <tbody>
+        {specs.items.map((item: any, index: any) => (
+          <tr key={index} className="border-b">
+            <td className="py-4 w-1/3 font-medium">{item.label}</td>
+            <td className="py-4 text-gray-600">{item.value}</td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  </div>
+);
+
+const ConstructionDetails: React.FC<{
+  construction: Product["specifications"]["construction"];
+}> = ({ construction }) => {
+  if (!construction) return null;
+
+  return (
+    <div className="space-y-3 text-gray-600">
+      {construction.walls && <li>• Walls: {construction.walls}</li>}
+      {construction.floorJoists && (
+        <li>• Floor Joists: {construction.floorJoists}</li>
+      )}
+      {construction.roofLoad && <li>• Roof Load: {construction.roofLoad}</li>}
+      {construction.insulation && (
+        <>
+          <li>• Ceiling Insulation: {construction.insulation.ceiling}</li>
+          <li>• Wall Insulation: {construction.insulation.walls}</li>
+          <li>• Floor Insulation: {construction.insulation.floor}</li>
+        </>
+      )}
+      {construction.flooring && <li>• Flooring: {construction.flooring}</li>}
+    </div>
+  );
+};
+
+const DescriptionTab: React.FC<TabContentProps> = ({ product }) => (
+  <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+    <div>
+      {product.features.construction && (
+        <FeatureList category={product.features.construction} />
+      )}
+      {product.features.exterior && (
+        <div className="mt-8">
+          <FeatureList category={product.features.exterior} />
+        </div>
+      )}
+    </div>
+    <div>
+      {product.features.interior && (
+        <FeatureList category={product.features.interior} />
+      )}
+      {product.features.systems && (
+        <div className="mt-8">
+          <FeatureList category={product.features.systems} />
+        </div>
+      )}
+    </div>
+
+    <div className="md:col-span-2 prose max-w-none mt-6">
+      <h3 className="text-xl font-bold mb-4">Overview</h3>
+      <p className="text-gray-600 leading-relaxed">{product.overview}</p>
+
+      {product.highlights && product.highlights.length > 0 && (
+        <div className="mt-6">
+          <h4 className="text-lg font-bold mb-3">Key Highlights</h4>
+          <ul className="space-y-2">
+            {product.highlights.map((highlight, index) => (
+              <li key={index} className="text-gray-600">
+                • {highlight}
+              </li>
+            ))}
           </ul>
         </div>
-        <div>
-          <h3 className="text-xl font-bold mb-4">Interior Features</h3>
-          <ul className="space-y-3 text-gray-600">
-            <li>• Taped and Textured Walls</li>
-            <li>• Rounded Corners</li>
-            <li>• 2-1/4" Door Case Molding</li>
-            <li>• 3" Baseboard Molding</li>
-            <li>• 2" Faux Wood Blinds</li>
-            <li>• 16 oz Shaw Carpet</li>
-            <li>• Mirrored Closet Doors</li>
-            <li>• Built-in Storage Solutions</li>
-          </ul>
+      )}
+    </div>
+  </div>
+);
 
-          <h3 className="text-xl font-bold mb-4 mt-8">Utility & Safety</h3>
-          <ul className="space-y-3 text-gray-600">
-            <li>• Gas Forced Air Furnace</li>
-            <li>• 50 AMP Service</li>
-            <li>• 20-Gallon Electric Water Heater</li>
-            <li>• GFI Exterior Receptacles</li>
-            <li>• Carbon Monoxide Detector</li>
-            <li>• Smoke Detectors</li>
-            <li>• Fire Extinguisher</li>
-          </ul>
-        </div>
+const AdditionalInfoTab: React.FC<TabContentProps> = ({ product }) => (
+  <div className="space-y-8">
+    {product.kitchenSpecs?.map((spec, index) => (
+      <SpecificationTable key={index} specs={spec} />
+    ))}
 
-        <div className="md:col-span-2 prose max-w-none mt-6">
-          <h3 className="text-xl font-bold mb-4">Overview</h3>
-          <p className="text-gray-600 leading-relaxed">
-            This meticulously designed tiny home combines modern amenities with
-            high-quality construction, perfect for those looking to downsize
-            without sacrificing comfort. The thoughtful design incorporates a
-            vaulted ceiling throughout, creating an open and airy feel while
-            maintaining structural integrity with premium construction materials
-            and methods.
-          </p>
-        </div>
-      </div>
-    ),
-    additionalInfo: (
-      <div className="space-y-6">
-        <h3 className="text-xl font-bold mb-6">Kitchen Specifications</h3>
-        <table className="w-full border-collapse mb-8">
-          <tbody>
-            <tr className="border-b">
-              <td className="py-4 w-1/3 font-medium">Appliances</td>
-              <td className="py-4 text-gray-600">
-                Deluxe gas range, 18 cu. ft. frost-free refrigerator
-              </td>
-            </tr>
-            <tr className="border-b">
-              <td className="py-4 w-1/3 font-medium">Ventilation</td>
-              <td className="py-4 text-gray-600">
-                30" vented range hood with light
-              </td>
-            </tr>
-            <tr className="border-b">
-              <td className="py-4 w-1/3 font-medium">Storage</td>
-              <td className="py-4 text-gray-600">
-                Bank of drawers, lined overhead cabinets
-              </td>
-            </tr>
-            <tr className="border-b">
-              <td className="py-4 w-1/3 font-medium">Countertops</td>
-              <td className="py-4 text-gray-600">
-                Granite with single eased edge, 4" granite backsplash
-              </td>
-            </tr>
-            <tr className="border-b">
-              <td className="py-4 w-1/3 font-medium">Fixtures</td>
-              <td className="py-4 text-gray-600">
-                Brushed nickel faucet, stainless steel sink
-              </td>
-            </tr>
-          </tbody>
-        </table>
+    {product.bathroomSpecs?.map((spec, index) => (
+      <SpecificationTable key={index} specs={spec} />
+    ))}
 
-        <h3 className="text-xl font-bold mb-6">Bathroom Specifications</h3>
-        <table className="w-full border-collapse">
-          <tbody>
-            <tr className="border-b">
-              <td className="py-4 w-1/3 font-medium">Shower Options</td>
-              <td className="py-4 text-gray-600">
-                36" or 48" shower with glass enclosure
-              </td>
-            </tr>
-            <tr className="border-b">
-              <td className="py-4 w-1/3 font-medium">Fixtures</td>
-              <td className="py-4 text-gray-600">
-                Brushed nickel faucets and hardware
-              </td>
-            </tr>
-            <tr className="border-b">
-              <td className="py-4 w-1/3 font-medium">Features</td>
-              <td className="py-4 text-gray-600">
-                Granite backsplash, modern fixtures
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    ),
+    {product.utilitySpecs?.map((spec, index) => (
+      <SpecificationTable key={index} specs={spec} />
+    ))}
+
+    <div className="mt-8">
+      <h3 className="text-xl font-bold mb-4">Warranty Information</h3>
+      <p className="text-gray-600 mb-2">
+        Duration: {product.warranty.duration}
+      </p>
+      <ul className="space-y-2">
+        {product.warranty.coverage.map((item, index) => (
+          <li key={index} className="text-gray-600">
+            • {item}
+          </li>
+        ))}
+      </ul>
+    </div>
+
+    <div className="mt-8">
+      <h3 className="text-xl font-bold mb-4">Buyer Protection</h3>
+      <ul className="space-y-2">
+        {product.buyerProtection.features.map((feature, index) => (
+          <li key={index} className="text-gray-600">
+            • {feature}
+          </li>
+        ))}
+      </ul>
+    </div>
+  </div>
+);
+
+const ProductDescription: React.FC<ProductDescriptionProps> = ({ product }) => {
+  const [activeTab, setActiveTab] = useState<TabType>("description");
+
+  const tabContent: Record<TabType, React.ReactNode> = {
+    description: <DescriptionTab product={product} />,
+    additionalInfo: <AdditionalInfoTab product={product} />,
   };
 
   return (
     <div className="max-w-[1300px] mx-auto px-4 py-12">
       <div className="border rounded-lg">
-        {/* Description Tabs */}
         <div className="border-b">
           <div className="flex">
-            <button
-              onClick={() => setActiveTab("description")}
-              className={`px-6 py-4 font-medium transition-colors ${
-                activeTab === "description"
-                  ? "text-orange-500 border-b-2 border-orange-500"
-                  : "text-gray-500 hover:text-gray-700"
-              }`}
-            >
-              Description
-            </button>
-            <button
-              onClick={() => setActiveTab("additionalInfo")}
-              className={`px-6 py-4 font-medium transition-colors ${
-                activeTab === "additionalInfo"
-                  ? "text-orange-500 border-b-2 border-orange-500"
-                  : "text-gray-500 hover:text-gray-700"
-              }`}
-            >
-              Additional Information
-            </button>
+            {[
+              { id: "description" as const, label: "Description" },
+              {
+                id: "additionalInfo" as const,
+                label: "Additional Information",
+              },
+            ].map((tab) => (
+              <button
+                key={tab.id}
+                onClick={() => setActiveTab(tab.id)}
+                className={`px-6 py-4 font-medium transition-colors ${
+                  activeTab === tab.id
+                    ? "text-orange-500 border-b-2 border-orange-500"
+                    : "text-gray-500 hover:text-gray-700"
+                }`}
+              >
+                {tab.label}
+              </button>
+            ))}
           </div>
         </div>
 
-        {/* Tab Content */}
         <div className="p-6 space-y-6">{tabContent[activeTab]}</div>
       </div>
     </div>

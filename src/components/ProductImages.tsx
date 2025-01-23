@@ -1,14 +1,14 @@
+// components/ProductImages.tsx
+"use client";
 import React, { useState } from "react";
 import { ChevronLeft, ChevronRight, ZoomIn } from "lucide-react";
+import { ProductImage } from "@/types/product";
 
-const images = [
-  "https://images.dwell.com/photos/6313690802401849344/6319601487229923328/large.jpg",
-  "https://cdn.shopify.com/s/files/1/1561/8759/files/4_Modern_Bohemian_Tiny_House_on_Wheels_by_Summit_Tiny_Homes_1024x1024.png?v=1575315236",
-  "https://tinyhousetalk.com/wp-content/uploads/Breezeway-Tiny-House-on-Wheels-by-Tiny-Heirloom-001.jpg",
-  "https://inhabitat.com/wp-content/blogs.dir/1/files/2018/11/Cumberland-Tiny-Home100.jpg",
-];
+interface ProductImagesProps {
+  images: ProductImage[];
+}
 
-const ImageGallery = () => {
+export default function ProductImages({ images }: ProductImagesProps) {
   const [selectedIndex, setSelectedIndex] = useState(0);
   const [isZoomed, setIsZoomed] = useState(false);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -45,7 +45,7 @@ const ImageGallery = () => {
           <div
             className={`w-full h-full transition-transform duration-200 bg-cover bg-no-repeat bg-center`}
             style={{
-              backgroundImage: `url(${images[selectedIndex]})`,
+              backgroundImage: `url(${images[selectedIndex].url})`,
               transform: isZoomed ? "scale(2)" : "scale(1)",
               transformOrigin: `${mousePosition.x}% ${mousePosition.y}%`,
             }}
@@ -78,15 +78,15 @@ const ImageGallery = () => {
       <div className="grid grid-cols-4 gap-2">
         {images.map((image, index) => (
           <button
-            key={index}
+            key={image.id}
             onClick={() => setSelectedIndex(index)}
             className={`relative aspect-video rounded-lg overflow-hidden ${
               index === selectedIndex ? "ring-2 ring-blue-500" : ""
             }`}
           >
             <img
-              src={image}
-              alt={`Thumbnail ${index + 1}`}
+              src={image.url}
+              alt={image.alt}
               className="w-full h-full object-cover"
             />
           </button>
@@ -94,6 +94,4 @@ const ImageGallery = () => {
       </div>
     </div>
   );
-};
-
-export default ImageGallery;
+}
