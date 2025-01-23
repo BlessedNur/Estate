@@ -156,10 +156,109 @@ export const products: Product[] = [
     images: [
       {
         id: "img-roaming-001",
-        url: "/images/placeholder-tiny-house.jpg", // Placeholder for 21 images
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/Roaming-retreat36.jpg", // Placeholder for 21 images
         alt: "Roaming Retreat Tiny House Exterior View",
       },
-      // Additional 20 image placeholders would be listed here
+      {
+        id: "img-roaming-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/Roaming-retreat17.png", // Placeholder for 21 images
+        alt: "Roaming Retreat Tiny House Exterior View",
+      },
+      {
+        id: "img-roaming-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/Roaming-retreat18.jpg", // Placeholder for 21 images
+        alt: "Roaming Retreat Tiny House Exterior View",
+      },
+      {
+        id: "img-roaming-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/Roaming-retreat19.jpg", // Placeholder for 21 images
+        alt: "Roaming Retreat Tiny House Exterior View",
+      },
+      {
+        id: "img-roaming-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/Roaming-retreat20.jpg", // Placeholder for 21 images
+        alt: "Roaming Retreat Tiny House Exterior View",
+      },
+      {
+        id: "img-roaming-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/Roaming-retreat21.jpg", // Placeholder for 21 images
+        alt: "Roaming Retreat Tiny House Exterior View",
+      },
+      {
+        id: "img-roaming-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/Roaming-retreat22.jpg", // Placeholder for 21 images
+        alt: "Roaming Retreat Tiny House Exterior View",
+      },
+      {
+        id: "img-roaming-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/Roaming-retreat23.jpg", // Placeholder for 21 images
+        alt: "Roaming Retreat Tiny House Exterior View",
+      },
+      {
+        id: "img-roaming-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/Roaming-retreat24.jpg", // Placeholder for 21 images
+        alt: "Roaming Retreat Tiny House Exterior View",
+      },
+      {
+        id: "img-roaming-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/Roaming-retreat25.jpg", // Placeholder for 21 images
+        alt: "Roaming Retreat Tiny House Exterior View",
+      },
+      {
+        id: "img-roaming-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/Roaming-retreat26.jpg", // Placeholder for 21 images
+        alt: "Roaming Retreat Tiny House Exterior View",
+      },
+      {
+        id: "img-roaming-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/Roaming-retreat27.jpg", // Placeholder for 21 images
+        alt: "Roaming Retreat Tiny House Exterior View",
+      },
+      {
+        id: "img-roaming-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/Roaming-retreat28.jpg", // Placeholder for 21 images
+        alt: "Roaming Retreat Tiny House Exterior View",
+      },
+      {
+        id: "img-roaming-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/Roaming-retreat29.jpg", // Placeholder for 21 images
+        alt: "Roaming Retreat Tiny House Exterior View",
+      },
+      {
+        id: "img-roaming-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/Roaming-retreat30.jpg", // Placeholder for 21 images
+        alt: "Roaming Retreat Tiny House Exterior View",
+      },
+      {
+        id: "img-roaming-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/Roaming-retreat31.jpg", // Placeholder for 21 images
+        alt: "Roaming Retreat Tiny House Exterior View",
+      },
+      {
+        id: "img-roaming-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/Roaming-retreat32.jpg", // Placeholder for 21 images
+        alt: "Roaming Retreat Tiny House Exterior View",
+      },
+      {
+        id: "img-roaming-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/Roaming-retreat33.jpg", // Placeholder for 21 images
+        alt: "Roaming Retreat Tiny House Exterior View",
+      },
+      {
+        id: "img-roaming-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/Roaming-retreat34.jpg", // Placeholder for 21 images
+        alt: "Roaming Retreat Tiny House Exterior View",
+      },
+      {
+        id: "img-roaming-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/Roaming-retreat35.jpg", // Placeholder for 21 images
+        alt: "Roaming Retreat Tiny House Exterior View",
+      },
+      {
+        id: "img-roaming-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/Roaming-retreat37.jpg", // Placeholder for 21 images
+        alt: "Roaming Retreat Tiny House Exterior View",
+      },
     ],
     features: {
       exterior: {
@@ -330,10 +429,109 @@ export const products: Product[] = [
     images: [
       {
         id: "img-nomad-001",
-        url: "/images/placeholder-tiny-house.jpg", // Placeholder for 20 images
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/Nomad-Nest30.jpg", // Placeholder for 20 images
         alt: "Nomad Nest Tiny House Exterior View",
       },
-      // Additional 19 image placeholders would be listed here
+      {
+        id: "img-nomad-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/Nomad-Nest36.png", // Placeholder for 20 images
+        alt: "Nomad Nest Tiny House Exterior View",
+      },
+      {
+        id: "img-nomad-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/Nomad-Nest17.jpg", // Placeholder for 20 images
+        alt: "Nomad Nest Tiny House Exterior View",
+      },
+      {
+        id: "img-nomad-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/Nomad-Nest18.jpg", // Placeholder for 20 images
+        alt: "Nomad Nest Tiny House Exterior View",
+      },
+      {
+        id: "img-nomad-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/Nomad-Nest19.jpg", // Placeholder for 20 images
+        alt: "Nomad Nest Tiny House Exterior View",
+      },
+      {
+        id: "img-nomad-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/Nomad-Nest20.jpg", // Placeholder for 20 images
+        alt: "Nomad Nest Tiny House Exterior View",
+      },
+      {
+        id: "img-nomad-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/Nomad-Nest21.jpg", // Placeholder for 20 images
+        alt: "Nomad Nest Tiny House Exterior View",
+      },
+      {
+        id: "img-nomad-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/Nomad-Nest22.jpg", // Placeholder for 20 images
+        alt: "Nomad Nest Tiny House Exterior View",
+      },
+      {
+        id: "img-nomad-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/Nomad-Nest23.jpg", // Placeholder for 20 images
+        alt: "Nomad Nest Tiny House Exterior View",
+      },
+      {
+        id: "img-nomad-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/Nomad-Nest24.jpg", // Placeholder for 20 images
+        alt: "Nomad Nest Tiny House Exterior View",
+      },
+      {
+        id: "img-nomad-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/Nomad-Nest25.jpg", // Placeholder for 20 images
+        alt: "Nomad Nest Tiny House Exterior View",
+      },
+      {
+        id: "img-nomad-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/Nomad-Nest26.jpg", // Placeholder for 20 images
+        alt: "Nomad Nest Tiny House Exterior View",
+      },
+      {
+        id: "img-nomad-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/Nomad-Nest27.jpg", // Placeholder for 20 images
+        alt: "Nomad Nest Tiny House Exterior View",
+      },
+      {
+        id: "img-nomad-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/Nomad-Nest28.jpg", // Placeholder for 20 images
+        alt: "Nomad Nest Tiny House Exterior View",
+      },
+      {
+        id: "img-nomad-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/Nomad-Nest29.jpg", // Placeholder for 20 images
+        alt: "Nomad Nest Tiny House Exterior View",
+      },
+      {
+        id: "img-nomad-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/Nomad-Nest30.jpg", // Placeholder for 20 images
+        alt: "Nomad Nest Tiny House Exterior View",
+      },
+      {
+        id: "img-nomad-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/Nomad-Nest31.jpg", // Placeholder for 20 images
+        alt: "Nomad Nest Tiny House Exterior View",
+      },
+      {
+        id: "img-nomad-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/Nomad-Nest32.jpg", // Placeholder for 20 images
+        alt: "Nomad Nest Tiny House Exterior View",
+      },
+      {
+        id: "img-nomad-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/Nomad-Nest33.jpg", // Placeholder for 20 images
+        alt: "Nomad Nest Tiny House Exterior View",
+      },
+      {
+        id: "img-nomad-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/Nomad-Nest34.jpg", // Placeholder for 20 images
+        alt: "Nomad Nest Tiny House Exterior View",
+      },
+      {
+        id: "img-nomad-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/Nomad-Nest35.jpg", // Placeholder for 20 images
+        alt: "Nomad Nest Tiny House Exterior View",
+      },
     ],
     features: {
       exterior: {
@@ -504,10 +702,164 @@ export const products: Product[] = [
     images: [
       {
         id: "img-wanderluxe-001",
-        url: "/images/placeholder-tiny-house.jpg", // Placeholder for 31 images
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/wanderluxe25.jpg", // Placeholder for 31 images
         alt: "WanderLuxe Mobile Tiny House Exterior View",
       },
-      // Additional 30 image placeholders would be listed here
+      {
+        id: "img-wanderluxe-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/wanderluxe17.jpg", // Placeholder for 31 images
+        alt: "WanderLuxe Mobile Tiny House Exterior View",
+      },
+      {
+        id: "img-wanderluxe-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/wanderluxe18.jpg", // Placeholder for 31 images
+        alt: "WanderLuxe Mobile Tiny House Exterior View",
+      },
+      {
+        id: "img-wanderluxe-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/wanderluxe19.jpg", // Placeholder for 31 images
+        alt: "WanderLuxe Mobile Tiny House Exterior View",
+      },
+      {
+        id: "img-wanderluxe-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/wanderluxe20.jpg", // Placeholder for 31 images
+        alt: "WanderLuxe Mobile Tiny House Exterior View",
+      },
+      {
+        id: "img-wanderluxe-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/wanderluxe21.jpg", // Placeholder for 31 images
+        alt: "WanderLuxe Mobile Tiny House Exterior View",
+      },
+      {
+        id: "img-wanderluxe-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/wanderluxe22.jpg", // Placeholder for 31 images
+        alt: "WanderLuxe Mobile Tiny House Exterior View",
+      },
+      {
+        id: "img-wanderluxe-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/wanderluxe23.jpg", // Placeholder for 31 images
+        alt: "WanderLuxe Mobile Tiny House Exterior View",
+      },
+      {
+        id: "img-wanderluxe-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/wanderluxe24.jpg", // Placeholder for 31 images
+        alt: "WanderLuxe Mobile Tiny House Exterior View",
+      },
+      {
+        id: "img-wanderluxe-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/wanderluxe25.jpg", // Placeholder for 31 images
+        alt: "WanderLuxe Mobile Tiny House Exterior View",
+      },
+      {
+        id: "img-wanderluxe-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/wanderluxe26.jpg", // Placeholder for 31 images
+        alt: "WanderLuxe Mobile Tiny House Exterior View",
+      },
+      {
+        id: "img-wanderluxe-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/wanderluxe27.jpg", // Placeholder for 31 images
+        alt: "WanderLuxe Mobile Tiny House Exterior View",
+      },
+      {
+        id: "img-wanderluxe-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/wanderluxe28.jpg", // Placeholder for 31 images
+        alt: "WanderLuxe Mobile Tiny House Exterior View",
+      },
+      {
+        id: "img-wanderluxe-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/wanderluxe29.jpg", // Placeholder for 31 images
+        alt: "WanderLuxe Mobile Tiny House Exterior View",
+      },
+      {
+        id: "img-wanderluxe-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/wanderluxe30.jpg", // Placeholder for 31 images
+        alt: "WanderLuxe Mobile Tiny House Exterior View",
+      },
+      {
+        id: "img-wanderluxe-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/wanderluxe31.jpg", // Placeholder for 31 images
+        alt: "WanderLuxe Mobile Tiny House Exterior View",
+      },
+      {
+        id: "img-wanderluxe-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/wanderluxe32.jpg", // Placeholder for 31 images
+        alt: "WanderLuxe Mobile Tiny House Exterior View",
+      },
+      {
+        id: "img-wanderluxe-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/wanderluxe33.jpg", // Placeholder for 31 images
+        alt: "WanderLuxe Mobile Tiny House Exterior View",
+      },
+      {
+        id: "img-wanderluxe-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/wanderluxe34.jpg", // Placeholder for 31 images
+        alt: "WanderLuxe Mobile Tiny House Exterior View",
+      },
+      {
+        id: "img-wanderluxe-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/wanderluxe35.jpg", // Placeholder for 31 images
+        alt: "WanderLuxe Mobile Tiny House Exterior View",
+      },
+      {
+        id: "img-wanderluxe-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/wanderluxe36.jpg", // Placeholder for 31 images
+        alt: "WanderLuxe Mobile Tiny House Exterior View",
+      },
+      {
+        id: "img-wanderluxe-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/wanderluxe37.jpg", // Placeholder for 31 images
+        alt: "WanderLuxe Mobile Tiny House Exterior View",
+      },
+      {
+        id: "img-wanderluxe-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/wanderluxe38.jpg", // Placeholder for 31 images
+        alt: "WanderLuxe Mobile Tiny House Exterior View",
+      },
+      {
+        id: "img-wanderluxe-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/wanderluxe39.jpg", // Placeholder for 31 images
+        alt: "WanderLuxe Mobile Tiny House Exterior View",
+      },
+      {
+        id: "img-wanderluxe-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/wanderluxe40.jpg", // Placeholder for 31 images
+        alt: "WanderLuxe Mobile Tiny House Exterior View",
+      },
+      {
+        id: "img-wanderluxe-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/wanderluxe41.jpg", // Placeholder for 31 images
+        alt: "WanderLuxe Mobile Tiny House Exterior View",
+      },
+      {
+        id: "img-wanderluxe-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/wanderluxe42.jpg", // Placeholder for 31 images
+        alt: "WanderLuxe Mobile Tiny House Exterior View",
+      },
+      {
+        id: "img-wanderluxe-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/wanderluxe43.jpg", // Placeholder for 31 images
+        alt: "WanderLuxe Mobile Tiny House Exterior View",
+      },
+      {
+        id: "img-wanderluxe-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/wanderluxe44.jpg", // Placeholder for 31 images
+        alt: "WanderLuxe Mobile Tiny House Exterior View",
+      },
+      {
+        id: "img-wanderluxe-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/wanderluxe45.jpg", // Placeholder for 31 images
+        alt: "WanderLuxe Mobile Tiny House Exterior View",
+      },
+      {
+        id: "img-wanderluxe-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/wanderluxe46.jpg", // Placeholder for 31 images
+        alt: "WanderLuxe Mobile Tiny House Exterior View",
+      },
+      {
+        id: "img-wanderluxe-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/wanderluxe47.jpg", // Placeholder for 31 images
+        alt: "WanderLuxe Mobile Tiny House Exterior View",
+      },
     ],
     features: {
       exterior: {
@@ -664,10 +1016,94 @@ export const products: Product[] = [
     images: [
       {
         id: "img-roam-001",
-        url: "/images/placeholder-tiny-house.jpg", // Placeholder for 22 images
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/roam-haven18.jpg", // Placeholder for 22 images
         alt: "Roam Haven Tiny House Exterior View",
       },
-      // Additional 21 image placeholders would be listed here
+      {
+        id: "img-roam-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/roam-haven24.jpg", // Placeholder for 22 images
+        alt: "Roam Haven Tiny House Exterior View",
+      },
+      {
+        id: "img-roam-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/roam-haven35.jpg", // Placeholder for 22 images
+        alt: "Roam Haven Tiny House Exterior View",
+      },
+      {
+        id: "img-roam-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/roam-haven36.jpg", // Placeholder for 22 images
+        alt: "Roam Haven Tiny House Exterior View",
+      },
+      {
+        id: "img-roam-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/roam-haven20.jpg", // Placeholder for 22 images
+        alt: "Roam Haven Tiny House Exterior View",
+      },
+      {
+        id: "img-roam-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/roam-haven21.jpg", // Placeholder for 22 images
+        alt: "Roam Haven Tiny House Exterior View",
+      },
+      {
+        id: "img-roam-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/roam-haven22.jpg", // Placeholder for 22 images
+        alt: "Roam Haven Tiny House Exterior View",
+      },
+      {
+        id: "img-roam-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/roam-haven23.jpg", // Placeholder for 22 images
+        alt: "Roam Haven Tiny House Exterior View",
+      },
+      {
+        id: "img-roam-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/roam-haven24.jpg", // Placeholder for 22 images
+        alt: "Roam Haven Tiny House Exterior View",
+      },
+      {
+        id: "img-roam-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/roam-haven25.jpg", // Placeholder for 22 images
+        alt: "Roam Haven Tiny House Exterior View",
+      },
+      {
+        id: "img-roam-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/roam-haven27.jpg", // Placeholder for 22 images
+        alt: "Roam Haven Tiny House Exterior View",
+      },
+      {
+        id: "img-roam-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/roam-haven28.jpg", // Placeholder for 22 images
+        alt: "Roam Haven Tiny House Exterior View",
+      },
+      {
+        id: "img-roam-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/roam-haven29.jpg", // Placeholder for 22 images
+        alt: "Roam Haven Tiny House Exterior View",
+      },
+      {
+        id: "img-roam-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/roam-haven30.jpg", // Placeholder for 22 images
+        alt: "Roam Haven Tiny House Exterior View",
+      },
+      {
+        id: "img-roam-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/roam-haven31.jpg", // Placeholder for 22 images
+        alt: "Roam Haven Tiny House Exterior View",
+      },
+      {
+        id: "img-roam-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/roam-haven32.jpg", // Placeholder for 22 images
+        alt: "Roam Haven Tiny House Exterior View",
+      },
+      {
+        id: "img-roam-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/roam-haven33.jpg", // Placeholder for 22 images
+        alt: "Roam Haven Tiny House Exterior View",
+      },
+      {
+        id: "img-roam-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/roam-haven34.jpg", // Placeholder for 22 images
+        alt: "Roam Haven Tiny House Exterior View",
+      },
     ],
     features: {
       construction: {
@@ -831,10 +1267,144 @@ export const products: Product[] = [
     images: [
       {
         id: "img-wander-001",
-        url: "/images/placeholder-tiny-house.jpg", // Placeholder for 28 images
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/145.jpg", // Placeholder for 28 images
         alt: "Wander Nest Tiny House Exterior View",
       },
-      // Additional 27 image placeholders would be listed here
+      {
+        id: "img-wander-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/136.jpg", // Placeholder for 28 images
+        alt: "Wander Nest Tiny House Exterior View",
+      },
+      {
+        id: "img-wander-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/137.jpg", // Placeholder for 28 images
+        alt: "Wander Nest Tiny House Exterior View",
+      },
+      {
+        id: "img-wander-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/138.jpg", // Placeholder for 28 images
+        alt: "Wander Nest Tiny House Exterior View",
+      },
+      {
+        id: "img-wander-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/139.jpg", // Placeholder for 28 images
+        alt: "Wander Nest Tiny House Exterior View",
+      },
+      {
+        id: "img-wander-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/140.jpg", // Placeholder for 28 images
+        alt: "Wander Nest Tiny House Exterior View",
+      },
+      {
+        id: "img-wander-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/141.jpg", // Placeholder for 28 images
+        alt: "Wander Nest Tiny House Exterior View",
+      },
+      {
+        id: "img-wander-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/142.jpg", // Placeholder for 28 images
+        alt: "Wander Nest Tiny House Exterior View",
+      },
+      {
+        id: "img-wander-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/143.jpg", // Placeholder for 28 images
+        alt: "Wander Nest Tiny House Exterior View",
+      },
+      {
+        id: "img-wander-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/144.jpg", // Placeholder for 28 images
+        alt: "Wander Nest Tiny House Exterior View",
+      },
+      {
+        id: "img-wander-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/145.jpg", // Placeholder for 28 images
+        alt: "Wander Nest Tiny House Exterior View",
+      },
+      {
+        id: "img-wander-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/146.jpg", // Placeholder for 28 images
+        alt: "Wander Nest Tiny House Exterior View",
+      },
+      {
+        id: "img-wander-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/147.jpg", // Placeholder for 28 images
+        alt: "Wander Nest Tiny House Exterior View",
+      },
+      {
+        id: "img-wander-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/148.jpg", // Placeholder for 28 images
+        alt: "Wander Nest Tiny House Exterior View",
+      },
+      {
+        id: "img-wander-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/149.jpg", // Placeholder for 28 images
+        alt: "Wander Nest Tiny House Exterior View",
+      },
+      {
+        id: "img-wander-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/150.jpg", // Placeholder for 28 images
+        alt: "Wander Nest Tiny House Exterior View",
+      },
+      {
+        id: "img-wander-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/151.jpg", // Placeholder for 28 images
+        alt: "Wander Nest Tiny House Exterior View",
+      },
+      {
+        id: "img-wander-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/152.jpg", // Placeholder for 28 images
+        alt: "Wander Nest Tiny House Exterior View",
+      },
+      {
+        id: "img-wander-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/153.jpg", // Placeholder for 28 images
+        alt: "Wander Nest Tiny House Exterior View",
+      },
+      {
+        id: "img-wander-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/154.jpg", // Placeholder for 28 images
+        alt: "Wander Nest Tiny House Exterior View",
+      },
+      {
+        id: "img-wander-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/155.jpg", // Placeholder for 28 images
+        alt: "Wander Nest Tiny House Exterior View",
+      },
+      {
+        id: "img-wander-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/156.jpg", // Placeholder for 28 images
+        alt: "Wander Nest Tiny House Exterior View",
+      },
+      {
+        id: "img-wander-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/157.jpg", // Placeholder for 28 images
+        alt: "Wander Nest Tiny House Exterior View",
+      },
+      {
+        id: "img-wander-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/158.jpg", // Placeholder for 28 images
+        alt: "Wander Nest Tiny House Exterior View",
+      },
+      {
+        id: "img-wander-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/159.jpg", // Placeholder for 28 images
+        alt: "Wander Nest Tiny House Exterior View",
+      },
+      {
+        id: "img-wander-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/160.jpg", // Placeholder for 28 images
+        alt: "Wander Nest Tiny House Exterior View",
+      },
+      {
+        id: "img-wander-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/161.jpg", // Placeholder for 28 images
+        alt: "Wander Nest Tiny House Exterior View",
+      },
+      {
+        id: "img-wander-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/162.jpg", // Placeholder for 28 images
+        alt: "Wander Nest Tiny House Exterior View",
+      },
     ],
     features: {
       construction: {
@@ -989,10 +1559,49 @@ export const products: Product[] = [
     images: [
       {
         id: "img-modern-001",
-        url: "/images/placeholder-tiny-house.jpg", // Placeholder for 11 images
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/t25.jpg", // Placeholder for 11 images
         alt: "Modern Living Tiny House Exterior View",
       },
-      // Additional 10 image placeholders would be listed here
+      {
+        id: "img-modern-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/t24.jpg", // Placeholder for 11 images
+        alt: "Modern Living Tiny House Exterior View",
+      },
+      {
+        id: "img-modern-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/t26.jpg", // Placeholder for 11 images
+        alt: "Modern Living Tiny House Exterior View",
+      },
+
+      {
+        id: "img-modern-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/t27.jpg", // Placeholder for 11 images
+        alt: "Modern Living Tiny House Exterior View",
+      },
+
+      {
+        id: "img-modern-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/t28.jpg", // Placeholder for 11 images
+        alt: "Modern Living Tiny House Exterior View",
+      },
+
+      {
+        id: "img-modern-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/t29.jpg", // Placeholder for 11 images
+        alt: "Modern Living Tiny House Exterior View",
+      },
+
+      {
+        id: "img-modern-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/t30.jpg", // Placeholder for 11 images
+        alt: "Modern Living Tiny House Exterior View",
+      },
+
+      {
+        id: "img-modern-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/t31.jpg", // Placeholder for 11 images
+        alt: "Modern Living Tiny House Exterior View",
+      },
     ],
     features: {
       construction: {
@@ -1141,10 +1750,59 @@ export const products: Product[] = [
     images: [
       {
         id: "img-spacious-001",
-        url: "/images/placeholder-tiny-house.jpg", // Placeholder for 11 images
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/s2.jpg", // Placeholder for 11 images
         alt: "Spacious Tiny House Exterior View",
       },
-      // Additional 10 image placeholders would be listed here
+      {
+        id: "img-spacious-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/s1.png", // Placeholder for 11 images
+        alt: "Spacious Tiny House Exterior View",
+      },
+      {
+        id: "img-spacious-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/s3.jpg", // Placeholder for 11 images
+        alt: "Spacious Tiny House Exterior View",
+      },
+      {
+        id: "img-spacious-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/s4.jpg", // Placeholder for 11 images
+        alt: "Spacious Tiny House Exterior View",
+      },
+      {
+        id: "img-spacious-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/s5.jpg", // Placeholder for 11 images
+        alt: "Spacious Tiny House Exterior View",
+      },
+      {
+        id: "img-spacious-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/s6.jpg", // Placeholder for 11 images
+        alt: "Spacious Tiny House Exterior View",
+      },
+      {
+        id: "img-spacious-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/s7.jpg", // Placeholder for 11 images
+        alt: "Spacious Tiny House Exterior View",
+      },
+      {
+        id: "img-spacious-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/s8.jpg", // Placeholder for 11 images
+        alt: "Spacious Tiny House Exterior View",
+      },
+      {
+        id: "img-spacious-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/s9.jpg", // Placeholder for 11 images
+        alt: "Spacious Tiny House Exterior View",
+      },
+      {
+        id: "img-spacious-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/s10.jpg", // Placeholder for 11 images
+        alt: "Spacious Tiny House Exterior View",
+      },
+      {
+        id: "img-spacious-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/s11.jpg", // Placeholder for 11 images
+        alt: "Spacious Tiny House Exterior View",
+      },
     ],
     features: {
       construction: {
@@ -1288,10 +1946,49 @@ export const products: Product[] = [
     images: [
       {
         id: "img-modern-loft-001",
-        url: "/images/placeholder-tiny-house.jpg", // Placeholder for 10 images
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/z1.jpg", // Placeholder for 10 images
         alt: "Modern Loft Tiny House Exterior View",
       },
-      // Additional 9 image placeholders would be listed here
+      {
+        id: "img-modern-loft-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/z2.jpg", // Placeholder for 10 images
+        alt: "Modern Loft Tiny House Exterior View",
+      },
+      {
+        id: "img-modern-loft-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/z3.jpg", // Placeholder for 10 images
+        alt: "Modern Loft Tiny House Exterior View",
+      },
+      {
+        id: "img-modern-loft-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/z4.jpg", // Placeholder for 10 images
+        alt: "Modern Loft Tiny House Exterior View",
+      },
+      {
+        id: "img-modern-loft-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/z5.jpg", // Placeholder for 10 images
+        alt: "Modern Loft Tiny House Exterior View",
+      },
+      {
+        id: "img-modern-loft-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/z6.jpg", // Placeholder for 10 images
+        alt: "Modern Loft Tiny House Exterior View",
+      },
+      {
+        id: "img-modern-loft-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/z7.jpg", // Placeholder for 10 images
+        alt: "Modern Loft Tiny House Exterior View",
+      },
+      {
+        id: "img-modern-loft-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/z8.jpg", // Placeholder for 10 images
+        alt: "Modern Loft Tiny House Exterior View",
+      },
+      {
+        id: "img-modern-loft-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/z9.jpg", // Placeholder for 10 images
+        alt: "Modern Loft Tiny House Exterior View",
+      },
     ],
     features: {
       interior: {
@@ -1454,10 +2151,84 @@ export const products: Product[] = [
     images: [
       {
         id: "img-roamlite-001",
-        url: "/images/placeholder-tiny-house.jpg", // Placeholder for 17 images
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/q3.jpg",
         alt: "RoamLite Tiny House Exterior View",
       },
-      // Additional 16 image placeholders would be listed here
+      {
+        id: "img-roamlite-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/q1.jpg",
+        alt: "RoamLite Tiny House Exterior View",
+      },
+      {
+        id: "img-roamlite-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/q2.png",
+        alt: "RoamLite Tiny House Exterior View",
+      },
+      {
+        id: "img-roamlite-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/q4.png",
+        alt: "RoamLite Tiny House Exterior View",
+      },
+      {
+        id: "img-roamlite-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/q5.png",
+        alt: "RoamLite Tiny House Exterior View",
+      },
+      {
+        id: "img-roamlite-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/q6.png",
+        alt: "RoamLite Tiny House Exterior View",
+      },
+      {
+        id: "img-roamlite-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/q7.png",
+        alt: "RoamLite Tiny House Exterior View",
+      },
+      {
+        id: "img-roamlite-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/q8.png",
+        alt: "RoamLite Tiny House Exterior View",
+      },
+      {
+        id: "img-roamlite-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/q9.png",
+        alt: "RoamLite Tiny House Exterior View",
+      },
+      {
+        id: "img-roamlite-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/q10.png",
+        alt: "RoamLite Tiny House Exterior View",
+      },
+      {
+        id: "img-roamlite-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/q11.png",
+        alt: "RoamLite Tiny House Exterior View",
+      },
+      {
+        id: "img-roamlite-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/q12.png",
+        alt: "RoamLite Tiny House Exterior View",
+      },
+      {
+        id: "img-roamlite-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/q13.png",
+        alt: "RoamLite Tiny House Exterior View",
+      },
+      {
+        id: "img-roamlite-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/q14.png",
+        alt: "RoamLite Tiny House Exterior View",
+      },
+      {
+        id: "img-roamlite-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/q15.png",
+        alt: "RoamLite Tiny House Exterior View",
+      },
+      {
+        id: "img-roamlite-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/q16.png",
+        alt: "RoamLite Tiny House Exterior View",
+      },
     ],
     features: {
       interior: {
@@ -1639,10 +2410,94 @@ export const products: Product[] = [
     images: [
       {
         id: "img-modern-tiny-001",
-        url: "/images/placeholder-tiny-house.jpg", // Placeholder for 18 images
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/18-2-600x444.jpg",
         alt: "Modern Tiny Home Exterior View",
       },
-      // Additional 17 image placeholders would be listed here
+      {
+        id: "img-modern-tiny-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/17-2.jpg",
+        alt: "Modern Tiny Home Exterior View",
+      },
+      {
+        id: "img-modern-tiny-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/16-3.jpg",
+        alt: "Modern Tiny Home Exterior View",
+      },
+      {
+        id: "img-modern-tiny-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/15-3.jpg",
+        alt: "Modern Tiny Home Exterior View",
+      },
+      {
+        id: "img-modern-tiny-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/14-3.jpg",
+        alt: "Modern Tiny Home Exterior View",
+      },
+      {
+        id: "img-modern-tiny-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/14-3.jpg",
+        alt: "Modern Tiny Home Exterior View",
+      },
+      {
+        id: "img-modern-tiny-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/13-3.jpg",
+        alt: "Modern Tiny Home Exterior View",
+      },
+      {
+        id: "img-modern-tiny-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/12-3.jpg",
+        alt: "Modern Tiny Home Exterior View",
+      },
+      {
+        id: "img-modern-tiny-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/11-3.jpg",
+        alt: "Modern Tiny Home Exterior View",
+      },
+      {
+        id: "img-modern-tiny-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/10-3.jpg",
+        alt: "Modern Tiny Home Exterior View",
+      },
+      {
+        id: "img-modern-tiny-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/9-3.jpg",
+        alt: "Modern Tiny Home Exterior View",
+      },
+      {
+        id: "img-modern-tiny-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/7-3.jpg",
+        alt: "Modern Tiny Home Exterior View",
+      },
+      {
+        id: "img-modern-tiny-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/6-3.jpg",
+        alt: "Modern Tiny Home Exterior View",
+      },
+      {
+        id: "img-modern-tiny-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/5-3.jpg",
+        alt: "Modern Tiny Home Exterior View",
+      },
+      {
+        id: "img-modern-tiny-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/4-3.jpg",
+        alt: "Modern Tiny Home Exterior View",
+      },
+      {
+        id: "img-modern-tiny-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/3-3.jpg",
+        alt: "Modern Tiny Home Exterior View",
+      },
+      {
+        id: "img-modern-tiny-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/2-2.jpg",
+        alt: "Modern Tiny Home Exterior View",
+      },
+      {
+        id: "img-modern-tiny-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/19-1.jpg",
+        alt: "Modern Tiny Home Exterior View",
+      },
     ],
     features: {
       interior: {
@@ -1833,10 +2688,74 @@ export const products: Product[] = [
     images: [
       {
         id: "img-modern-tiny-001",
-        url: "/images/placeholder-tiny-house.jpg", // Placeholder for 17 images
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/36.jpg",
         alt: "Modern Tiny Home Exterior View",
       },
-      // Additional 16 image placeholders would be listed here
+      {
+        id: "img-modern-tiny-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/35.jpg",
+        alt: "Modern Tiny Home Exterior View",
+      },
+      {
+        id: "img-modern-tiny-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/34.jpg",
+        alt: "Modern Tiny Home Exterior View",
+      },
+      {
+        id: "img-modern-tiny-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/33.jpg",
+        alt: "Modern Tiny Home Exterior View",
+      },
+      {
+        id: "img-modern-tiny-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/31.jpg",
+        alt: "Modern Tiny Home Exterior View",
+      },
+      {
+        id: "img-modern-tiny-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/30.jpg",
+        alt: "Modern Tiny Home Exterior View",
+      },
+      {
+        id: "img-modern-tiny-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/28.jpg",
+        alt: "Modern Tiny Home Exterior View",
+      },
+      {
+        id: "img-modern-tiny-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/27.jpg",
+        alt: "Modern Tiny Home Exterior View",
+      },
+      {
+        id: "img-modern-tiny-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/26.jpg",
+        alt: "Modern Tiny Home Exterior View",
+      },
+      {
+        id: "img-modern-tiny-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/25.jpg",
+        alt: "Modern Tiny Home Exterior View",
+      },
+      {
+        id: "img-modern-tiny-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/24-1.jpg",
+        alt: "Modern Tiny Home Exterior View",
+      },
+      {
+        id: "img-modern-tiny-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/23-1.jpg",
+        alt: "Modern Tiny Home Exterior View",
+      },
+      {
+        id: "img-modern-tiny-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/22-2.jpg",
+        alt: "Modern Tiny Home Exterior View",
+      },
+      {
+        id: "img-modern-tiny-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/21-1.jpg",
+        alt: "Modern Tiny Home Exterior View",
+      },
     ],
     features: {
       interior: {
@@ -2032,10 +2951,114 @@ export const products: Product[] = [
     images: [
       {
         id: "img-furnished-tiny-001",
-        url: "/images/placeholder-tiny-house.jpg", // Placeholder for 22 images
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/1-2-600x401.jpg", // Placeholder for 22 images
         alt: "Fully Furnished Tiny Home Exterior View",
       },
-      // Additional 21 image placeholders would be listed here
+      {
+        id: "img-furnished-tiny-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/2-1.jpg", // Placeholder for 22 images
+        alt: "Fully Furnished Tiny Home Exterior View",
+      },
+      {
+        id: "img-furnished-tiny-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/3-2.jpg", // Placeholder for 22 images
+        alt: "Fully Furnished Tiny Home Exterior View",
+      },
+      {
+        id: "img-furnished-tiny-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/4-2.jpg", // Placeholder for 22 images
+        alt: "Fully Furnished Tiny Home Exterior View",
+      },
+      {
+        id: "img-furnished-tiny-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/5-2.jpg", // Placeholder for 22 images
+        alt: "Fully Furnished Tiny Home Exterior View",
+      },
+      {
+        id: "img-furnished-tiny-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/6-2.jpg", // Placeholder for 22 images
+        alt: "Fully Furnished Tiny Home Exterior View",
+      },
+      {
+        id: "img-furnished-tiny-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/7-2.jpg", // Placeholder for 22 images
+        alt: "Fully Furnished Tiny Home Exterior View",
+      },
+      {
+        id: "img-furnished-tiny-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/8-2.jpg", // Placeholder for 22 images
+        alt: "Fully Furnished Tiny Home Exterior View",
+      },
+      {
+        id: "img-furnished-tiny-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/9-2.jpg", // Placeholder for 22 images
+        alt: "Fully Furnished Tiny Home Exterior View",
+      },
+      {
+        id: "img-furnished-tiny-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/10-2.jpg", // Placeholder for 22 images
+        alt: "Fully Furnished Tiny Home Exterior View",
+      },
+      {
+        id: "img-furnished-tiny-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/11-2.jpg", // Placeholder for 22 images
+        alt: "Fully Furnished Tiny Home Exterior View",
+      },
+      {
+        id: "img-furnished-tiny-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/12-2.jpg", // Placeholder for 22 images
+        alt: "Fully Furnished Tiny Home Exterior View",
+      },
+      {
+        id: "img-furnished-tiny-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/13-2.jpg", // Placeholder for 22 images
+        alt: "Fully Furnished Tiny Home Exterior View",
+      },
+      {
+        id: "img-furnished-tiny-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/14-2.jpg", // Placeholder for 22 images
+        alt: "Fully Furnished Tiny Home Exterior View",
+      },
+      {
+        id: "img-furnished-tiny-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/15-2.jpg", // Placeholder for 22 images
+        alt: "Fully Furnished Tiny Home Exterior View",
+      },
+      {
+        id: "img-furnished-tiny-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/16-2.jpg", // Placeholder for 22 images
+        alt: "Fully Furnished Tiny Home Exterior View",
+      },
+      {
+        id: "img-furnished-tiny-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/17-1.jpg", // Placeholder for 22 images
+        alt: "Fully Furnished Tiny Home Exterior View",
+      },
+      {
+        id: "img-furnished-tiny-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/18-1.jpg", // Placeholder for 22 images
+        alt: "Fully Furnished Tiny Home Exterior View",
+      },
+      {
+        id: "img-furnished-tiny-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/19.jpg", // Placeholder for 22 images
+        alt: "Fully Furnished Tiny Home Exterior View",
+      },
+      {
+        id: "img-furnished-tiny-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/20-1.jpg", // Placeholder for 22 images
+        alt: "Fully Furnished Tiny Home Exterior View",
+      },
+      {
+        id: "img-furnished-tiny-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/22-1.jpg", // Placeholder for 22 images
+        alt: "Fully Furnished Tiny Home Exterior View",
+      },
+      {
+        id: "img-furnished-tiny-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/Shadow-Creek.png", // Placeholder for 22 images
+        alt: "Fully Furnished Tiny Home Exterior View",
+      },
     ],
     features: {
       interior: {
@@ -2208,10 +3231,94 @@ export const products: Product[] = [
     images: [
       {
         id: "img-399tiny-001",
-        url: "/images/placeholder-tiny-house.jpg", // Placeholder for 23 images
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/5-1-600x418.jpg",
         alt: "399 sqft Tiny Home On Wheels Exterior View",
       },
-      // Additional 22 image placeholders would be listed here
+      {
+        id: "img-399tiny-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/1-1.jpg",
+        alt: "399 sqft Tiny Home On Wheels Exterior View",
+      },
+      {
+        id: "img-399tiny-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/24.jpg",
+        alt: "399 sqft Tiny Home On Wheels Exterior View",
+      },
+      {
+        id: "img-399tiny-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/23.jpg",
+        alt: "399 sqft Tiny Home On Wheels Exterior View",
+      },
+      {
+        id: "img-399tiny-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/22.jpg",
+        alt: "399 sqft Tiny Home On Wheels Exterior View",
+      },
+      {
+        id: "img-399tiny-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/20.jpg",
+        alt: "399 sqft Tiny Home On Wheels Exterior View",
+      },
+      {
+        id: "img-399tiny-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/21.jpg",
+        alt: "399 sqft Tiny Home On Wheels Exterior View",
+      },
+      {
+        id: "img-399tiny-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/17.jpg",
+        alt: "399 sqft Tiny Home On Wheels Exterior View",
+      },
+      {
+        id: "img-399tiny-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/18.jpg",
+        alt: "399 sqft Tiny Home On Wheels Exterior View",
+      },
+      {
+        id: "img-399tiny-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/16-1.jpg",
+        alt: "399 sqft Tiny Home On Wheels Exterior View",
+      },
+      {
+        id: "img-399tiny-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/14-1.jpg",
+        alt: "399 sqft Tiny Home On Wheels Exterior View",
+      },
+      {
+        id: "img-399tiny-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/15-1.jpg",
+        alt: "399 sqft Tiny Home On Wheels Exterior View",
+      },
+      {
+        id: "img-399tiny-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/13-1.jpg",
+        alt: "399 sqft Tiny Home On Wheels Exterior View",
+      },
+      {
+        id: "img-399tiny-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/11-1.jpg",
+        alt: "399 sqft Tiny Home On Wheels Exterior View",
+      },
+      {
+        id: "img-399tiny-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/9-1.jpg",
+        alt: "399 sqft Tiny Home On Wheels Exterior View",
+      },
+      {
+        id: "img-399tiny-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/8-1.jpg",
+        alt: "399 sqft Tiny Home On Wheels Exterior View",
+      },
+      {
+        id: "img-399tiny-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/7-1.jpg",
+        alt: "399 sqft Tiny Home On Wheels Exterior View",
+      },
+      {
+        id: "img-399tiny-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/2.png",
+        alt: "399 sqft Tiny Home On Wheels Exterior View",
+      },
     ],
     features: {
       interior: {
@@ -2366,10 +3473,74 @@ export const products: Product[] = [
     images: [
       {
         id: "img-400-2bed-001",
-        url: "/images/placeholder-tiny-house.jpg", // Placeholder for 12 images
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/6.jpeg", // Placeholder for 12 images
         alt: "2 Beds, 1 Bath Tiny Home Exterior View",
       },
-      // Additional 11 image placeholders would be listed here
+      {
+        id: "img-400-2bed-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/1.png", // Placeholder for 12 images
+        alt: "2 Beds, 1 Bath Tiny Home Exterior View",
+      },
+      {
+        id: "img-400-2bed-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/13.jpeg", // Placeholder for 12 images
+        alt: "2 Beds, 1 Bath Tiny Home Exterior View",
+      },
+      {
+        id: "img-400-2bed-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/12.jpeg", // Placeholder for 12 images
+        alt: "2 Beds, 1 Bath Tiny Home Exterior View",
+      },
+      {
+        id: "img-400-2bed-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/11.jpeg", // Placeholder for 12 images
+        alt: "2 Beds, 1 Bath Tiny Home Exterior View",
+      },
+      {
+        id: "img-400-2bed-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/10.jpeg", // Placeholder for 12 images
+        alt: "2 Beds, 1 Bath Tiny Home Exterior View",
+      },
+      {
+        id: "img-400-2bed-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/9.jpeg", // Placeholder for 12 images
+        alt: "2 Beds, 1 Bath Tiny Home Exterior View",
+      },
+      {
+        id: "img-400-2bed-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/8.jpeg", // Placeholder for 12 images
+        alt: "2 Beds, 1 Bath Tiny Home Exterior View",
+      },
+      {
+        id: "img-400-2bed-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/7.jpeg", // Placeholder for 12 images
+        alt: "2 Beds, 1 Bath Tiny Home Exterior View",
+      },
+      {
+        id: "img-400-2bed-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/6.jpeg", // Placeholder for 12 images
+        alt: "2 Beds, 1 Bath Tiny Home Exterior View",
+      },
+      {
+        id: "img-400-2bed-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/5.jpeg", // Placeholder for 12 images
+        alt: "2 Beds, 1 Bath Tiny Home Exterior View",
+      },
+      {
+        id: "img-400-2bed-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/4.jpeg", // Placeholder for 12 images
+        alt: "2 Beds, 1 Bath Tiny Home Exterior View",
+      },
+      {
+        id: "img-400-2bed-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/3.jpeg", // Placeholder for 12 images
+        alt: "2 Beds, 1 Bath Tiny Home Exterior View",
+      },
+      {
+        id: "img-400-2bed-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/2.jpeg", // Placeholder for 12 images
+        alt: "2 Beds, 1 Bath Tiny Home Exterior View",
+      },
     ],
     features: {
       interior: {
@@ -2496,10 +3667,89 @@ export const products: Product[] = [
     images: [
       {
         id: "img-399mobile-001",
-        url: "/images/placeholder-tiny-house.jpg", // Placeholder for 17 images
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/6.jpg",
         alt: "399 sqft Mobile Tiny Home Exterior View",
       },
-      // Additional 16 image placeholders would be listed here
+      {
+        id: "img-399mobile-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/4.jpg",
+        alt: "399 sqft Mobile Tiny Home Exterior View",
+      },
+      {
+        id: "img-399mobile-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/3.jpg",
+        alt: "399 sqft Mobile Tiny Home Exterior View",
+      },
+      {
+        id: "img-399mobile-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/2.jpg",
+        alt: "399 sqft Mobile Tiny Home Exterior View",
+      },
+      {
+        id: "img-399mobile-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/1.jpg",
+        alt: "399 sqft Mobile Tiny Home Exterior View",
+      },
+      {
+        id: "img-399mobile-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/16.jpg",
+        alt: "399 sqft Mobile Tiny Home Exterior View",
+      },
+      {
+        id: "img-399mobile-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/15.jpg",
+        alt: "399 sqft Mobile Tiny Home Exterior View",
+      },
+      {
+        id: "img-399mobile-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/14.jpg",
+        alt: "399 sqft Mobile Tiny Home Exterior View",
+      },
+      {
+        id: "img-399mobile-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/13.jpg",
+        alt: "399 sqft Mobile Tiny Home Exterior View",
+      },
+      {
+        id: "img-399mobile-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/12.jpg",
+        alt: "399 sqft Mobile Tiny Home Exterior View",
+      },
+      {
+        id: "img-399mobile-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/11.jpg",
+        alt: "399 sqft Mobile Tiny Home Exterior View",
+      },
+      {
+        id: "img-399mobile-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/10.jpg",
+        alt: "399 sqft Mobile Tiny Home Exterior View",
+      },
+      {
+        id: "img-399mobile-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/9.jpg",
+        alt: "399 sqft Mobile Tiny Home Exterior View",
+      },
+      {
+        id: "img-399mobile-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/8.jpg",
+        alt: "399 sqft Mobile Tiny Home Exterior View",
+      },
+      {
+        id: "img-399mobile-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/7.jpg",
+        alt: "399 sqft Mobile Tiny Home Exterior View",
+      },
+      {
+        id: "img-399mobile-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/6.jpg",
+        alt: "399 sqft Mobile Tiny Home Exterior View",
+      },
+      {
+        id: "img-399mobile-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/5.jpg",
+        alt: "399 sqft Mobile Tiny Home Exterior View",
+      },
     ],
     features: {
       interior: {
@@ -2636,10 +3886,94 @@ export const products: Product[] = [
     images: [
       {
         id: "img-399space-001",
-        url: "/images/placeholder-tiny-house.jpg", // Placeholder for 19 images
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/a5-1.jpg",
         alt: "Spacious 399 sqft Tiny Home Exterior View",
       },
-      // Additional 18 image placeholders would be listed here
+      {
+        id: "img-399space-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/a1-1.jpg",
+        alt: "Spacious 399 sqft Tiny Home Exterior View",
+      },
+      {
+        id: "img-399space-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/a20.jpg",
+        alt: "Spacious 399 sqft Tiny Home Exterior View",
+      },
+      {
+        id: "img-399space-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/a17-1.jpg",
+        alt: "Spacious 399 sqft Tiny Home Exterior View",
+      },
+      {
+        id: "img-399space-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/a16-1.jpg",
+        alt: "Spacious 399 sqft Tiny Home Exterior View",
+      },
+      {
+        id: "img-399space-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/a15-1.jpg",
+        alt: "Spacious 399 sqft Tiny Home Exterior View",
+      },
+      {
+        id: "img-399space-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/a14-1.jpg",
+        alt: "Spacious 399 sqft Tiny Home Exterior View",
+      },
+      {
+        id: "img-399space-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/a13-1.jpg",
+        alt: "Spacious 399 sqft Tiny Home Exterior View",
+      },
+      {
+        id: "img-399space-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/a12-1.jpg",
+        alt: "Spacious 399 sqft Tiny Home Exterior View",
+      },
+      {
+        id: "img-399space-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/a11-1.jpg",
+        alt: "Spacious 399 sqft Tiny Home Exterior View",
+      },
+      {
+        id: "img-399space-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/a10-1.jpg",
+        alt: "Spacious 399 sqft Tiny Home Exterior View",
+      },
+      {
+        id: "img-399space-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/a9-1.jpg",
+        alt: "Spacious 399 sqft Tiny Home Exterior View",
+      },
+      {
+        id: "img-399space-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/a8-1.jpg",
+        alt: "Spacious 399 sqft Tiny Home Exterior View",
+      },
+      {
+        id: "img-399space-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/a7-1.jpg",
+        alt: "Spacious 399 sqft Tiny Home Exterior View",
+      },
+      {
+        id: "img-399space-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/a6-1.jpg",
+        alt: "Spacious 399 sqft Tiny Home Exterior View",
+      },
+      {
+        id: "img-399space-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/a4-1.jpg",
+        alt: "Spacious 399 sqft Tiny Home Exterior View",
+      },
+      {
+        id: "img-399space-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/a3-1.jpg",
+        alt: "Spacious 399 sqft Tiny Home Exterior View",
+      },
+      {
+        id: "img-399space-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/a2-1.jpg",
+        alt: "Spacious 399 sqft Tiny Home Exterior View",
+      },
     ],
     features: {
       interior: {
@@ -2780,10 +4114,74 @@ export const products: Product[] = [
     images: [
       {
         id: "img-399mobile-001",
-        url: "/images/placeholder-tiny-house.jpg", // Placeholder for 17 images
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/a2.jpg",
         alt: "399 sqft Mobile Tiny Home On Wheels Exterior View",
       },
-      // Additional 16 image placeholders would be listed here
+      {
+        id: "img-399mobile-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/a17.jpg",
+        alt: "399 sqft Mobile Tiny Home On Wheels Exterior View",
+      },
+      {
+        id: "img-399mobile-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/a16.jpg",
+        alt: "399 sqft Mobile Tiny Home On Wheels Exterior View",
+      },
+      {
+        id: "img-399mobile-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/a15.jpg",
+        alt: "399 sqft Mobile Tiny Home On Wheels Exterior View",
+      },
+      {
+        id: "img-399mobile-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/a14.jpg",
+        alt: "399 sqft Mobile Tiny Home On Wheels Exterior View",
+      },
+      {
+        id: "img-399mobile-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/a13.jpg",
+        alt: "399 sqft Mobile Tiny Home On Wheels Exterior View",
+      },
+      {
+        id: "img-399mobile-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/a12.jpg",
+        alt: "399 sqft Mobile Tiny Home On Wheels Exterior View",
+      },
+      {
+        id: "img-399mobile-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/a11.jpg",
+        alt: "399 sqft Mobile Tiny Home On Wheels Exterior View",
+      },
+      {
+        id: "img-399mobile-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/a9.jpg",
+        alt: "399 sqft Mobile Tiny Home On Wheels Exterior View",
+      },
+      {
+        id: "img-399mobile-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/a8.jpg",
+        alt: "399 sqft Mobile Tiny Home On Wheels Exterior View",
+      },
+      {
+        id: "img-399mobile-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/a7.jpg",
+        alt: "399 sqft Mobile Tiny Home On Wheels Exterior View",
+      },
+      {
+        id: "img-399mobile-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/a6.jpg",
+        alt: "399 sqft Mobile Tiny Home On Wheels Exterior View",
+      },
+      {
+        id: "img-399mobile-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/a5.jpg",
+        alt: "399 sqft Mobile Tiny Home On Wheels Exterior View",
+      },
+      {
+        id: "img-399mobile-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/a4.jpg",
+        alt: "399 sqft Mobile Tiny Home On Wheels Exterior View",
+      },
     ],
     features: {
       interior: {
@@ -2924,10 +4322,81 @@ export const products: Product[] = [
     images: [
       {
         id: "img-399loft-001",
-        url: "/images/placeholder-tiny-house.jpg", // Placeholder for 13 images
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/t1.jpg",
         alt: "399 sqft Tiny Home with Loft Bedroom Exterior View",
       },
-      // Additional 12 image placeholders would be listed here
+
+      {
+        id: "img-399loft-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/t13.jpg",
+        alt: "399 sqft Tiny Home with Loft Bedroom Exterior View",
+      },
+
+      {
+        id: "img-399loft-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/t12.jpg",
+        alt: "399 sqft Tiny Home with Loft Bedroom Exterior View",
+      },
+
+      {
+        id: "img-399loft-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/t11.jpg",
+        alt: "399 sqft Tiny Home with Loft Bedroom Exterior View",
+      },
+
+      {
+        id: "img-399loft-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/t10.jpg",
+        alt: "399 sqft Tiny Home with Loft Bedroom Exterior View",
+      },
+
+      {
+        id: "img-399loft-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/t9.jpg",
+        alt: "399 sqft Tiny Home with Loft Bedroom Exterior View",
+      },
+
+      {
+        id: "img-399loft-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/t8.jpg",
+        alt: "399 sqft Tiny Home with Loft Bedroom Exterior View",
+      },
+
+      {
+        id: "img-399loft-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/t7.jpg",
+        alt: "399 sqft Tiny Home with Loft Bedroom Exterior View",
+      },
+
+      {
+        id: "img-399loft-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/t6.jpg",
+        alt: "399 sqft Tiny Home with Loft Bedroom Exterior View",
+      },
+
+      {
+        id: "img-399loft-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/t5.jpg",
+        alt: "399 sqft Tiny Home with Loft Bedroom Exterior View",
+      },
+
+      {
+        id: "img-399loft-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/t4.jpg",
+        alt: "399 sqft Tiny Home with Loft Bedroom Exterior View",
+      },
+
+      {
+        id: "img-399loft-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/t3.jpg",
+        alt: "399 sqft Tiny Home with Loft Bedroom Exterior View",
+      },
+
+      {
+        id: "img-399loft-001",
+        url: "https://containerx-press.com/wp-content/uploads/2025/01/t2.jpg",
+        alt: "399 sqft Tiny Home with Loft Bedroom Exterior View",
+      },
     ],
     features: {
       interior: {
