@@ -60,7 +60,7 @@ const WarrantyPage = () => {
       <div className="relative">
         <div className="absolute inset-0">
           <img
-            src="/images/warranty-hero.jpg"
+            src="https://containerx-press.com/wp-content/uploads/2023/11/containers2.jpeg"
             alt="Tiny Home Quality"
             className="w-full h-full object-cover"
           />
