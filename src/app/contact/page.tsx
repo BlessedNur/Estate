@@ -49,10 +49,10 @@ const ContactPage = () => {
               Available 24/7 for your inquiries
             </p>
             <a
-              href="mailto:info@containerx-press.com"
+              href="mailto:info@homesonwheelss.com"
               className="text-orange-600 hover:text-orange-700 font-semibold flex items-center gap-2"
             >
-              info@containerx-press.com
+              info@homesonwheelss.com
               <ExternalLink className="w-4 h-4" />
             </a>
           </div>
@@ -235,10 +235,10 @@ const ContactPage = () => {
                   <div>
                     <h3 className="font-semibold text-lg">Email Support</h3>
                     <a
-                      href="mailto:info@containerx-press.com"
+                      href="mailto:info@homesonwheelss.com"
                       className="text-orange-600 hover:text-orange-700"
                     >
-                      info@containerx-press.com
+                      info@homesonwheelss.com
                     </a>
                   </div>
                 </div>

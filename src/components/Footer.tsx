@@ -132,10 +132,10 @@ function Footer() {
               <li className="flex items-center gap-3 text-gray-400">
                 <Mail size={20} />
                 <Link
-                  href="mailto:info@containerx-press.com"
+                  href="mailto:info@homesonwheelss.com"
                   className="hover:text-orange-500 transition-colors"
                 >
-                  info@containerx-press.com
+                  info@homesonwheelss.com
                 </Link>
               </li>
             </ul>
