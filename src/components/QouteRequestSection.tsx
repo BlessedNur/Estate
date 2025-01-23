@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import {
   ArrowLeft,
   ArrowRight,
@@ -10,6 +10,7 @@ import {
   LucideIcon,
 } from "lucide-react";
 import React, { useState } from "react";
+import { toast } from "sonner";
 
 interface Step {
   number: number;
@@ -114,6 +115,7 @@ const QuoteRequestSection: React.FC = () => {
     </label>
   );
 
+  const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
   const [formData, setFormData] = useState<FormData>({
     homeType: "",
     timeline: "",
@@ -124,6 +126,59 @@ const QuoteRequestSection: React.FC = () => {
     location: "",
   });
 
+  const validateStep = (): boolean => {
+    switch (currentStep) {
+      case 1:
+        return !!formData.homeType;
+      case 2:
+        return !!formData.timeline;
+      case 3:
+        return !!formData.payment;
+      case 4:
+        return !!(
+          formData.name &&
+          formData.email &&
+          formData.phone &&
+          formData.location
+        );
+      default:
+        return false;
+    }
+  };
+
+  const handleSubmit = async () => {
+    if (!validateStep()) {
+      toast.error("Please fill in all required fields");
+      return;
+    }
+
+    setIsSubmitting(true);
+
+    try {
+      const response = await fetch("/api/send-quota", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const result = await response.json();
+
+      if (result.success) {
+        toast.success("Quote request submitted successfully!");
+
+        // Reset form or redirect
+      } else {
+        toast.error(result.message || "Failed to submit quote request");
+      }
+    } catch (error) {
+      console.error("Submission error:", error);
+      toast.error("An error occurred. Please try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
   const handleInputChange = (field: keyof FormData, value: string): void => {
     setFormData((prev) => ({ ...prev, [field]: value }));
   };
@@ -368,14 +423,28 @@ const QuoteRequestSection: React.FC = () => {
                 type="button"
                 onClick={
                   currentStep === 4
-                    ? () => console.log("Submit", formData)
-                    : handleNext
+                    ? handleSubmit
+                    : () => {
+                        if (validateStep()) {
+                          setCurrentStep((prev) => prev + 1);
+                        } else {
+                          toast.error(
+                            "Please complete all fields in this step"
+                          );
+                        }
+                      }
                 }
+                disabled={isSubmitting}
                 className="inline-flex items-center gap-2 bg-blue-600 text-white px-8 py-3 rounded-lg 
-                hover:bg-blue-700 transition-all duration-300 font-semibold ml-auto"
+    hover:bg-blue-700 transition-all duration-300 font-semibold ml-auto
+    disabled:opacity-50 disabled:cursor-not-allowed"
               >
-                {currentStep === 4 ? "Submit" : "Next Step"}
-                {currentStep !== 4 && (
+                {currentStep === 4
+                  ? isSubmitting
+                    ? "Submitting..."
+                    : "Submit"
+                  : "Next Step"}
+                {currentStep !== 4 && !isSubmitting && (
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 )}
               </button>

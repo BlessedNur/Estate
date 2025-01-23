@@ -13,7 +13,6 @@ function Banner() {
       quoteSection.scrollIntoView({ behavior: "smooth" });
     }
   };
-
   return (
     <div className="h-[100svh] bg-[#FAF5EF] relative">
       <div className="max-w-[1300px] h-full relative mx-auto">
@@ -33,10 +32,10 @@ function Banner() {
           <div className="relative h-full flex flex-col items-center justify-center px-4">
             <div className="text-center transform translate-y-[-50%] space-y-4">
               <h4 className="text-blue-400 font-semibold tracking-wider uppercase text-lg md:text-xl mb-2 animate-fade-in">
-                Homes on wheels
-              </h4>
-              <h1 className="text-white text-4xl md:text-6xl lg:text-[80px] font-bold tracking-tight whitespace-nowrap animate-slide-up">
                 TINY HOMES
+              </h4>
+              <h1 className="text-white uppercase text-4xl md:text-6xl lg:text-[80px] font-bold tracking-tight whitespace-nowrap animate-slide-up">
+                Homes on wheels
               </h1>
               <div className="w-24 h-1 bg-blue-500 mx-auto mt-4 animate-expand" />
             </div>

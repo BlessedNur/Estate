@@ -1,6 +1,8 @@
 import { CheckCircle2, ArrowRight } from 'lucide-react';
+import { useRouter } from 'next/navigation';
 
 const WhyChooseSection = () => {
+  const router = useRouter();
   const features = [
     {
       title: "Quality Guarantee",
@@ -43,7 +45,7 @@ const WhyChooseSection = () => {
             <p className="text-gray-600 leading-relaxed">
               {feature.description}
             </p>
-            <div className="mt-auto pt-4 group-hover:text-blue-600 flex items-center gap-2 text-sm font-medium">
+            <div onClick={()=>router.push("/about")} className="cursor-pointer mt-auto pt-4 group-hover:text-blue-600 flex items-center gap-2 text-sm font-medium">
               Learn More
               <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
             </div>
@@ -51,12 +53,7 @@ const WhyChooseSection = () => {
         ))}
       </div>
 
-      <div className="text-center mt-12">
-        <button className="inline-flex items-center gap-2 bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors duration-300">
-          Get Started Today
-          <ArrowRight className="w-4 h-4" />
-        </button>
-      </div>
+      
     </section>
   );
 };

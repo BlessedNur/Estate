@@ -1,13 +1,39 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import { Mail, MapPin, Clock, Phone, Send, ExternalLink } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { toast } from "sonner";
 
 const ContactPage = () => {
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const handleSubmit = async (e: any) => {
     e.preventDefault();
-    // Handle form submission
+
+    const formData = new FormData(e.target);
+    const data = Object.fromEntries(formData.entries());
+
+    try {
+      setIsSubmitting(true);
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
+
+      const result = await response.json();
+
+      if (result.success) {
+        setIsSubmitting(false);
+        toast.success("Your message has been sent successfully!");
+      } else {
+        setIsSubmitting(false);
+        toast.error("Failed to send message. Please try again later.");
+      }
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      toast.error("An error occurred. Please try again.");
+    }
   };
 
   return (
@@ -167,13 +193,25 @@ const ContactPage = () => {
                 ></textarea>
               </div>
 
-              <button
-                type="submit"
-                className="w-full bg-orange-600 text-white py-4 px-6 rounded-lg hover:bg-orange-700 transition-colors flex items-center justify-center gap-2 text-lg font-semibold"
-              >
-                <Send className="w-5 h-5" />
-                Send Message
-              </button>
+              {isSubmitting ? (
+                <button
+                  disabled
+                  type="submit"
+                  className="w-full bg-orange-600 text-white py-4 px-6 rounded-lg hover:bg-orange-700 transition-colors flex items-center justify-center gap-2 text-lg font-semibold"
+                >
+                  {" "}
+                  <Send className="w-5 h-5" />
+                  Please wait while submitting the form...
+                </button>
+              ) : (
+                <button
+                  type="submit"
+                  className="w-full bg-orange-600 text-white py-4 px-6 rounded-lg hover:bg-orange-700 transition-colors flex items-center justify-center gap-2 text-lg font-semibold"
+                >
+                  <Send className="w-5 h-5" />
+                  Send Message
+                </button>
+              )}
             </form>
           </div>
 

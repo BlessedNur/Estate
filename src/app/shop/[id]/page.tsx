@@ -14,6 +14,7 @@ import ProductInfo from "@/components/ProductInfo";
 import OrderForm from "@/components/OrderForm";
 import { Product } from "@/libs/products";
 import { products } from "@/libs/products";
+import BuyerProtection from "@/components/BuyerPortection";
 
 const ProductDetail: React.FC = () => {
   const params = useParams();
@@ -104,10 +105,21 @@ const ProductDetail: React.FC = () => {
       <div className="max-w-[1300px] mx-auto px-4 py-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           <ProductImages images={product.images} />
+
           <div className="space-y-6">
             <ProductInfo product={product} />
             <OrderForm product={product} />
+            <div className="flex items-center gap-4 mt-8">
+              <Image
+                src="https://containerx-press.com/wp-content/uploads/2024/11/google-1.webp"
+                alt="Google"
+                width={120}
+                height={80}
+                className="object-contain"
+              />
+            </div>
           </div>
+          <BuyerProtection />
         </div>
       </div>
 

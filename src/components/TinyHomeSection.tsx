@@ -1,4 +1,5 @@
 import { Home, ArrowRight, Truck, Palette, Leaf } from "lucide-react";
+import { useRouter } from "next/navigation";
 
 const FeatureItem = ({
   icon: Icon,
@@ -44,6 +45,8 @@ const TinyHomesSection = () => {
     },
   ];
 
+  const router = useRouter();
+
   return (
     <section className="bg-gradient-to-b from-gray-50 to-white py-24">
       <div className="max-w-[1300px] mx-auto px-4 lg:px-8">
@@ -75,8 +78,11 @@ const TinyHomesSection = () => {
             </div>
 
             <div className="flex flex-wrap gap-4">
-              <button className="inline-flex items-center gap-2 bg-blue-600 text-white px-8 py-3 rounded-lg hover:bg-blue-700 transition-all duration-300 font-semibold group">
-                Explore Our Models
+              <button
+                onClick={() => router.push("/shop")}
+                className="inline-flex items-center gap-2 bg-blue-600 text-white px-8 py-3 rounded-lg hover:bg-blue-700 transition-all duration-300 font-semibold group"
+              >
+                Explore Our Products
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </button>
             </div>
@@ -98,7 +104,7 @@ const TinyHomesSection = () => {
                 </div>
                 <div>
                   <p className="font-bold text-lg">Starting at</p>
-                  <p className="text-blue-600 text-2xl font-bold">$49,999</p>
+                  <p className="text-blue-600 text-2xl font-bold">$30,000</p>
                 </div>
               </div>
             </div>

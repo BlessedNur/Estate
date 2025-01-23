@@ -1,7 +1,9 @@
-import { ChevronDown, ShoppingCart, Menu } from "lucide-react";
-import Link from "next/link";
+"use client"
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import React, { useState } from "react";
+import { ChevronDown, Menu, ShoppingCart } from "lucide-react";
+import Link from "next/link";
 
 function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -30,7 +32,16 @@ function Navbar() {
     <div className="sticky top-0 z-50 bg-white shadow-sm">
       <div className="flex justify-between items-center p-4 m-auto max-w-[1300px]">
         {/* Logo */}
-        <div className="text-xl font-bold">LOGO</div>
+        <Link href="/" className="grid  place-content-center w-40 h-12 mt-2 ">
+          <Image
+            src="/images/Screenshot__3_-removebg-preview.png"
+            alt="Company Logo"
+            width={4000}
+            height={4000}
+            className="object-contain"
+            priority
+          />
+        </Link>
 
         {/* Mobile Menu Button */}
         <button
@@ -194,9 +205,6 @@ function Navbar() {
                 </span>
                 <div className="relative">
                   <ShoppingCart size={24} className="text-gray-700" />
-                  <span className="absolute -top-1 -right-1 bg-orange-600 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">
-                    0
-                  </span>
                 </div>
               </div>
             </div>

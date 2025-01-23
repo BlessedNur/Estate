@@ -1,20 +1,67 @@
-"use client";
 import React from "react";
-import { Shield, CheckCircle, AlertCircle } from "lucide-react";
+import {
+  Shield,
+  CheckCircle,
+  AlertCircle,
+  Clock,
+  FileCheck,
+  Settings,
+} from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
 const WarrantyPage = () => {
+  const coverageItems = [
+    {
+      title: "Structural Integrity",
+      description:
+        "Full coverage for the structural components including walls, roof, and foundation connections.",
+    },
+    {
+      title: "Plumbing Systems",
+      description:
+        "Complete protection for all installed plumbing fixtures and water systems.",
+    },
+    {
+      title: "Electrical Systems",
+      description:
+        "Coverage for electrical wiring, outlets, and installed lighting fixtures.",
+    },
+    {
+      title: "Windows & Doors",
+      description:
+        "Protection against manufacturing defects in all windows and door installations.",
+    },
+  ];
+
+  const maintenanceItems = [
+    {
+      title: "Regular Inspections",
+      description:
+        "Annual professional inspections to maintain warranty validity.",
+    },
+    {
+      title: "Documentation",
+      description:
+        "Keep records of all maintenance and repairs for warranty claims.",
+    },
+    {
+      title: "Approved Modifications",
+      description:
+        "Any modifications must be approved to maintain warranty coverage.",
+    },
+  ];
+
   return (
     <div className="min-h-screen bg-gray-50">
       <Navbar />
 
-      {/* Hero Section with Background Image */}
+      {/* Hero Section */}
       <div className="relative">
         <div className="absolute inset-0">
           <img
-            src="https://containerx-press.com/wp-content/uploads/2024/06/441887605_972558447604383_85966219333880355_n.jpg"
-            alt="Container Home Banner"
+            src="/images/warranty-hero.jpg"
+            alt="Tiny Home Quality"
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-black bg-opacity-60"></div>
@@ -24,100 +71,125 @@ const WarrantyPage = () => {
             <div className="flex flex-col items-center">
               <Shield className="w-16 h-16 text-white mb-6" />
               <h1 className="text-5xl font-bold mb-6 text-center text-white">
-                Warranty
+                Our Warranty Protection
               </h1>
               <p className="text-xl text-center text-gray-200 max-w-2xl mx-auto">
-                All of our tiny homes come with an impressive 25-year warranty,
-                ensuring your investment is protected for years to come.
+                Protecting your investment with industry-leading coverage and
+                peace of mind.
               </p>
             </div>
           </div>
         </div>
       </div>
 
-      {/* Main Content */}
-      <div className="max-w-4xl mx-auto px-4 py-16">
-        {/* Warranty Overview */}
+      {/* Warranty Tiers */}
+      <div className="max-w-7xl mx-auto px-4 py-16">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+          <div className="bg-white rounded-xl p-6 shadow-lg border border-gray-100">
+            <div className="text-center">
+              <Clock className="w-12 h-12 text-blue-600 mx-auto mb-4" />
+              <h3 className="text-xl font-bold mb-2">5-Year</h3>
+              <p className="text-gray-600">Comprehensive Coverage</p>
+              <p className="mt-4 text-sm text-gray-500">
+                Full protection for all major systems and structural components
+              </p>
+            </div>
+          </div>
+          <div className="bg-white rounded-xl p-6 shadow-lg border border-gray-100">
+            <div className="text-center">
+              <Settings className="w-12 h-12 text-blue-600 mx-auto mb-4" />
+              <h3 className="text-xl font-bold mb-2">10-Year</h3>
+              <p className="text-gray-600">Structural Warranty</p>
+              <p className="mt-4 text-sm text-gray-500">
+                Extended coverage for all structural elements
+              </p>
+            </div>
+          </div>
+          <div className="bg-white rounded-xl p-6 shadow-lg border border-gray-100">
+            <div className="text-center">
+              <FileCheck className="w-12 h-12 text-blue-600 mx-auto mb-4" />
+              <h3 className="text-xl font-bold mb-2">Limited Lifetime</h3>
+              <p className="text-gray-600">Frame Warranty</p>
+              <p className="mt-4 text-sm text-gray-500">
+                Lifetime protection for the main steel frame structure
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* Coverage Details */}
         <div className="bg-white rounded-xl p-8 shadow-lg border border-gray-100 mb-12">
-          <div className="flex items-center justify-center mb-8">
-            <div className="flex flex-col items-center text-center p-6 bg-blue-50 rounded-lg">
-              <Shield className="w-16 h-16 text-blue-600 mb-4" />
-              <h3 className="text-3xl font-bold mb-2">25-Year</h3>
-              <p className="text-gray-600">Comprehensive Warranty</p>
-            </div>
+          <h2 className="text-2xl font-bold mb-8 text-center">
+            What's Covered
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {coverageItems.map((item, index) => (
+              <div key={index} className="flex items-start gap-4">
+                <CheckCircle className="w-6 h-6 text-green-500 flex-shrink-0 mt-1" />
+                <div>
+                  <h3 className="font-semibold mb-2">{item.title}</h3>
+                  <p className="text-gray-600">{item.description}</p>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
 
-        {/* What's Covered */}
-        <div className="space-y-12">
-          <div className="bg-white rounded-xl p-8 shadow-lg border border-gray-100">
-            <div className="flex items-start gap-4">
-              <CheckCircle className="w-8 h-8 text-green-500 flex-shrink-0 mt-1" />
-              <div>
-                <h2 className="text-2xl font-bold mb-4">What's Covered</h2>
-                <div className="text-gray-600 space-y-4">
-                  <p>
-                    Our warranty covers any untimely wear and tear due to faults
-                    or errors from our technical team. In the unlikely event
-                    that you experience severe damage, we offer free repair
-                    services and will replace your home at no extra cost.
-                  </p>
-                  <p>
-                    Before each tiny home is delivered, we conduct thorough
-                    quality control inspections to ensure that no minor faults
-                    slip through the cracks. If any issues arise despite our
-                    rigorous checks, you can rest assured that you're covered by
-                    our warranty.
-                  </p>
-                </div>
+        {/* Maintenance Requirements */}
+        <div className="bg-white rounded-xl p-8 shadow-lg border border-gray-100 mb-12">
+          <h2 className="text-2xl font-bold mb-8 text-center">
+            Warranty Maintenance
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {maintenanceItems.map((item, index) => (
+              <div key={index} className="text-center">
+                <h3 className="font-semibold mb-2">{item.title}</h3>
+                <p className="text-gray-600">{item.description}</p>
               </div>
-            </div>
-          </div>
-
-          <div className="bg-white rounded-xl p-8 shadow-lg border border-gray-100">
-            <div className="flex items-start gap-4">
-              <AlertCircle className="w-8 h-8 text-red-500 flex-shrink-0 mt-1" />
-              <div>
-                <h2 className="text-2xl font-bold mb-4">What's Not Covered</h2>
-                <div className="text-gray-600 space-y-4">
-                  <p>
-                    Please note that our warranty does not cover wear and tear
-                    caused by improper management or handling by the owner.
-                    Additionally, factors beyond our control, such as weather
-                    damage or vandalism, are not included.
-                  </p>
-                  <p>
-                    We encourage all our clients to carry out proper maintenance
-                    on their tiny homes to ensure an extended lifespan.
-                  </p>
-                </div>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
 
-        {/* Closing Statement */}
-        <div className="mt-12 text-center bg-blue-50 rounded-xl p-8">
-          <p className="text-xl text-gray-800">
-            With our comprehensive warranty, you can enjoy the charm and
-            practicality of tiny living, knowing that your home is protected.
-          </p>
+        {/* Exclusions */}
+        <div className="bg-white rounded-xl p-8 shadow-lg border border-gray-100">
+          <div className="flex items-start gap-4">
+            <AlertCircle className="w-8 h-8 text-red-500 flex-shrink-0 mt-1" />
+            <div>
+              <h2 className="text-2xl font-bold mb-4">Warranty Exclusions</h2>
+              <ul className="text-gray-600 space-y-2">
+                <li>
+                  • Damage from natural disasters or extreme weather events
+                </li>
+                <li>• Unauthorized modifications or repairs</li>
+                <li>• Normal wear and tear</li>
+                <li>• Cosmetic changes or deterioration</li>
+                <li>• Damage from improper maintenance or neglect</li>
+              </ul>
+            </div>
+          </div>
         </div>
 
         {/* CTA Section */}
         <div className="mt-12 text-center">
-          <h2 className="text-2xl font-bold mb-4">
-            Have Questions About Our Warranty?
-          </h2>
+          <h2 className="text-2xl font-bold mb-4">Need More Information?</h2>
           <p className="text-gray-600 mb-8">
-            Our team is ready to assist you with any warranty-related inquiries.
+            Download our detailed warranty guide or speak with our warranty
+            specialists.
           </p>
-          <a
-            href="/contact"
-            className="inline-block bg-blue-600 text-white px-8 py-4 rounded-lg hover:bg-blue-700 transition-colors font-semibold"
-          >
-            Contact Us
-          </a>
+          <div className="flex justify-center gap-4">
+            <a
+              href="/contact"
+              className="inline-block bg-blue-600 text-white px-8 py-4 rounded-lg hover:bg-blue-700 transition-colors font-semibold"
+            >
+              Contact Us
+            </a>
+            <a
+              href="/warranty-guide.pdf"
+              className="inline-block bg-gray-100 text-gray-800 px-8 py-4 rounded-lg hover:bg-gray-200 transition-colors font-semibold"
+            >
+              Download Guide
+            </a>
+          </div>
         </div>
       </div>
       <Footer />

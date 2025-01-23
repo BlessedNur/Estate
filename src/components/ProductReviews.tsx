@@ -188,7 +188,7 @@ const ProductReviews = () => {
               <div className="flex items-center gap-3">
                 <GoogleLogo />
                 <div>
-                  <h2 className="text-2xl font-bold">Customer Reviews</h2>
+                  <h2 className="text-2xl font-bold">Google Reviews</h2>
                   <p className="text-gray-600">
                     Displaying 9 out of 2,200 reviews
                   </p>

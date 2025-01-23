@@ -3,61 +3,33 @@ import React from "react";
 import { Users, Target, Globe, Star } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import Image from "next/image";
 
 const AboutUsPage = () => {
-  const teamMembers = [
-    {
-      name: "Michael Smith",
-      position: "Director",
-      image: "/team/michael.jpg",
-      quote: "I ensure that our employees have a safe working environment",
-      description:
-        "Michael's extensive business experience and expertise helped build Homesonwheels into the national company and brand it is today. His drive for company growth and people management skills has been key to the expansion.",
-    },
-    {
-      name: "Greg Friday",
-      position: "General Manager",
-      image: "/team/greg.jpg",
-      quote:
-        "As a general manager, I consider all of our employees as part of the Homesonwheels family",
-      description:
-        "Greg keeps the entire company running smoothly by managing our sales, logistics and accounting teams. He has a broad range of skills and experience. His hard work and dedication ensures our continued success.",
-    },
-    {
-      name: "Sarah Holiday",
-      position: "Sales Manager",
-      image: "/team/sarah.jpg",
-      quote:
-        "My goal is to ensure that every client gets what they need and get the best customer experience with our company",
-      description:
-        "Sarah's skills in people management and communication makes her an ideal sales manager. She has contributed a great deal to our company, and continues to do an outstanding job.",
-    },
-  ];
-
   const features = [
     {
       icon: <Globe className="w-12 h-12" />,
-      title: "Global Reach",
+      title: "Nationwide Service",
       description:
-        "Access to inventory across the world through established relationships with major steamship lines and leasing companies.",
+        "We deliver and set up homes across the United States, making sustainable living accessible to everyone.",
     },
     {
       icon: <Users className="w-12 h-12" />,
-      title: "Expert Team",
+      title: "Sustainable Living",
       description:
-        "Highly trained staff with over 30 years of combined experience in various fields of expertise.",
+        "Our homes are built with eco-friendly practices, utilizing recycled materials and energy-efficient designs.",
     },
     {
       icon: <Target className="w-12 h-12" />,
-      title: "Local Service",
+      title: "Custom Design",
       description:
-        "Providing friendly local service while maintaining national and international reach.",
+        "Each home is thoughtfully designed to match your lifestyle, with flexible layouts and personalized features.",
     },
     {
       icon: <Star className="w-12 h-12" />,
-      title: "Custom Solutions",
+      title: "Quality Assurance",
       description:
-        "Specialized in modifying containers to meet creative and unique needs of our customers.",
+        "Every home undergoes rigorous quality checks and meets strict building standards for safety and durability.",
     },
   ];
 
@@ -69,8 +41,8 @@ const AboutUsPage = () => {
       <div className="relative">
         <div className="absolute inset-0">
           <img
-            src="https://containerx-press.com/wp-content/uploads/2023/11/containers2.jpeg"
-            alt="Container Yard"
+            src="https://containerx-press.com/wp-content/uploads/2024/06/441887605_972558447604383_85966219333880355_n.jpg"
+            alt="Modern Tiny Home"
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-black bg-opacity-60"></div>
@@ -79,28 +51,33 @@ const AboutUsPage = () => {
           <div className="max-w-7xl mx-auto px-4">
             <div className="flex flex-col items-center">
               <h1 className="text-5xl font-bold mb-6 text-center text-white">
-                About Homesonwheels
+                Redefining Mobile Living
               </h1>
               <p className="text-xl text-center text-gray-200 max-w-2xl mx-auto">
-                Connecting people and businesses to the world of shipping
-                containers with innovative solutions and exceptional service.
+                Creating innovative, sustainable tiny homes that combine
+                comfort, mobility, and style for modern living.
               </p>
             </div>
           </div>
         </div>
       </div>
 
-      {/* Mission Statement */}
+      {/* Story Section */}
       <div className="max-w-4xl mx-auto px-4 py-16">
         <div className="text-center">
-          <h2 className="text-3xl font-bold mb-6">Our Mission</h2>
+          <h2 className="text-3xl font-bold mb-6">Our Story</h2>
+          <p className="text-lg text-gray-600 mb-6">
+            Founded in 2020, Homesonwheels emerged from a vision to
+            revolutionize mobile living. We saw an opportunity to create homes
+            that not only provide freedom and flexibility but also minimize
+            environmental impact while maximizing living quality.
+          </p>
           <p className="text-lg text-gray-600">
-            At Homesonwheels, we believe in providing a friendly local service
-            to our customers while giving access to shipping containers and
-            container homes both nationally and internationally. Our mission is
-            to connect people and businesses to the world of new and used
-            shipping containers while modifying them to creative and unique
-            needs.
+            Today, we're proud to be at the forefront of the tiny home movement,
+            crafting spaces that reflect our commitment to sustainability,
+            innovation, and exceptional craftsmanship. Each home we build is a
+            testament to our belief that living spaces should be both beautiful
+            and functional, regardless of their size.
           </p>
         </div>
       </div>
@@ -108,6 +85,9 @@ const AboutUsPage = () => {
       {/* Features Grid */}
       <div className="bg-white py-16">
         <div className="max-w-7xl mx-auto px-4">
+          <h2 className="text-3xl font-bold text-center mb-12">
+            What Sets Us Apart
+          </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {features.map((feature, index) => (
               <div
@@ -125,35 +105,39 @@ const AboutUsPage = () => {
         </div>
       </div>
 
-      {/* Team Section */}
-      <div className="py-16 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-12">
-            Meet Our Team
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {teamMembers.map((member, index) => (
-              <div
-                key={index}
-                className="bg-white rounded-xl shadow-lg overflow-hidden"
-              >
-                <div className="aspect-w-16 aspect-h-9 bg-gray-200">
-                  <img
-                    src={member.image}
-                    alt={member.name}
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                <div className="p-6">
-                  <h3 className="text-xl font-bold mb-2">{member.name}</h3>
-                  <p className="text-blue-600 mb-4">{member.position}</p>
-                  <p className="text-gray-600 mb-4">{member.description}</p>
-                  <blockquote className="italic text-gray-500 border-l-4 border-blue-600 pl-4">
-                    "{member.quote}"
-                  </blockquote>
-                </div>
-              </div>
-            ))}
+      {/* Values Section */}
+      <div className="bg-gray-50 py-16">
+        <div className="max-w-4xl mx-auto px-4">
+          <h2 className="text-3xl font-bold text-center mb-12">Our Values</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="bg-white p-6 rounded-lg shadow-lg">
+              <h3 className="text-xl font-bold mb-4">Sustainability First</h3>
+              <p className="text-gray-600">
+                We're committed to eco-friendly practices in every aspect of our
+                business, from material selection to construction methods.
+              </p>
+            </div>
+            <div className="bg-white p-6 rounded-lg shadow-lg">
+              <h3 className="text-xl font-bold mb-4">Innovation</h3>
+              <p className="text-gray-600">
+                We continuously explore new technologies and design approaches
+                to improve our homes and customer experience.
+              </p>
+            </div>
+            <div className="bg-white p-6 rounded-lg shadow-lg">
+              <h3 className="text-xl font-bold mb-4">Quality Craftsmanship</h3>
+              <p className="text-gray-600">
+                Every detail matters. We take pride in building homes that are
+                beautiful, durable, and built to last.
+              </p>
+            </div>
+            <div className="bg-white p-6 rounded-lg shadow-lg">
+              <h3 className="text-xl font-bold mb-4">Customer Focus</h3>
+              <p className="text-gray-600">
+                Your satisfaction is our priority. We work closely with each
+                client to ensure their vision becomes reality.
+              </p>
+            </div>
           </div>
         </div>
       </div>
@@ -163,15 +147,17 @@ const AboutUsPage = () => {
         <div className="max-w-4xl mx-auto px-4 text-center">
           <h2 className="text-3xl font-bold mb-6">Get in Touch</h2>
           <p className="text-lg text-gray-600 mb-8">
-            Have questions about our services? We'd love to hear from you.
+            Ready to start your tiny home journey? We'd love to hear from you.
           </p>
           <div className="space-y-4">
             <p className="text-gray-600">
-              <strong>Address:</strong> 2852 Christensen Rd, Cheyenne, Wyoming
-              82007
+              <strong>Address:</strong> Beaumont, Texas
             </p>
             <p className="text-gray-600">
-              <strong>Email:</strong> info@homesonwheelss.com
+              <strong>Email:</strong> info@homesonwheels.com
+            </p>
+            <p className="text-gray-600">
+              <strong>Phone:</strong> +1 (409) 934-7143
             </p>
           </div>
         </div>

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { CheckCircle } from "lucide-react";
+import { CheckCircle, Loader2 } from "lucide-react";
 import { Product } from "@/libs/products";
 
 interface FormData {
@@ -110,15 +110,67 @@ export default function OrderForm({ product }: OrderFormProps) {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSuccess, setIsSuccess] = useState(false);
+  const [submitError, setSubmitError] = useState("");
+
+  if (isSuccess) {
+    return (
+      <div className="border rounded-lg p-8 text-center">
+        <div className="flex flex-col items-center space-y-4">
+          <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center">
+            <CheckCircle className="w-8 h-8 text-green-500" />
+          </div>
+          <h3 className="text-2xl font-bold text-green-600">
+            Order Submitted Successfully!
+          </h3>
+          <p className="text-gray-600 max-w-md mx-auto">
+            Thank you for your order. We have sent a confirmation email to{" "}
+            {formData.email}. Our team will contact you shortly with further
+            instructions.
+          </p>
+          <button
+            onClick={() => (window.location.href = "/shop")}
+            className="mt-6 px-6 py-2 bg-orange-500 text-white rounded-md hover:bg-orange-600"
+          >
+            Continue Shopping
+          </button>
+        </div>
+      </div>
+    );
+  }
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (validateStep(3)) {
+      setIsSubmitting(true);
+      setSubmitError("");
+
       try {
-        // Handle form submission
-        console.log("Form submitted:", formData);
-        // Add your API call here
+        const response = await fetch("/api/send-order", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            formData,
+            product,
+          }),
+        });
+
+        const data = await response.json();
+
+        if (data.success) {
+          setIsSuccess(true);
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        } else {
+          setSubmitError(
+            data.message || "Something went wrong. Please try again."
+          );
+        }
       } catch (error) {
-        console.error("Error submitting form:", error);
+        setSubmitError("Failed to submit the form. Please try again.");
+      } finally {
+        setIsSubmitting(false);
       }
     }
   };
@@ -406,10 +458,23 @@ export default function OrderForm({ product }: OrderFormProps) {
           ) : (
             <button
               type="submit"
-              className="px-6 py-2 bg-orange-500 text-white rounded-md hover:bg-orange-600 ml-auto"
+              disabled={isSubmitting}
+              className="px-6 py-2 bg-orange-500 text-white rounded-md hover:bg-orange-600 ml-auto flex items-center gap-2"
             >
-              Place Order
+              {isSubmitting ? (
+                <>
+                  <Loader2 className="w-4 h-4 animate-spin" />
+                  Submitting...
+                </>
+              ) : (
+                "Place Order"
+              )}
             </button>
+          )}
+          {submitError && (
+            <div className="mb-4 p-4 bg-red-50 border border-red-200 rounded-md text-red-600">
+              {submitError}
+            </div>
           )}
         </div>
       </form>

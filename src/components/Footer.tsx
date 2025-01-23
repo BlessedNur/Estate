@@ -1,5 +1,6 @@
-import { Mail, MapPin, Phone } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
+import { Mail, MapPin, Phone } from "lucide-react";
 
 function Footer() {
   return (
@@ -8,8 +9,17 @@ function Footer() {
         {/* Main Footer Content */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
           {/* Company Info */}
-          <div className="space-y-4">
-            <h3 className="text-xl font-bold mb-6">LOGO</h3>
+          <div className="space-y-4 mb-4">
+            <Link href="/" className="block w-40 h-12 mb-8">
+              <Image
+                src="/images/Screenshot__3_-removebg-preview.png"
+                alt="Company Logo"
+                width={4000}
+                height={4000}
+                className="object-contain brightness-0 invert"
+                priority
+              />
+            </Link>
             <p className="text-gray-400 text-sm leading-relaxed">
               We specialize in providing high-quality tiny homes and container
               homes that combine style, functionality, and sustainability.
@@ -120,7 +130,6 @@ function Footer() {
               </li>
               <li className="flex items-center gap-3 text-gray-400">
                 <Phone size={20} />
-
                 <Link
                   href="https://wa.me/14099347143"
                   target="_blank"
@@ -143,12 +152,26 @@ function Footer() {
         </div>
 
         {/* Copyright */}
-        <div className="border-t border-gray-800 pt-8 pb-4">
+        <div className="border-t border-gray-800 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-gray-400 text-sm">
-              © {new Date().getFullYear()} Container-Xpress. All rights
+              © {new Date().getFullYear()} Homesonwheels. All rights
               reserved.
             </p>
+            <div className="flex items-center gap-4">
+              <Link
+                href="/privacy-policy"
+                className="text-gray-400 hover:text-orange-500 transition-colors text-sm"
+              >
+                Privacy Policy
+              </Link>
+              <Link
+                href="/terms-conditions"
+                className="text-gray-400 hover:text-orange-500 transition-colors text-sm"
+              >
+                Terms & Conditions
+              </Link>
+            </div>
           </div>
         </div>
       </div>
