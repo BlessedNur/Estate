@@ -1,8 +1,31 @@
-// components/OrderForm.tsx
-"use client";
 import React, { useState } from "react";
 import { CheckCircle } from "lucide-react";
-import { Product, FormData, FormErrors } from "@/types/product";
+import { Product } from "@/libs/products";
+
+interface FormData {
+  name: string;
+  email: string;
+  phone: string;
+  street: string;
+  state: string;
+  city: string;
+  zipCode: string;
+  paymentOption: string;
+  paymentMethod: string;
+  comments: string;
+}
+
+interface FormErrors {
+  name?: string;
+  email?: string;
+  phone?: string;
+  street?: string;
+  state?: string;
+  city?: string;
+  zipCode?: string;
+  paymentOption?: string;
+  paymentMethod?: string;
+}
 
 interface OrderFormProps {
   product: Product;
@@ -69,8 +92,9 @@ export default function OrderForm({ product }: OrderFormProps) {
   ) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
-    if (errors[name]) {
-      setErrors((prev) => ({ ...prev, [name]: "" }));
+    // Only clear error if it exists
+    if (errors[name as keyof FormErrors]) {
+      setErrors((prev) => ({ ...prev, [name]: undefined }));
     }
   };
 
@@ -86,11 +110,16 @@ export default function OrderForm({ product }: OrderFormProps) {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (validateStep(3)) {
-      // Handle form submission
-      console.log("Form submitted:", formData);
+      try {
+        // Handle form submission
+        console.log("Form submitted:", formData);
+        // Add your API call here
+      } catch (error) {
+        console.error("Error submitting form:", error);
+      }
     }
   };
 
@@ -215,7 +244,9 @@ export default function OrderForm({ product }: OrderFormProps) {
             </div>
             <div className="grid grid-cols-2 gap-4">
               <div>
-                <label className="block text-sm font-medium mb-1">State *</label>
+                <label className="block text-sm font-medium mb-1">
+                  State *
+                </label>
                 <input
                   type="text"
                   name="state"
@@ -246,7 +277,9 @@ export default function OrderForm({ product }: OrderFormProps) {
               </div>
             </div>
             <div>
-              <label className="block text-sm font-medium mb-1">ZIP Code *</label>
+              <label className="block text-sm font-medium mb-1">
+                ZIP Code *
+              </label>
               <input
                 type="text"
                 name="zipCode"

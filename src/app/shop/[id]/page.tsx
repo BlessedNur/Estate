@@ -130,7 +130,7 @@ const ProductDetail: React.FC = () => {
                   className="w-full sm:w-1/2 lg:w-1/4 flex-shrink-0 px-3"
                 >
                   <Link
-                    href={`/products/${relatedProduct.id}`}
+                    href={`/shop/${relatedProduct.id}`}
                     className="block border rounded-lg overflow-hidden group"
                   >
                     <div className="relative aspect-[4/3] overflow-hidden">
