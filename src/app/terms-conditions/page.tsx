@@ -101,8 +101,7 @@ const TermsAndConditionsPage = () => {
             <h2 className="text-2xl font-bold mb-4">6. Returns and Refunds</h2>
             <ul className="text-gray-600 space-y-2">
               <li>
-                Our return policy allows for returns within [insert return
-                period, e.g., 30 days] if the product is in original condition.
+                Our return policy allows for returns within 14 days if the product is in original condition.
               </li>
               <li>Customized or modified orders are non-refundable.</li>
             </ul>
@@ -111,7 +110,7 @@ const TermsAndConditionsPage = () => {
           <section>
             <h2 className="text-2xl font-bold mb-4">7. Warranty</h2>
             <p className="text-gray-600">
-              Our products come with a [insert warranty period, e.g., one-year]
+              Our products come with a 25 years
               warranty against defects in materials and workmanship.
             </p>
           </section>
@@ -130,7 +129,7 @@ const TermsAndConditionsPage = () => {
             <h2 className="text-2xl font-bold mb-4">9. Governing Law</h2>
             <p className="text-gray-600">
               These terms and conditions shall be governed by and construed in
-              accordance with the laws of [insert your jurisdiction].
+              accordance with the laws of North America.
             </p>
           </section>
 
