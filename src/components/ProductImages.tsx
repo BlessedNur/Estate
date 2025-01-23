@@ -2,7 +2,11 @@
 "use client";
 import React, { useState } from "react";
 import { ChevronLeft, ChevronRight, ZoomIn } from "lucide-react";
-import { ProductImage } from "@/types/product";
+interface ProductImage {
+  id: string;
+  url: string;
+  alt: string;
+}
 
 interface ProductImagesProps {
   images: ProductImage[];

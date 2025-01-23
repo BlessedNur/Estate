@@ -5,7 +5,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
 const ContactPage = () => {
-  const handleSubmit = (e: any) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     // Handle form submission
   };
@@ -29,7 +29,8 @@ const ContactPage = () => {
               Get In Touch
             </h1>
             <p className="text-xl text-center text-gray-200 max-w-2xl mx-auto">
-              Have questions about our tiny homes? We're here to help you 24/7.
+              Have questions about our container homes? We're here to help you
+              24/7.
             </p>
           </div>
         </div>
@@ -39,48 +40,55 @@ const ContactPage = () => {
       <div className="max-w-7xl mx-auto px-4 py-16">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16">
           {/* Contact Info Cards */}
-          <div className="bg-white rounded-xl p-8 shadow-lg border border-gray-100 hover:border-blue-500 transition-all">
-            <div className="w-16 h-16 bg-blue-50 rounded-full flex items-center justify-center mb-6">
-              <Mail className="w-8 h-8 text-blue-600" />
+          <div className="bg-white rounded-xl p-8 shadow-lg border border-gray-100 hover:border-orange-500 transition-all">
+            <div className="w-16 h-16 bg-orange-50 rounded-full flex items-center justify-center mb-6">
+              <Mail className="w-8 h-8 text-orange-600" />
             </div>
             <h3 className="text-xl font-bold mb-2">Email Us</h3>
             <p className="text-gray-600 mb-4">
               Available 24/7 for your inquiries
             </p>
             <a
-              href="mailto:info@tinyhomes.com"
-              className="text-blue-600 hover:text-blue-700 font-semibold flex items-center gap-2"
+              href="mailto:info@containerx-press.com"
+              className="text-orange-600 hover:text-orange-700 font-semibold flex items-center gap-2"
             >
-              info@tinyhomes.com
+              info@containerx-press.com
               <ExternalLink className="w-4 h-4" />
             </a>
           </div>
 
-          <div className="bg-white rounded-xl p-8 shadow-lg border border-gray-100 hover:border-blue-500 transition-all">
-            <div className="w-16 h-16 bg-blue-50 rounded-full flex items-center justify-center mb-6">
-              <MapPin className="w-8 h-8 text-blue-600" />
+          <div className="bg-white rounded-xl p-8 shadow-lg border border-gray-100 hover:border-orange-500 transition-all">
+            <div className="w-16 h-16 bg-orange-50 rounded-full flex items-center justify-center mb-6">
+              <MapPin className="w-8 h-8 text-orange-600" />
             </div>
             <h3 className="text-xl font-bold mb-2">Visit Us</h3>
-            <p className="text-gray-600 mb-4">Our Showroom Location</p>
-            <address className="text-gray-600 not-italic">
-              2852 Christensen Rd
-              <br />
-              Cheyenne, Wyoming 82007
-            </address>
+            <p className="text-gray-600 mb-4">Our Locations</p>
+            <div className="space-y-4">
+              <address className="text-gray-600 not-italic">
+                <strong>Texas Office:</strong>
+                <br />
+                Beaumont, Texas
+              </address>
+            </div>
           </div>
 
-          <div className="bg-white rounded-xl p-8 shadow-lg border border-gray-100 hover:border-blue-500 transition-all">
-            <div className="w-16 h-16 bg-blue-50 rounded-full flex items-center justify-center mb-6">
-              <Clock className="w-8 h-8 text-blue-600" />
+          <div className="bg-white rounded-xl p-8 shadow-lg border border-gray-100 hover:border-orange-500 transition-all">
+            <div className="w-16 h-16 bg-orange-50 rounded-full flex items-center justify-center mb-6">
+              <Phone className="w-8 h-8 text-orange-600" />
             </div>
-            <h3 className="text-xl font-bold mb-2">Working Hours</h3>
+            <h3 className="text-xl font-bold mb-2">Contact Numbers</h3>
             <div className="space-y-2">
+              <a
+                href="https://wa.me/14099347143"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-600 hover:text-orange-600 block"
+              >
+                <span className="font-semibold">WhatsApp:</span> +1 (409)
+                934-7143
+              </a>
               <p className="text-gray-600">
-                <span className="font-semibold">Mon - Fri:</span> 8:00 am - 5:00
-                pm
-              </p>
-              <p className="text-gray-600">
-                <span className="font-semibold">Customer Support:</span> 24/7
+                <span className="font-semibold">Support:</span> 24/7
               </p>
             </div>
           </div>
@@ -103,7 +111,7 @@ const ContactPage = () => {
                   id="name"
                   name="name"
                   required
-                  className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all"
+                  className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-orange-500 focus:border-orange-500 outline-none transition-all"
                   placeholder="Enter your full name"
                 />
               </div>
@@ -120,7 +128,7 @@ const ContactPage = () => {
                   id="email"
                   name="email"
                   required
-                  className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all"
+                  className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-orange-500 focus:border-orange-500 outline-none transition-all"
                   placeholder="Enter your email"
                 />
               </div>
@@ -137,7 +145,7 @@ const ContactPage = () => {
                   id="phone"
                   name="phone"
                   required
-                  className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all"
+                  className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-orange-500 focus:border-orange-500 outline-none transition-all"
                   placeholder="Enter your phone number"
                 />
               </div>
@@ -154,14 +162,14 @@ const ContactPage = () => {
                   name="message"
                   required
                   rows={6}
-                  className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all resize-none"
+                  className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-orange-500 focus:border-orange-500 outline-none transition-all resize-none"
                   placeholder="How can we help you?"
                 ></textarea>
               </div>
 
               <button
                 type="submit"
-                className="w-full bg-blue-600 text-white py-4 px-6 rounded-lg hover:bg-blue-700 transition-colors flex items-center justify-center gap-2 text-lg font-semibold"
+                className="w-full bg-orange-600 text-white py-4 px-6 rounded-lg hover:bg-orange-700 transition-colors flex items-center justify-center gap-2 text-lg font-semibold"
               >
                 <Send className="w-5 h-5" />
                 Send Message
@@ -176,24 +184,26 @@ const ContactPage = () => {
               {/* Replace with actual map component */}
               <div className="aspect-video bg-gray-100 rounded-lg mb-6">
                 <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3019.7329865187416!2d-104.8741135!3d41.1335995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x876f3b8c8f69d35f%3A0x7c7d2b2b2b2b2b2b!2s2852%20Christensen%20Rd%2C%20Cheyenne%2C%20WY%2082007!5e0!3m2!1sen!2sus!4v1629299999999!5m2!1sen!2sus"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d221948.11396213257!2d-94.24743682772777!3d30.08603367639014!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x863ecb2c84f5455d%3A0xa24e2145fe9e83f0!2sBeaumont%2C%20TX%2C%20USA!5e0!3m2!1sen!2s!4v1705981346417!5m2!1sen!2s"
                   width="100%"
                   height="100%"
                   style={{ border: 0 }}
                   allowFullScreen
                   loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
                   className="rounded-lg"
+                  title="Texas Office Location"
                 ></iframe>
               </div>
-              <div className="flex items-center gap-4">
-                <div className="w-12 h-12 bg-blue-50 rounded-full flex items-center justify-center flex-shrink-0">
-                  <MapPin className="w-6 h-6 text-blue-600" />
-                </div>
-                <div>
-                  <h3 className="font-semibold text-lg">Our Address</h3>
-                  <p className="text-gray-600">
-                    2852 Christensen Rd, Cheyenne, Wyoming 82007
-                  </p>
+              <div className="space-y-6">
+                <div className="flex items-center gap-4">
+                  <div className="w-12 h-12 bg-orange-50 rounded-full flex items-center justify-center flex-shrink-0">
+                    <MapPin className="w-6 h-6 text-orange-600" />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-lg">Texas Office</h3>
+                    <p className="text-gray-600">Beaumont, Texas</p>
+                  </div>
                 </div>
               </div>
             </div>
@@ -203,27 +213,32 @@ const ContactPage = () => {
               <h2 className="text-3xl font-bold mb-8">Quick Contact</h2>
               <div className="space-y-6">
                 <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 bg-blue-50 rounded-full flex items-center justify-center flex-shrink-0">
-                    <Phone className="w-6 h-6 text-blue-600" />
+                  <div className="w-12 h-12 bg-orange-50 rounded-full flex items-center justify-center flex-shrink-0">
+                    <Phone className="w-6 h-6 text-orange-600" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-lg">Phone Support</h3>
-                    <p className="text-gray-600">
-                      24/7 Customer Support Available
-                    </p>
+                    <h3 className="font-semibold text-lg">WhatsApp Support</h3>
+                    <a
+                      href="https://wa.me/14099347143"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-orange-600 hover:text-orange-700"
+                    >
+                      +1 (409) 934-7143
+                    </a>
                   </div>
                 </div>
                 <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 bg-blue-50 rounded-full flex items-center justify-center flex-shrink-0">
-                    <Mail className="w-6 h-6 text-blue-600" />
+                  <div className="w-12 h-12 bg-orange-50 rounded-full flex items-center justify-center flex-shrink-0">
+                    <Mail className="w-6 h-6 text-orange-600" />
                   </div>
                   <div>
                     <h3 className="font-semibold text-lg">Email Support</h3>
                     <a
-                      href="mailto:info@tinyhomes.com"
-                      className="text-blue-600 hover:text-blue-700"
+                      href="mailto:info@containerx-press.com"
+                      className="text-orange-600 hover:text-orange-700"
                     >
-                      info@tinyhomes.com
+                      info@containerx-press.com
                     </a>
                   </div>
                 </div>

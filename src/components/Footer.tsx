@@ -116,7 +116,18 @@ function Footer() {
             <ul className="space-y-4">
               <li className="flex items-start gap-3 text-gray-400">
                 <MapPin size={20} className="min-w-[20px] mt-1" />
-                <span>2852 Christensen Rd Cheyenne Wyoming 82007</span>
+                <span>Beaumont, Texas</span>
+              </li>
+              <li className="flex items-center gap-3 text-gray-400">
+                <Phone size={20} />
+
+                <Link
+                  href="https://wa.me/14099347143"
+                  target="_blank"
+                  className="hover:text-orange-500 transition-colors"
+                >
+                  +1 (409) 934-7143
+                </Link>
               </li>
               <li className="flex items-center gap-3 text-gray-400">
                 <Mail size={20} />
