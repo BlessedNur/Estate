@@ -151,7 +151,7 @@ const AboutUsPage = () => {
           </p>
           <div className="space-y-4">
             <p className="text-gray-600">
-              <strong>Address:</strong> Beaumont, Texas
+              <strong>Address:</strong> 6819 Tram Rd, Beaumont, TX 77713, USA
             </p>
             <p className="text-gray-600">
               <strong>Email:</strong> info@homesonwheels.com

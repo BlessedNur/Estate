@@ -93,7 +93,7 @@ const ContactPage = () => {
               <address className="text-gray-600 not-italic">
                 <strong>Texas Office:</strong>
                 <br />
-                Beaumont, Texas
+                6819 Tram Rd, Beaumont, TX 77713, USA{" "}
               </address>
             </div>
           </div>
@@ -222,7 +222,7 @@ const ContactPage = () => {
               {/* Replace with actual map component */}
               <div className="aspect-video bg-gray-100 rounded-lg mb-6">
                 <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d221948.11396213257!2d-94.24743682772777!3d30.08603367639014!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x863ecb2c84f5455d%3A0xa24e2145fe9e83f0!2sBeaumont%2C%20TX%2C%20USA!5e0!3m2!1sen!2s!4v1705981346417!5m2!1sen!2s"
+                  src="https://www.google.com/maps?q=6819+Tram+Rd,+Beaumont,+TX+77713,+USA&output=embed"
                   width="100%"
                   height="100%"
                   style={{ border: 0 }}
@@ -240,7 +240,9 @@ const ContactPage = () => {
                   </div>
                   <div>
                     <h3 className="font-semibold text-lg">Texas Office</h3>
-                    <p className="text-gray-600">Beaumont, Texas</p>
+                    <p className="text-gray-600">
+                      6819 Tram Rd, Beaumont, TX 77713, USA
+                    </p>
                   </div>
                 </div>
               </div>

@@ -126,7 +126,7 @@ function Footer() {
             <ul className="space-y-4">
               <li className="flex items-start gap-3 text-gray-400">
                 <MapPin size={20} className="min-w-[20px] mt-1" />
-                <span>Beaumont, Texas</span>
+                <span>6819 Tram Rd, Beaumont, TX 77713, USA</span>
               </li>
               <li className="flex items-center gap-3 text-gray-400">
                 <Phone size={20} />
