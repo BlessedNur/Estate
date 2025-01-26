@@ -13,7 +13,7 @@ const PrivacyPolicyPage = () => {
       <div className="relative">
         <div className="absolute inset-0">
           <img
-            src="https://containerx-press.com/wp-content/uploads/2023/11/containers2.jpeg"
+            src="/images/441887605_972558447604383_85966219333880355_n.jpg"
             alt="Container Homes"
             className="w-full h-full object-cover"
           />
