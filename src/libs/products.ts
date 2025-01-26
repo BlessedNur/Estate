@@ -397,7 +397,7 @@ export const products: Product[] = [
   {
     id: "th-002",
     slug: "nomad-nest-tiny-house-399sqft",
-    name: "Nomad Nest Tiny House",
+    name: "Nomad Nest: 399 sq ft Vaulted Ceiling Tiny Home",
     shortDescription:
       "Beautifully designed tiny home with vaulted ceilings and modern amenities",
     price: 30000,
@@ -998,7 +998,7 @@ export const products: Product[] = [
   {
     id: "th-005",
     slug: "roam-haven-tiny-house",
-    name: "Roam Haven",
+    name: "Roam Haven: 389 sq ft Fully Furnished Tiny Home",
     shortDescription:
       "Fully Furnished 1 Bed, 1 Bath Tiny House On Wheels - 389 SQFT",
     price: 36000,
@@ -1242,7 +1242,7 @@ export const products: Product[] = [
   {
     id: "th-006",
     slug: "wander-nest-tiny-house",
-    name: "Wander Nest",
+    name: "Wander Nest: Fully Furnished 1-Bed Tiny Home on Wheels",
     shortDescription: "Fully Furnished Tiny House On Wheels, 1 Bed, 1 Bath",
     price: 38000,
     downPayment: {
@@ -1533,7 +1533,7 @@ export const products: Product[] = [
   {
     id: "th-007",
     slug: "399-sqft-tiny-house",
-    name: "Modern Living",
+    name: "Modern Living: 399 sq ft Tiny Home on Wheels",
     shortDescription: "Tiny House On Wheels, 1 Bed, 1 Bath – 399 sqft",
     price: 35000,
     downPayment: {
@@ -1716,7 +1716,7 @@ export const products: Product[] = [
   {
     id: "th-008",
     slug: "spacious-tiny-house",
-    name: "Spacious Living",
+    name: "Luxurious 1-Bed Tiny Home with Vaulted Ceilings",
     shortDescription: "Spacious 1 Bed, 1 Bath Tiny House On Wheels",
     price: 30000,
     downPayment: {
@@ -1923,7 +1923,7 @@ export const products: Product[] = [
   {
     id: "th-009",
     slug: "modern-loft-tiny-house",
-    name: "Modern Loft Living",
+    name: "Modern Loft Living: Stylish 1-Bed Tiny Home",
     shortDescription: "Modern 1 Bed, 1 Bath & Loft Tiny House On Wheels",
     price: 30000,
     downPayment: {
@@ -2125,7 +2125,7 @@ export const products: Product[] = [
   {
     id: "th-010",
     slug: "roamlite-tiny-house",
-    name: "RoamLite",
+    name: "Modern 1-Bed RoamLite with Loft",
     shortDescription: "RoamLite Tiny House On Wheels",
     price: 35000,
     downPayment: {
@@ -2386,7 +2386,7 @@ export const products: Product[] = [
   {
     id: "th-011",
     slug: "modern-tiny-home-399sqft",
-    name: "Modern Tiny Home",
+    name: "Modern 1-Bed Tiny Home with Loft",
     shortDescription:
       "Modern Tiny Home On Wheels, 1 Bed, 1 Bath and Loft – 399 sqft",
     price: 35000,
@@ -2657,7 +2657,7 @@ export const products: Product[] = [
   {
     id: "th-012",
     slug: "modern-tiny-home-loft",
-    name: "Modern Tiny Home",
+    name: "Luxe Loft Tiny Home on Wheels",
     shortDescription: "1 Bed, 1 Bath & Loft Modern Tiny Home On Wheels",
     price: 30000,
     downPayment: {
@@ -3200,7 +3200,7 @@ export const products: Product[] = [
   {
     id: "th-014",
     slug: "399sqft-tiny-home-on-wheels",
-    name: "Tiny Home On Wheels",
+    name: "Modern 1-Bed Tiny Home with Dual Bathrooms",
     shortDescription: "1 Bed, 2 Bath 399 sqft Tiny Home On Wheels",
     price: 35000,
     downPayment: {
@@ -3439,7 +3439,7 @@ export const products: Product[] = [
   {
     id: "th-015",
     slug: "400sqft-2bed-tiny-home",
-    name: "Tiny Home",
+    name: "Modern 2-Bed Tiny Home with Single Bath",
     shortDescription: "2 Beds, 1 Bath Tiny Home - 400 sqft",
     price: 38000,
     downPayment: {
@@ -3636,7 +3636,7 @@ export const products: Product[] = [
   {
     id: "th-016",
     slug: "399sqft-mobile-tiny-home",
-    name: "Spacious Mobile Tiny Home",
+    name: "Modern 1-Bed Mobile Tiny Home with Bay Window",
     shortDescription:
       "399 sqft Mobile Tiny Home with Bay Window and French Door",
     price: 35000,
@@ -3855,7 +3855,7 @@ export const products: Product[] = [
   {
     id: "th-017",
     slug: "399sqft-spacious-tiny-home",
-    name: "Spacious Tiny Home",
+    name: "Modern 399 sqft Tiny Home with Front Porch",
     shortDescription:
       "399 sqft Tiny Home with U-Shaped Kitchen and Front Porch",
     price: 35000,
@@ -3874,6 +3874,11 @@ export const products: Product[] = [
       },
     },
     images: [
+      {
+        "id": "img-399space-001",
+        "url": "/images/image-265.jpg",
+        "alt": "Spacious 399 sqft Tiny Home Exterior View"
+      },
       {
         "id": "img-399space-001",
         "url": "/images/image-250.jpg",
@@ -3947,11 +3952,6 @@ export const products: Product[] = [
       {
         "id": "img-399space-001",
         "url": "/images/image-264.jpg",
-        "alt": "Spacious 399 sqft Tiny Home Exterior View"
-      },
-      {
-        "id": "img-399space-001",
-        "url": "/images/image-265.jpg",
         "alt": "Spacious 399 sqft Tiny Home Exterior View"
       },
       {
@@ -4082,7 +4082,7 @@ export const products: Product[] = [
   {
     id: "th-018",
     slug: "399sqft-mobile-tiny-home-wheels",
-    name: "Mobile Tiny Home On Wheels ",
+    name: "Fully Mobile 399 sqft Tiny Home on Wheels",
     shortDescription:
       "Mobile tiny home featuring modern amenities and front porch",
     price: 35000,
@@ -4290,7 +4290,7 @@ export const products: Product[] = [
   {
     id: "th-019",
     slug: "399sqft-tiny-home-loft-bedroom",
-    name: "Tiny Home with Loft Bedroom",
+    name: "Compact 399 sqft Tiny Home with Loft Bedroom",
     shortDescription:
       "Beautifully crafted tiny home with loft bedroom and modern amenities",
     price: 35000,

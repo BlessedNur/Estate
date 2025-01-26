@@ -110,12 +110,7 @@ function Navbar() {
               </div>
             </div>
           </div>
-          <button className="relative p-2 hover:bg-gray-100 rounded-full transition-colors">
-            <ShoppingCart size={20} className="text-gray-700" />
-            {/* <span className="absolute -top-1 -right-1 bg-orange-600 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">
-              0
-            </span> */}
-          </button>
+         
         </div>
 
         {/* Mobile Navigation */}
@@ -199,14 +194,7 @@ function Navbar() {
                   </Link>
                 </div>
               </div>
-              <div className="flex items-center justify-between border-t pt-4">
-                <span className="text-lg font-semibold text-gray-700">
-                  Cart
-                </span>
-                <div className="relative">
-                  <ShoppingCart size={24} className="text-gray-700" />
-                </div>
-              </div>
+              
             </div>
           </div>
         </div>
