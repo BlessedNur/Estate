@@ -41,7 +41,7 @@ const AboutUsPage = () => {
       <div className="relative">
         <div className="absolute inset-0">
           <img
-            src="https://containerx-press.com/wp-content/uploads/2024/06/441887605_972558447604383_85966219333880355_n.jpg"
+            src="/images/441887605_972558447604383_85966219333880355_n.jpg"
             alt="Modern Tiny Home"
             className="w-full h-full object-cover"
           />

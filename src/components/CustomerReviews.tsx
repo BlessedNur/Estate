@@ -183,10 +183,10 @@ const ReviewsSection = () => {
       <div className="max-w-[1300px] mx-auto px-4">
         <div className="bg-white rounded-lg border">
           <div className="p-6 border-b">
-            <div className="flex items-center justify-between mb-6">
+            <div className="md:flex-row flex gap-3 flex-col justify-between mb-6">
               <div className="flex items-center gap-3">
                 <GoogleLogo />
-                <div>
+                <div className="">
                   <h2 className="text-2xl font-bold">Google Reviews</h2>
                   <p className="text-gray-600">Displaying {reviews.length} out of 2,200 reviews</p>
                 </div>

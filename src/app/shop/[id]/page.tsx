@@ -111,7 +111,7 @@ const ProductDetail: React.FC = () => {
             <OrderForm product={product} />
             <div className="flex items-center gap-4 mt-8">
               <Image
-                src="https://containerx-press.com/wp-content/uploads/2024/11/google-1.webp"
+                src="/images/google-1.webp"
                 alt="Google"
                 width={120}
                 height={80}
