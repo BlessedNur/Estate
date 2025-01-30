@@ -1,6 +1,7 @@
 import { CheckCircle, Loader2, AlertCircle } from "lucide-react";
 import { Product } from "@/libs/products";
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 
 interface FormData {
   name: string;
@@ -102,10 +103,28 @@ export default function OrderForm({ product }: OrderFormProps) {
     }
   };
 
+  const router = useRouter();
+  const handleCheckoutRedirect = () => {
+    if (validateStep(3)) {
+      // Store form data in localStorage
+      localStorage.setItem("checkoutFormData", JSON.stringify(formData));
+      localStorage.setItem("checkoutProduct", JSON.stringify(product));
+
+      // Redirect to checkout page
+      router.push(`/checkout?productId=${product.id}`);
+    }
+  };
+
   const handleNext = () => {
     if (validateStep(currentStep)) {
-      setCurrentStep((prev) => prev + 1);
-      window.scrollTo({ top: 0, behavior: "smooth" });
+      if (currentStep === 3) {
+        // If we're on step 3 and validation passes, redirect to checkout
+        handleCheckoutRedirect();
+      } else {
+        // Otherwise proceed to next step as normal
+        setCurrentStep((prev) => prev + 1);
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      }
     }
   };
 
@@ -159,7 +178,7 @@ export default function OrderForm({ product }: OrderFormProps) {
   const renderProgressBar = () => (
     <div className="mb-8">
       <div className="flex justify-between">
-        {[1, 2, 3, 4].map((step) => (
+        {[1, 2, 3].map((step) => (
           <div key={step} className="flex flex-col items-center">
             <div
               className={`w-8 h-8 rounded-full flex items-center justify-center ${
@@ -455,20 +474,22 @@ export default function OrderForm({ product }: OrderFormProps) {
                 )}
               </div>
 
-              <div className="bg-orange-50 border-l-4 border-orange-400 p-4">
-                <div className="flex">
-                  <div className="flex-shrink-0">
-                    <AlertCircle className="h-5 w-5 text-orange-400" />
-                  </div>
-                  <div className="ml-3">
-                    <p className="text-sm text-orange-700">
-                      All Card payments are temporarily suspended due to
-                      security database update. Please select a different
-                      payment option.
-                    </p>
+              {formData.paymentMethod === "card" && (
+                <div className="bg-orange-50 border-l-4 border-orange-400 p-4">
+                  <div className="flex">
+                    <div className="flex-shrink-0">
+                      <AlertCircle className="h-5 w-5 text-orange-400" />
+                    </div>
+                    <div className="ml-3">
+                      <p className="text-sm text-orange-700">
+                        All Card payments are temporarily suspended due to
+                        security database update. Please select a different
+                        payment option.
+                      </p>
+                    </div>
                   </div>
                 </div>
-              </div>
+              )}
 
               <div>
                 <label className="block text-sm font-medium mb-1">
@@ -487,77 +508,6 @@ export default function OrderForm({ product }: OrderFormProps) {
           </div>
         )}
 
-        {/* Step 4: Order Confirmation */}
-        {currentStep === 4 && (
-          <div className="space-y-6">
-            <div className="bg-orange-50 border border-orange-200 rounded-lg p-6 text-center">
-              <AlertCircle className="w-12 h-12 text-orange-500 mx-auto mb-4" />
-              <h4 className="text-lg font-semibold mb-2">Important Note</h4>
-              <p className="text-gray-700">
-                Your order has not been placed yet. Please review your
-                information and click on the Place Order button below to
-                complete your purchase.
-              </p>
-            </div>
-
-            <div className="space-y-4">
-              <div className="border rounded-lg p-4">
-                <h5 className="font-semibold mb-2">Personal Information</h5>
-                <div className="grid grid-cols-2 gap-4 text-sm">
-                  <div>
-                    <span className="text-gray-500">Name:</span> {formData.name}
-                  </div>
-                  <div>
-                    <span className="text-gray-500">Email:</span>{" "}
-                    {formData.email}
-                  </div>
-                  <div>
-                    <span className="text-gray-500">Phone:</span>{" "}
-                    {formData.phone}
-                  </div>
-                </div>
-              </div>
-
-              <div className="border rounded-lg p-4">
-                <h5 className="font-semibold mb-2">Delivery Details</h5>
-                <div className="grid grid-cols-2 gap-4 text-sm">
-                  <div>
-                    <span className="text-gray-500">Address:</span>{" "}
-                    {formData.street}
-                  </div>
-                  <div>
-                    <span className="text-gray-500">City:</span> {formData.city}
-                  </div>
-                  <div>
-                    <span className="text-gray-500">State:</span>{" "}
-                    {formData.state}
-                  </div>
-                  <div>
-                    <span className="text-gray-500">ZIP Code:</span>{" "}
-                    {formData.zipCode}
-                  </div>
-                </div>
-              </div>
-
-              <div className="border rounded-lg p-4">
-                <h5 className="font-semibold mb-2">Payment Details</h5>
-                <div className="grid grid-cols-2 gap-4 text-sm">
-                  <div>
-                    <span className="text-gray-500">Payment Option:</span>{" "}
-                    {formData.paymentOption === "full"
-                      ? "Full Payment"
-                      : "Financing"}
-                  </div>
-                  <div>
-                    <span className="text-gray-500">Payment Method:</span>{" "}
-                    {formData.paymentMethod}
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        )}
-
         <div className="flex justify-between pt-4">
           {currentStep > 1 && (
             <button
@@ -568,31 +518,13 @@ export default function OrderForm({ product }: OrderFormProps) {
               Back
             </button>
           )}
-          {currentStep < 4 ? (
-            <button
-              type="button"
-              onClick={handleNext}
-              className="px-6 py-2 bg-orange-500 text-white rounded-md hover:bg-orange-600 ml-auto"
-            >
-              Next
-            </button>
-          ) : (
-            <button
-              type="button"
-              onClick={handlePlaceOrder}
-              disabled={isSubmitting}
-              className="px-6 py-2 bg-orange-500 text-white rounded-md hover:bg-orange-600 ml-auto flex items-center gap-2"
-            >
-              {isSubmitting ? (
-                <>
-                  <Loader2 className="w-4 h-4 animate-spin" />
-                  Submitting...
-                </>
-              ) : (
-                "Place Order"
-              )}
-            </button>
-          )}
+          <button
+            type="button"
+            onClick={handleNext}
+            className="px-6 py-2 bg-orange-500 text-white rounded-md hover:bg-orange-600 ml-auto"
+          >
+            {currentStep === 3 ? "Proceed to Checkout" : "Next"}
+          </button>
         </div>
         {submitError && (
           <div className="mt-4 p-4 bg-red-50 border border-red-200 rounded-md text-red-600">

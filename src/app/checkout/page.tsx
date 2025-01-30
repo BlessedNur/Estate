@@ -1,34 +1,53 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
-import { ChevronRight } from "lucide-react";
+import { CheckCircle, ChevronRight, Loader2 } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Product } from "@/libs/products";
 
+// Add interface for form data
+interface FormData {
+  name: string;
+  email: string;
+  phone: string;
+  street: string;
+  state: string;
+  city: string;
+  zipCode: string;
+  paymentOption: string;
+  paymentMethod: string;
+  comments: string;
+}
+
 const CheckoutPage: React.FC = () => {
   const [product, setProduct] = useState<Product | null>(null);
+  const [formData, setFormData] = useState<FormData | null>(null);
   const [loading, setLoading] = useState(true);
+  const [isSuccess, setIsSuccess] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState("");
 
-  // You'll need to implement this to get the product from localStorage or state management
   useEffect(() => {
-    // Simulate loading the product data
-    // In a real app, you would get this from your cart/state management
-    const loadProduct = async () => {
+    const loadData = async () => {
       try {
-        // Get product from localStorage or state management
-        const savedProduct = localStorage.getItem('checkoutProduct');
+        const savedProduct = localStorage.getItem("checkoutProduct");
+        const savedFormData = localStorage.getItem("checkoutFormData");
+
         if (savedProduct) {
           setProduct(JSON.parse(savedProduct));
         }
+        if (savedFormData) {
+          setFormData(JSON.parse(savedFormData));
+        }
       } catch (error) {
-        console.error('Error loading product:', error);
+        console.error("Error loading data:", error);
       } finally {
         setLoading(false);
       }
     };
 
-    loadProduct();
+    loadData();
   }, []);
 
   if (loading) {
@@ -39,6 +58,33 @@ const CheckoutPage: React.FC = () => {
     );
   }
 
+  if (isSuccess) {
+    return (
+      <div className="min-h-screen flex flex-col">
+        <Navbar />
+        <div className="flex-1 flex items-center justify-center">
+          <div className="text-center max-w-md mx-auto p-6 border rounded-lg">
+            <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+              <CheckCircle className="w-8 h-8 text-green-500" />
+            </div>
+            <h1 className="text-2xl font-bold mb-4">Order Confirmed!</h1>
+            <p className="text-gray-600 mb-6">
+              Thank you for your order. We have sent a confirmation email to{" "}
+              {formData?.email}. Our team will contact you shortly with further
+              instructions.
+            </p>
+            <Link
+              href="/shop"
+              className="inline-block px-6 py-3 bg-orange-500 text-white rounded-md hover:bg-orange-600"
+            >
+              Continue Shopping
+            </Link>
+          </div>
+        </div>
+        <Footer />
+      </div>
+    );
+  }
   if (!product) {
     return (
       <div className="min-h-screen flex flex-col">
@@ -46,9 +92,11 @@ const CheckoutPage: React.FC = () => {
         <div className="flex-1 flex items-center justify-center">
           <div className="text-center">
             <h1 className="text-2xl font-bold mb-4">No Product Selected</h1>
-            <p className="text-gray-600 mb-6">Please select a product before proceeding to checkout.</p>
-            <Link 
-              href="/shop" 
+            <p className="text-gray-600 mb-6">
+              Please select a product before proceeding to checkout.
+            </p>
+            <Link
+              href="/shop"
               className="inline-block px-6 py-3 bg-orange-500 text-white rounded-md hover:bg-orange-600"
             >
               Return to Shop
@@ -60,44 +108,79 @@ const CheckoutPage: React.FC = () => {
     );
   }
 
+  // ... (keep your loading and no product states the same)
+
   return (
     <div className="bg-white min-h-screen">
       <Navbar />
 
-      {/* Navigation Breadcrumb */}
-      <div className="max-w-[1300px] mx-auto px-4 py-4">
-        <div className="flex items-center gap-2 text-sm">
-          <Link href="/" className="hover:text-orange-500">
-            Home
-          </Link>
-          <ChevronRight size={12} />
-          <Link href="/shop" className="hover:text-orange-500">
-            Shop
-          </Link>
-          <ChevronRight size={12} />
-          <Link href={`/products/${product.id}`} className="hover:text-orange-500">
-            {product.name}
-          </Link>
-          <ChevronRight size={12} />
-          <span className="text-gray-500">Checkout</span>
-        </div>
-      </div>
+      {/* Keep your breadcrumb navigation the same */}
 
-      {/* Main Checkout Section */}
       <div className="max-w-[1300px] mx-auto px-4 py-8">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-          {/* Checkout Form Section */}
           <div className="lg:col-span-2">
             <div className="border rounded-lg p-6 space-y-6">
-              <h1 className="text-2xl font-bold">Checkout</h1>
-              
+              <h1 className="text-2xl font-bold">Confirm Purchase</h1>
+
               {/* Order Summary for Mobile */}
               <div className="lg:hidden border rounded-lg p-4 mb-6">
-                <OrderSummary product={product} />
+                <OrderSummary product={product!} formData={formData!} />
               </div>
 
-              {/* Checkout Form */}
-              <CheckoutForm product={product} />
+              {/* Order Details */}
+              <div className="space-y-6">
+                <div className="border rounded-lg p-4">
+                  <h3 className="font-semibold mb-3">Shipping Information</h3>
+                  {formData && (
+                    <div className="space-y-2 text-sm">
+                      <p>
+                        <span className="text-gray-500">Name:</span>{" "}
+                        {formData.name}
+                      </p>
+                      <p>
+                        <span className="text-gray-500">Email:</span>{" "}
+                        {formData.email}
+                      </p>
+                      <p>
+                        <span className="text-gray-500">Phone:</span>{" "}
+                        {formData.phone}
+                      </p>
+                      <p>
+                        <span className="text-gray-500">Address:</span>{" "}
+                        {formData.street}
+                      </p>
+                      <p>
+                        <span className="text-gray-500">City:</span>{" "}
+                        {formData.city}, {formData.state} {formData.zipCode}
+                      </p>
+                    </div>
+                  )}
+                </div>
+                <div className="border rounded-lg p-4">
+                  <h3 className="font-semibold mb-3">Payment Method</h3>
+                  {formData && (
+                    <div className="space-y-2 text-sm">
+                      <p>
+                        <span className="text-gray-500">Payment Option:</span>{" "}
+                        {formData.paymentOption === "full"
+                          ? "Full Payment"
+                          : "Financing"}
+                      </p>
+                      <p>
+                        <span className="text-gray-500">Payment Method:</span>{" "}
+                        {formData.paymentMethod}
+                      </p>
+                    </div>
+                  )}
+                </div>
+                {/* Payment Details Form */}{" "}
+                <PaymentDetailsForm
+                  product={product!}
+                  formData={formData!}
+                  setIsSuccess={setIsSuccess}
+                  setSubmitError={setSubmitError}
+                />
+              </div>
             </div>
           </div>
 
@@ -105,7 +188,9 @@ const CheckoutPage: React.FC = () => {
           <div className="hidden lg:block">
             <div className="border rounded-lg p-6 sticky top-6">
               <h2 className="text-xl font-bold mb-4">Order Summary</h2>
-              <OrderSummary product={product} />
+              {product && formData && (
+                <OrderSummary product={product} formData={formData} />
+              )}
             </div>
           </div>
         </div>
@@ -116,10 +201,15 @@ const CheckoutPage: React.FC = () => {
   );
 };
 
-// Order Summary Component
-const OrderSummary: React.FC<{ product: Product }> = ({ product }) => {
+// Update OrderSummary to include formData
+const OrderSummary: React.FC<{ product: Product; formData: FormData }> = ({
+  product,
+  formData,
+}) => {
   const downPayment = product.price * 0.3;
   const balance = product.price * 0.7;
+  const monthlyPayment =
+    formData.paymentOption === "financing" ? product.monthlyPayment : 0;
 
   return (
     <div className="space-y-4">
@@ -133,7 +223,9 @@ const OrderSummary: React.FC<{ product: Product }> = ({ product }) => {
         </div>
         <div>
           <h3 className="font-medium">{product.name}</h3>
-          <p className="text-sm text-gray-500">{product.shortDescription}</p>
+          <p className="text-sm text-gray-500">
+            {formData.paymentOption === "full" ? "Full Payment" : "Financing"}
+          </p>
         </div>
       </div>
 
@@ -147,6 +239,12 @@ const OrderSummary: React.FC<{ product: Product }> = ({ product }) => {
             <span>Down Payment (30%)</span>
             <span>${downPayment.toLocaleString()}</span>
           </div>
+          {formData.paymentOption === "financing" && (
+            <div className="flex justify-between text-sm text-gray-600">
+              <span>Monthly Payment</span>
+              <span>${monthlyPayment.toLocaleString()}</span>
+            </div>
+          )}
           <div className="flex justify-between text-sm text-gray-600">
             <span>Balance Due</span>
             <span>${balance.toLocaleString()}</span>
@@ -164,27 +262,95 @@ const OrderSummary: React.FC<{ product: Product }> = ({ product }) => {
   );
 };
 
-// Checkout Form Component
-const CheckoutForm: React.FC<{ product: Product }> = ({ product }) => {
+// New PaymentDetailsForm component
+
+const PaymentDetailsForm: React.FC<{
+  product: Product;
+  formData: FormData;
+  setIsSuccess: (value: boolean) => void;
+  setSubmitError: (value: string) => void;
+}> = ({ product, formData, setIsSuccess, setSubmitError }) => {
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    // Add your form submission logic here
-    setTimeout(() => {
+    setSubmitError(""); // Clear any previous errors
+
+    try {
+      const response = await fetch("/api/send-order", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          formData,
+          product,
+        }),
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        // Clear stored data
+        localStorage.removeItem("checkoutProduct");
+        localStorage.removeItem("checkoutFormData");
+
+        // Show success state
+        setIsSuccess(true);
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      } else {
+        setSubmitError(
+          data.message || "Something went wrong. Please try again."
+        );
+      }
+    } catch (error) {
+      console.error("Payment error:", error);
+      setSubmitError("Failed to process payment. Please try again.");
+    } finally {
       setIsSubmitting(false);
-    }, 2000);
+    }
   };
+  // Only show card details if payment method is card
+  if (formData.paymentMethod !== "card") {
+    return (
+      <div className="space-y-6">
+        <div className="bg-orange-50 border-l-4 border-orange-400 p-4">
+          <p className="text-sm text-orange-700">
+            Please follow the {formData.paymentMethod} payment instructions that
+            will be sent to your email.
+          </p>
+        </div>
+        <button
+          type="button"
+          onClick={handleSubmit}
+          disabled={isSubmitting}
+          className={`w-full py-3 rounded-md text-white font-semibold ${
+            isSubmitting ? "bg-gray-400" : "bg-orange-500 hover:bg-orange-600"
+          }`}
+        >
+          {isSubmitting ? (
+            <span className="flex items-center justify-center gap-2">
+              <Loader2 className="w-4 h-4 animate-spin" />
+              Processing...
+            </span>
+          ) : (
+            "Confirm Order"
+          )}
+        </button>
+      </div>
+    );
+  }
 
   return (
     <form onSubmit={handleSubmit} className="space-y-6">
-      {/* Payment Information */}
       <div>
-        <h3 className="text-lg font-semibold mb-4">Payment Information</h3>
+        <h3 className="text-lg font-semibold mb-4">Card Details</h3>
         <div className="space-y-4">
           <div>
-            <label className="block text-sm font-medium mb-1">Card Number</label>
+            <label className="block text-sm font-medium mb-1">
+              Card Number
+            </label>
             <input
               type="text"
               className="w-full border rounded-md p-2"
@@ -193,7 +359,9 @@ const CheckoutForm: React.FC<{ product: Product }> = ({ product }) => {
           </div>
           <div className="grid grid-cols-2 gap-4">
             <div>
-              <label className="block text-sm font-medium mb-1">Expiry Date</label>
+              <label className="block text-sm font-medium mb-1">
+                Expiry Date
+              </label>
               <input
                 type="text"
                 className="w-full border rounded-md p-2"
@@ -212,64 +380,21 @@ const CheckoutForm: React.FC<{ product: Product }> = ({ product }) => {
         </div>
       </div>
 
-      {/* Billing Address */}
-      <div>
-        <h3 className="text-lg font-semibold mb-4">Billing Address</h3>
-        <div className="space-y-4">
-          <div>
-            <label className="block text-sm font-medium mb-1">Full Name</label>
-            <input
-              type="text"
-              className="w-full border rounded-md p-2"
-              placeholder="John Doe"
-            />
-          </div>
-          <div>
-            <label className="block text-sm font-medium mb-1">Street Address</label>
-            <input
-              type="text"
-              className="w-full border rounded-md p-2"
-              placeholder="123 Main St"
-            />
-          </div>
-          <div className="grid grid-cols-2 gap-4">
-            <div>
-              <label className="block text-sm font-medium mb-1">City</label>
-              <input
-                type="text"
-                className="w-full border rounded-md p-2"
-                placeholder="City"
-              />
-            </div>
-            <div>
-              <label className="block text-sm font-medium mb-1">State</label>
-              <input
-                type="text"
-                className="w-full border rounded-md p-2"
-                placeholder="State"
-              />
-            </div>
-          </div>
-          <div>
-            <label className="block text-sm font-medium mb-1">ZIP Code</label>
-            <input
-              type="text"
-              className="w-full border rounded-md p-2"
-              placeholder="12345"
-            />
-          </div>
-        </div>
-      </div>
-
-      {/* Submit Button */}
       <button
         type="submit"
         disabled={isSubmitting}
         className={`w-full py-3 rounded-md text-white font-semibold ${
-          isSubmitting ? 'bg-gray-400' : 'bg-orange-500 hover:bg-orange-600'
+          isSubmitting ? "bg-gray-400" : "bg-orange-500 hover:bg-orange-600"
         }`}
       >
-        {isSubmitting ? 'Processing...' : 'Complete Purchase'}
+        {isSubmitting ? (
+          <span className="flex items-center justify-center gap-2">
+            <Loader2 className="w-4 h-4 animate-spin" />
+            Processing...
+          </span>
+        ) : (
+          "Complete Purchase"
+        )}
       </button>
     </form>
   );
