@@ -1,11 +1,12 @@
 "use client";
+
 import React, { useEffect, useState, Suspense } from "react";
 import Link from "next/link";
 import { CheckCircle, ChevronRight, Loader2 } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Product } from "@/libs/products";
-import { useRouter, useSearchParams } from "next/navigation";
+import { useRouter, useParams } from "next/navigation";
 
 // Add interface for form data
 interface FormData {
@@ -22,7 +23,7 @@ interface FormData {
 }
 
 const CheckoutContent: React.FC = () => {
-  const searchParams = useSearchParams();
+  const params = useParams();
   const router = useRouter();
   const [product, setProduct] = useState<Product | null>(null);
   const [formData, setFormData] = useState<FormData | null>(null);
@@ -35,9 +36,9 @@ const CheckoutContent: React.FC = () => {
   useEffect(() => {
     const loadData = async () => {
       try {
-        const itemId = searchParams.get("item_id");
+        const productId = params.id; // Get ID from path parameter
 
-        if (!itemId) {
+        if (!productId) {
           throw new Error("No product selected");
         }
 
@@ -53,7 +54,7 @@ const CheckoutContent: React.FC = () => {
         } else {
           // Direct access (e.g., from Google Merchant)
           try {
-            const response = await fetch(`/api/products/${itemId}`);
+            const response = await fetch(`/api/products/${productId}`);
             if (!response.ok) {
               throw new Error("Product not found");
             }
@@ -75,8 +76,10 @@ const CheckoutContent: React.FC = () => {
       }
     };
 
-    loadData();
-  }, [searchParams]);
+    if (params.id) {
+      loadData();
+    }
+  }, [params.id]);
 
   // Add this condition early in your render logic
   if (!loading && isDirectAccess && product) {

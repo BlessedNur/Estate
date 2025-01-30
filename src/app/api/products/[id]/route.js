@@ -1,20 +1,14 @@
-import { NextResponse } from "next/server";
+// pages/api/products/[id].js
 import { products } from "@/libs/products";
 
-export async function GET(request, context) {
-  try {
-    const { params } = context;
-    const product = products.find((p) => p.id === params.id);
+export default function handler(req, res) {
+  const { id } = req.query;
 
-    if (!product) {
-      return NextResponse.json({ error: "Product not found" }, { status: 404 });
-    }
+  const product = products.find((p) => p.id === id);
 
-    return NextResponse.json(product);
-  } catch (error) {
-    return NextResponse.json(
-      { error: "Internal server error" },
-      { status: 500 }
-    );
+  if (!product) {
+    return res.status(404).json({ error: "Product not found" });
   }
+
+  return res.status(200).json(product);
 }

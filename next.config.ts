@@ -8,6 +8,22 @@ const nextConfig = {
       },
     ],
   },
+  async redirects() {
+    return [
+      {
+        // Redirect old checkout URLs to new format
+        source: "/checkout",
+        has: [
+          {
+            type: "query",
+            key: "item_id",
+          },
+        ],
+        destination: "/checkout/:item_id",
+        permanent: true,
+      },
+    ];
+  },
 };
 
 export default nextConfig;
