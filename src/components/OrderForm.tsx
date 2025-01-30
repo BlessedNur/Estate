@@ -461,10 +461,10 @@ export default function OrderForm({ product }: OrderFormProps) {
                       type="radio"
                       name="paymentMethod"
                       value="wire transfer"
-                      checked={formData.paymentMethod === "apple"}
+                      checked={formData.paymentMethod === "wire transfer"}
                       onChange={handleInputChange}
                     />
-                    <span className="ml-3">Wire Transfers</span>
+                    <span className="ml-3">Wire Transfer</span>
                   </label>
                 </div>
                 {errors.paymentMethod && (
