@@ -30,7 +30,8 @@ const CheckoutContent: React.FC = () => {
   const [isSuccess, setIsSuccess] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitError, setSubmitError] = useState("");
-  // In CheckoutContent component, modify the loadData function:
+  const [isDirectAccess, setIsDirectAccess] = useState(false);
+
   useEffect(() => {
     const loadData = async () => {
       try {
@@ -48,6 +49,7 @@ const CheckoutContent: React.FC = () => {
           // User came from form submission
           setFormData(JSON.parse(savedFormData));
           setProduct(JSON.parse(savedProduct));
+          setIsDirectAccess(false);
         } else {
           // Direct access (e.g., from Google Merchant)
           try {
@@ -57,20 +59,7 @@ const CheckoutContent: React.FC = () => {
             }
             const productData = await response.json();
             setProduct(productData);
-
-            // Instead of redirecting, show the product in checkout
-            setFormData({
-              name: "",
-              email: "",
-              phone: "",
-              street: "",
-              state: "",
-              city: "",
-              zipCode: "",
-              paymentOption: "",
-              paymentMethod: "",
-              comments: "",
-            });
+            setIsDirectAccess(true); // Set this to true for direct access
           } catch (error) {
             console.error("Error loading product:", error);
             throw error;
@@ -88,8 +77,9 @@ const CheckoutContent: React.FC = () => {
 
     loadData();
   }, [searchParams]);
-  // Replace the current direct access view with this:
-  if (!loading && !formData && product) {
+
+  // Add this condition early in your render logic
+  if (!loading && isDirectAccess && product) {
     return (
       <div className="min-h-screen flex flex-col">
         <Navbar />
@@ -114,13 +104,25 @@ const CheckoutContent: React.FC = () => {
                     </div>
                   </div>
 
-                  {/* Checkout Options */}
-                  <Link
-                    href={`/shop/${product.id}`}
-                    className="block w-full text-center px-6 py-3 bg-orange-500 text-white rounded-md hover:bg-orange-600"
-                  >
-                    Continue to Order Details
-                  </Link>
+                  {/* Initial Checkout Form */}
+                  <div className="space-y-4">
+                    <div>
+                      <label className="block text-sm font-medium mb-1">
+                        Email
+                      </label>
+                      <input
+                        type="email"
+                        className="w-full border rounded-md p-2"
+                        placeholder="Enter your email to begin checkout"
+                      />
+                    </div>
+                    <Link
+                      href={`/shop/${product.id}`}
+                      className="block w-full text-center py-3 bg-orange-500 text-white rounded-md hover:bg-orange-600"
+                    >
+                      Start Checkout
+                    </Link>
+                  </div>
                 </div>
               </div>
             </div>
@@ -134,6 +136,12 @@ const CheckoutContent: React.FC = () => {
                     <span>Product Price</span>
                     <span>${product.price.toLocaleString()}</span>
                   </div>
+                  <div className="pt-4 border-t">
+                    <div className="flex justify-between font-bold">
+                      <span>Total</span>
+                      <span>${product.price.toLocaleString()}</span>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -143,7 +151,6 @@ const CheckoutContent: React.FC = () => {
       </div>
     );
   }
-
   if (loading) {
     return (
       <div className="min-h-screen flex items-center justify-center">
