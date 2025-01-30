@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, Suspense } from "react";
 import Link from "next/link";
 import { CheckCircle, ChevronRight, Loader2 } from "lucide-react";
 import Navbar from "@/components/Navbar";
@@ -21,7 +21,7 @@ interface FormData {
   comments: string;
 }
 
-const CheckoutPage: React.FC = () => {
+const CheckoutContent: React.FC = () => {
   const searchParams = useSearchParams();
   const router = useRouter();
   const [product, setProduct] = useState<Product | null>(null);
@@ -162,8 +162,7 @@ const CheckoutPage: React.FC = () => {
       </div>
     );
   }
-
-  // ... (keep your loading and no product states the same)
+  // ... rest of your component logic ...
 
   return (
     <div className="bg-white min-h-screen">
@@ -290,6 +289,20 @@ const CheckoutPage: React.FC = () => {
 
       <Footer />
     </div>
+  );
+};
+
+const CheckoutPage: React.FC = () => {
+  return (
+    <Suspense
+      fallback={
+        <div className="min-h-screen flex items-center justify-center">
+          <div className="animate-spin rounded-full h-32 w-32 border-t-2 border-b-2 border-orange-500"></div>
+        </div>
+      }
+    >
+      <CheckoutContent />
+    </Suspense>
   );
 };
 
