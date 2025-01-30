@@ -86,7 +86,7 @@ export async function POST(req) {
 
     // Send confirmation email to customer
     await transporter.sendMail({
-      from: process.env.SMTP_USER,
+      from: process.env.ADMIN_EMAIL,
       to: formData.email,
       subject: "Order Confirmation",
       html: `
