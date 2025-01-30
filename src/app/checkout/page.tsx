@@ -172,6 +172,43 @@ const CheckoutPage: React.FC = () => {
       {/* Keep your breadcrumb navigation the same */}
 
       <div className="max-w-[1300px] mx-auto px-4 py-8">
+        <div className="mb-8">
+          <div className="bg-gradient-to-r from-orange-50 to-white border border-orange-200 rounded-lg shadow-sm">
+            <div className="px-6 py-5">
+              <div className="flex items-start space-x-4">
+                <div className="flex-shrink-0">
+                  <svg
+                    className="h-6 w-6 text-orange-500"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                    />
+                  </svg>
+                </div>
+                <div className="flex-1">
+                  <h3 className="text-lg font-semibold text-gray-900 mb-1">
+                    Important Notice
+                  </h3>
+                  <p className="text-gray-700">
+                    Your order has not been placed yet. Please review your
+                    information and click on the
+                    <span className="font-medium text-orange-600">
+                      {" "}
+                      Place Order{" "}
+                    </span>
+                    button below to complete your purchase.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           <div className="lg:col-span-2">
             <div className="border rounded-lg p-6 space-y-6">
