@@ -379,8 +379,13 @@ export default function OrderForm({ product }: OrderFormProps) {
                     <div className="ml-3">
                       <div className="font-medium">Full Payment</div>
                       <div className="text-sm text-gray-500">
-                        ${product.downPayment.full.toLocaleString()} Down
-                        Payment & Balance Upon Delivery
+                        ${(product.price * 0.3).toLocaleString()} Down Payment
+                        (30%)
+                        <br />
+                        <span className="text-xs">
+                          Balance of ${(product.price * 0.7).toLocaleString()}{" "}
+                          due upon delivery
+                        </span>
                       </div>
                     </div>
                   </label>
@@ -436,11 +441,11 @@ export default function OrderForm({ product }: OrderFormProps) {
                     <input
                       type="radio"
                       name="paymentMethod"
-                      value="apple"
+                      value="wire transfer"
                       checked={formData.paymentMethod === "apple"}
                       onChange={handleInputChange}
                     />
-                    <span className="ml-3">Apple Pay</span>
+                    <span className="ml-3">Wire Transfers</span>
                   </label>
                 </div>
                 {errors.paymentMethod && (
