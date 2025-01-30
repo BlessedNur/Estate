@@ -200,7 +200,7 @@ const CheckoutPage: React.FC = () => {
                     information and click on the
                     <span className="font-medium text-orange-600">
                       {" "}
-                      Place Order{" "}
+                      Confirm Order{" "}
                     </span>
                     button below to complete your purchase.
                   </p>
