@@ -105,14 +105,12 @@ const ContactPage = () => {
             <h3 className="text-xl font-bold mb-2">Contact Numbers</h3>
             <div className="space-y-2">
               <a
-                href="https://wa.me/14099347143"
-                target="_blank"
-                rel="noopener noreferrer"
+                href="sms:14099347143"
                 className="text-gray-600 hover:text-orange-600 block"
               >
-                <span className="font-semibold">WhatsApp:</span> +1 (409)
-                934-7143
+                <span className="font-semibold">SMS:</span> +1 (409) 934-7143
               </a>
+
               <p className="text-gray-600">
                 <span className="font-semibold">Support:</span> 24/7
               </p>
@@ -257,14 +255,13 @@ const ContactPage = () => {
                     <Phone className="w-6 h-6 text-orange-600" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-lg">WhatsApp Support</h3>
+                    <h3 className="font-semibold text-lg">Support</h3>
                     <a
-                      href="https://wa.me/14099347143"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-orange-600 hover:text-orange-700"
+                      href="sms:14099347143"
+                      className="text-gray-600 hover:text-orange-600 block"
                     >
-                      +1 (409) 934-7143
+                      <span className="font-semibold">SMS:</span> +1 (409)
+                      934-7143
                     </a>
                   </div>
                 </div>

@@ -131,11 +131,10 @@ function Footer() {
               <li className="flex items-center gap-3 text-gray-400">
                 <Phone size={20} />
                 <Link
-                  href="https://wa.me/14099347143"
-                  target="_blank"
-                  className="hover:text-orange-500 transition-colors"
+                  href="sms:14099347143"
+                  className="text-gray-600 hover:text-orange-600 block"
                 >
-                  +1 (409) 934-7143
+                  <span className="font-semibold">SMS:</span> +1 (409) 934-7143
                 </Link>
               </li>
               <li className="flex items-center gap-3 text-gray-400">
@@ -155,8 +154,7 @@ function Footer() {
         <div className="border-t border-gray-800 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-gray-400 text-sm">
-              © {new Date().getFullYear()} Homesonwheels. All rights
-              reserved.
+              © {new Date().getFullYear()} Homesonwheels. All rights reserved.
             </p>
             <div className="flex items-center gap-4">
               <Link
