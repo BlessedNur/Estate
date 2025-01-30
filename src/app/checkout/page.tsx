@@ -34,7 +34,7 @@ const CheckoutContent: React.FC = () => {
   useEffect(() => {
     const loadData = async () => {
       try {
-        const itemId = searchParams.get("item_id");
+        const itemId = searchParams.get("id");
 
         if (!itemId) {
           throw new Error("No product selected");

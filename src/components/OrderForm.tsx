@@ -111,7 +111,7 @@ export default function OrderForm({ product }: OrderFormProps) {
       localStorage.setItem("checkoutProduct", JSON.stringify(product));
 
       // Redirect to checkout page
-      router.push(`/checkout?item_id=${product.id}`);
+      router.push(`/checkout?id=${product.id}`);
     }
   };
 
