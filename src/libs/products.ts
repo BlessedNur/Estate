@@ -402,10 +402,10 @@ export const products: Product[] = [
       "Beautifully designed tiny home with vaulted ceilings and modern amenities",
     price: 30000,
     downPayment: {
-      full: 12000, // 40% of price
-      financing: 9000,
+      full: 15000, // 40% of price
+      financing: 13000,
     },
-    monthlyPayment: 714,
+    monthlyPayment: 875,
     specifications: {
       bedrooms: 1,
       bathrooms: 1,
@@ -1004,7 +1004,7 @@ export const products: Product[] = [
     price: 36000,
     downPayment: {
       full: 14400, // 40% of price
-      financing: 12000,
+      financing: 15000,
     },
     monthlyPayment: 850,
     specifications: {
@@ -1720,7 +1720,7 @@ export const products: Product[] = [
     shortDescription: "Spacious 1 Bed, 1 Bath Tiny House On Wheels",
     price: 30000,
     downPayment: {
-      full: 12000, // 40% of price
+      full: 15000, // 40% of price
       financing: 10000,
     },
     monthlyPayment: 715,
@@ -1927,7 +1927,7 @@ export const products: Product[] = [
     shortDescription: "Modern 1 Bed, 1 Bath & Loft Tiny House On Wheels",
     price: 30000,
     downPayment: {
-      full: 12000, // 40% of price
+      full: 15000, // 40% of price
       financing: 10000,
     },
     monthlyPayment: 715,
@@ -2661,8 +2661,8 @@ export const products: Product[] = [
     shortDescription: "1 Bed, 1 Bath & Loft Modern Tiny Home On Wheels",
     price: 30000,
     downPayment: {
-      full: 12000, // 40% of price
-      financing: 9000,
+      full: 15000, // 40% of price
+      financing: 13000,
     },
     monthlyPayment: 715,
     specifications: {

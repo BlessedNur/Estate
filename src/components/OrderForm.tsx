@@ -1,6 +1,6 @@
-import React, { useState } from "react";
-import { CheckCircle, Loader2 } from "lucide-react";
+import { CheckCircle, Loader2, AlertCircle } from "lucide-react";
 import { Product } from "@/libs/products";
+import { useState } from "react";
 
 interface FormData {
   name: string;
@@ -46,6 +46,10 @@ export default function OrderForm({ product }: OrderFormProps) {
     comments: "",
   });
   const [errors, setErrors] = useState<FormErrors>({});
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSuccess, setIsSuccess] = useState(false);
+  const [submitError, setSubmitError] = useState("");
+  const [orderPlaced, setOrderPlaced] = useState(false);
 
   const validateStep = (step: number): boolean => {
     const newErrors: FormErrors = {};
@@ -60,9 +64,10 @@ export default function OrderForm({ product }: OrderFormProps) {
         }
         if (!formData.phone.trim()) {
           newErrors.phone = "Phone is required";
-        } else if (!/^\d{10}$/.test(formData.phone.replace(/\D/g, ""))) {
-          newErrors.phone = "Phone number must be 10 digits";
         }
+        // else if (!/^\d{10}$/.test(formData.phone.replace(/\D/g, ""))) {
+        //   newErrors.phone = "Phone number must be 10 digits";
+        // }
         break;
       case 2:
         if (!formData.street.trim())
@@ -92,7 +97,6 @@ export default function OrderForm({ product }: OrderFormProps) {
   ) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
-    // Only clear error if it exists
     if (errors[name as keyof FormErrors]) {
       setErrors((prev) => ({ ...prev, [name]: undefined }));
     }
@@ -110,37 +114,9 @@ export default function OrderForm({ product }: OrderFormProps) {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [isSuccess, setIsSuccess] = useState(false);
-  const [submitError, setSubmitError] = useState("");
-
-  if (isSuccess) {
-    return (
-      <div className="border rounded-lg p-8 text-center">
-        <div className="flex flex-col items-center space-y-4">
-          <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center">
-            <CheckCircle className="w-8 h-8 text-green-500" />
-          </div>
-          <h3 className="text-2xl font-bold text-green-600">
-            Order Submitted Successfully!
-          </h3>
-          <p className="text-gray-600 max-w-md mx-auto">
-            Thank you for your order. We have sent a confirmation email to{" "}
-            {formData.email}. Our team will contact you shortly with further
-            instructions.
-          </p>
-          <button
-            onClick={() => (window.location.href = "/shop")}
-            className="mt-6 px-6 py-2 bg-orange-500 text-white rounded-md hover:bg-orange-600"
-          >
-            Continue Shopping
-          </button>
-        </div>
-      </div>
-    );
-  }
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    if (!orderPlaced) return;
     if (validateStep(3)) {
       setIsSubmitting(true);
       setSubmitError("");
@@ -174,11 +150,16 @@ export default function OrderForm({ product }: OrderFormProps) {
       }
     }
   };
+  const handlePlaceOrder = () => {
+    setOrderPlaced(true);
+    // Trigger form submission
+    document.querySelector("form")?.requestSubmit();
+  };
 
   const renderProgressBar = () => (
     <div className="mb-8">
       <div className="flex justify-between">
-        {[1, 2, 3].map((step) => (
+        {[1, 2, 3, 4].map((step) => (
           <div key={step} className="flex flex-col items-center">
             <div
               className={`w-8 h-8 rounded-full flex items-center justify-center ${
@@ -196,7 +177,9 @@ export default function OrderForm({ product }: OrderFormProps) {
                 ? "Personal Info"
                 : step === 2
                 ? "Delivery Details"
-                : "Payment"}
+                : step === 3
+                ? "Payment"
+                : "Confirmation"}
             </div>
           </div>
         ))}
@@ -205,11 +188,37 @@ export default function OrderForm({ product }: OrderFormProps) {
         <div className="absolute top-0 h-1 bg-gray-200 w-full"></div>
         <div
           className="absolute top-0 h-1 bg-orange-500 transition-all duration-300"
-          style={{ width: `${((currentStep - 1) / 2) * 100}%` }}
+          style={{ width: `${((currentStep - 1) / 3) * 100}%` }}
         ></div>
       </div>
     </div>
   );
+
+  if (isSuccess) {
+    return (
+      <div className="border rounded-lg p-8 text-center">
+        <div className="flex flex-col items-center space-y-4">
+          <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center">
+            <CheckCircle className="w-8 h-8 text-green-500" />
+          </div>
+          <h3 className="text-2xl font-bold text-green-600">
+            Order Submitted Successfully!
+          </h3>
+          <p className="text-gray-600 max-w-md mx-auto">
+            Thank you for your order. We have sent a confirmation email to{" "}
+            {formData.email}. Our team will contact you shortly with further
+            instructions.
+          </p>
+          <button
+            onClick={() => (window.location.href = "/shop")}
+            className="mt-6 px-6 py-2 bg-orange-500 text-white rounded-md hover:bg-orange-600"
+          >
+            Continue Shopping
+          </button>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="border rounded-lg p-6">
@@ -350,89 +359,196 @@ export default function OrderForm({ product }: OrderFormProps) {
 
         {/* Step 3: Payment Options */}
         {currentStep === 3 && (
-          <div className="space-y-4">
-            <div>
-              <label className="block text-sm font-medium mb-2">
-                Payment Option *
-              </label>
-              <div className="space-y-2">
-                <label className="flex items-center gap-2">
-                  <input
-                    type="radio"
-                    name="paymentOption"
-                    value="full"
-                    checked={formData.paymentOption === "full"}
-                    onChange={handleInputChange}
-                  />
-                  <span>
-                    Full Payment (${product.downPayment.full.toLocaleString()})
-                  </span>
+          <div className="space-y-6">
+            <h4 className="text-lg font-semibold">Select Payment Option</h4>
+            <div className="space-y-4">
+              <div>
+                <label className="block text-sm font-medium mb-2">
+                  Payment Options *
                 </label>
-                <label className="flex items-center gap-2">
-                  <input
-                    type="radio"
-                    name="paymentOption"
-                    value="financing"
-                    checked={formData.paymentOption === "financing"}
-                    onChange={handleInputChange}
-                  />
-                  <span>
-                    Financing (${product.downPayment.financing.toLocaleString()}{" "}
-                    down + ${product.monthlyPayment}/mo)
-                  </span>
-                </label>
+                <div className="space-y-3">
+                  <label className="flex items-start p-4 border rounded-lg hover:bg-gray-50 cursor-pointer">
+                    <input
+                      type="radio"
+                      name="paymentOption"
+                      value="full"
+                      checked={formData.paymentOption === "full"}
+                      onChange={handleInputChange}
+                      className="mt-1"
+                    />
+                    <div className="ml-3">
+                      <div className="font-medium">Full Payment</div>
+                      <div className="text-sm text-gray-500">
+                        ${product.downPayment.full.toLocaleString()} Down
+                        Payment & Balance Upon Delivery
+                      </div>
+                    </div>
+                  </label>
+                  <label className="flex items-start p-4 border rounded-lg hover:bg-gray-50 cursor-pointer">
+                    <input
+                      type="radio"
+                      name="paymentOption"
+                      value="financing"
+                      checked={formData.paymentOption === "financing"}
+                      onChange={handleInputChange}
+                      className="mt-1"
+                    />
+                    <div className="ml-3">
+                      <div className="font-medium">Financing</div>
+                      <div className="text-sm text-gray-500">
+                        ${product.downPayment.financing.toLocaleString()} Down
+                        Payment & ${product.monthlyPayment} Monthly Payment
+                      </div>
+                    </div>
+                  </label>
+                </div>
+                {errors.paymentOption && (
+                  <p className="text-red-500 text-sm mt-1">
+                    {errors.paymentOption}
+                  </p>
+                )}
               </div>
-              {errors.paymentOption && (
-                <p className="text-red-500 text-sm mt-1">
-                  {errors.paymentOption}
-                </p>
-              )}
+
+              <div>
+                <h4 className="text-lg font-semibold mb-4">Payment Method</h4>
+                <div className="space-y-3">
+                  <label className="flex items-center p-4 border rounded-lg hover:bg-gray-50 cursor-pointer">
+                    <input
+                      type="radio"
+                      name="paymentMethod"
+                      value="card"
+                      checked={formData.paymentMethod === "card"}
+                      onChange={handleInputChange}
+                    />
+                    <span className="ml-3">Card Payment</span>
+                  </label>
+                  <label className="flex items-center p-4 border rounded-lg hover:bg-gray-50 cursor-pointer">
+                    <input
+                      type="radio"
+                      name="paymentMethod"
+                      value="bank"
+                      checked={formData.paymentMethod === "bank"}
+                      onChange={handleInputChange}
+                    />
+                    <span className="ml-3">Bank Transfer</span>
+                  </label>
+                  <label className="flex items-center p-4 border rounded-lg hover:bg-gray-50 cursor-pointer">
+                    <input
+                      type="radio"
+                      name="paymentMethod"
+                      value="apple"
+                      checked={formData.paymentMethod === "apple"}
+                      onChange={handleInputChange}
+                    />
+                    <span className="ml-3">Apple Pay</span>
+                  </label>
+                </div>
+                {errors.paymentMethod && (
+                  <p className="text-red-500 text-sm mt-1">
+                    {errors.paymentMethod}
+                  </p>
+                )}
+              </div>
+
+              <div className="bg-orange-50 border-l-4 border-orange-400 p-4">
+                <div className="flex">
+                  <div className="flex-shrink-0">
+                    <AlertCircle className="h-5 w-5 text-orange-400" />
+                  </div>
+                  <div className="ml-3">
+                    <p className="text-sm text-orange-700">
+                      All Card payments are temporarily suspended due to
+                      security database update. Please select a different
+                      payment option.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div>
+                <label className="block text-sm font-medium mb-1">
+                  Comments (Optional)
+                </label>
+                <textarea
+                  name="comments"
+                  value={formData.comments}
+                  onChange={handleInputChange}
+                  rows={4}
+                  className="w-full border rounded-md p-2"
+                  placeholder="Add any special instructions or comments here..."
+                />
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* Step 4: Order Confirmation */}
+        {currentStep === 4 && (
+          <div className="space-y-6">
+            <div className="bg-orange-50 border border-orange-200 rounded-lg p-6 text-center">
+              <AlertCircle className="w-12 h-12 text-orange-500 mx-auto mb-4" />
+              <h4 className="text-lg font-semibold mb-2">Important Note</h4>
+              <p className="text-gray-700">
+                Your order has not been placed yet. Please review your
+                information and click on the Place Order button below to
+                complete your purchase.
+              </p>
             </div>
 
-            <div>
-              <label className="block text-sm font-medium mb-2">
-                Payment Method *
-              </label>
-              <div className="space-y-2">
-                <label className="flex items-center gap-2">
-                  <input
-                    type="radio"
-                    name="paymentMethod"
-                    value="credit"
-                    checked={formData.paymentMethod === "credit"}
-                    onChange={handleInputChange}
-                  />
-                  <span>Credit Card</span>
-                </label>
-                <label className="flex items-center gap-2">
-                  <input
-                    type="radio"
-                    name="paymentMethod"
-                    value="bank"
-                    checked={formData.paymentMethod === "bank"}
-                    onChange={handleInputChange}
-                  />
-                  <span>Bank Transfer</span>
-                </label>
+            <div className="space-y-4">
+              <div className="border rounded-lg p-4">
+                <h5 className="font-semibold mb-2">Personal Information</h5>
+                <div className="grid grid-cols-2 gap-4 text-sm">
+                  <div>
+                    <span className="text-gray-500">Name:</span> {formData.name}
+                  </div>
+                  <div>
+                    <span className="text-gray-500">Email:</span>{" "}
+                    {formData.email}
+                  </div>
+                  <div>
+                    <span className="text-gray-500">Phone:</span>{" "}
+                    {formData.phone}
+                  </div>
+                </div>
               </div>
-              {errors.paymentMethod && (
-                <p className="text-red-500 text-sm mt-1">
-                  {errors.paymentMethod}
-                </p>
-              )}
-            </div>
 
-            <div>
-              <label className="block text-sm font-medium mb-1">
-                Additional Comments
-              </label>
-              <textarea
-                name="comments"
-                value={formData.comments}
-                onChange={handleInputChange}
-                rows={4}
-                className="w-full border rounded-md p-2"
-              />
+              <div className="border rounded-lg p-4">
+                <h5 className="font-semibold mb-2">Delivery Details</h5>
+                <div className="grid grid-cols-2 gap-4 text-sm">
+                  <div>
+                    <span className="text-gray-500">Address:</span>{" "}
+                    {formData.street}
+                  </div>
+                  <div>
+                    <span className="text-gray-500">City:</span> {formData.city}
+                  </div>
+                  <div>
+                    <span className="text-gray-500">State:</span>{" "}
+                    {formData.state}
+                  </div>
+                  <div>
+                    <span className="text-gray-500">ZIP Code:</span>{" "}
+                    {formData.zipCode}
+                  </div>
+                </div>
+              </div>
+
+              <div className="border rounded-lg p-4">
+                <h5 className="font-semibold mb-2">Payment Details</h5>
+                <div className="grid grid-cols-2 gap-4 text-sm">
+                  <div>
+                    <span className="text-gray-500">Payment Option:</span>{" "}
+                    {formData.paymentOption === "full"
+                      ? "Full Payment"
+                      : "Financing"}
+                  </div>
+                  <div>
+                    <span className="text-gray-500">Payment Method:</span>{" "}
+                    {formData.paymentMethod}
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         )}
@@ -447,7 +563,7 @@ export default function OrderForm({ product }: OrderFormProps) {
               Back
             </button>
           )}
-          {currentStep < 3 ? (
+          {currentStep < 4 ? (
             <button
               type="button"
               onClick={handleNext}
@@ -457,7 +573,8 @@ export default function OrderForm({ product }: OrderFormProps) {
             </button>
           ) : (
             <button
-              type="submit"
+              type="button"
+              onClick={handlePlaceOrder}
               disabled={isSubmitting}
               className="px-6 py-2 bg-orange-500 text-white rounded-md hover:bg-orange-600 ml-auto flex items-center gap-2"
             >
@@ -471,12 +588,12 @@ export default function OrderForm({ product }: OrderFormProps) {
               )}
             </button>
           )}
-          {submitError && (
-            <div className="mb-4 p-4 bg-red-50 border border-red-200 rounded-md text-red-600">
-              {submitError}
-            </div>
-          )}
         </div>
+        {submitError && (
+          <div className="mt-4 p-4 bg-red-50 border border-red-200 rounded-md text-red-600">
+            {submitError}
+          </div>
+        )}
       </form>
     </div>
   );
