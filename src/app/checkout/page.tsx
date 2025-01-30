@@ -5,7 +5,7 @@ import { CheckCircle, ChevronRight, Loader2 } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Product } from "@/libs/products";
-import { useSearchParams } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 
 // Add interface for form data
 interface FormData {
@@ -23,6 +23,7 @@ interface FormData {
 
 const CheckoutPage: React.FC = () => {
   const searchParams = useSearchParams();
+  const router = useRouter();
   const [product, setProduct] = useState<Product | null>(null);
   const [formData, setFormData] = useState<FormData | null>(null);
   const [loading, setLoading] = useState(true);
@@ -33,40 +34,36 @@ const CheckoutPage: React.FC = () => {
   useEffect(() => {
     const loadData = async () => {
       try {
-        // First check URL parameter
         const itemId = searchParams.get("item_id");
 
-        if (itemId) {
-          // If URL has item_id, fetch product data
-          const response = await fetch(`/api/products/${itemId}`);
-          if (!response.ok) {
-            throw new Error("Product not found");
-          }
-          const productData = await response.json();
-
-          if (productData) {
-            setProduct(productData);
-            // Save to localStorage for persistence
-            localStorage.setItem(
-              "checkoutProduct",
-              JSON.stringify(productData)
-            );
-          }
-        } else {
-          // If no URL parameter, try loading from localStorage
-          const savedProduct = localStorage.getItem("checkoutProduct");
-          if (savedProduct) {
-            setProduct(JSON.parse(savedProduct));
-          } else {
-            // No product found in URL or localStorage
-            throw new Error("No product selected");
-          }
+        if (!itemId) {
+          throw new Error("No product selected");
         }
 
-        // Load form data if exists
+        // Try to get form data from localStorage
         const savedFormData = localStorage.getItem("checkoutFormData");
-        if (savedFormData) {
+        const savedProduct = localStorage.getItem("checkoutProduct");
+
+        if (savedFormData && savedProduct) {
+          // User came from form submission
           setFormData(JSON.parse(savedFormData));
+          setProduct(JSON.parse(savedProduct));
+        } else {
+          // Direct access (e.g., from Google Merchant)
+          try {
+            const response = await fetch(`/api/products/${itemId}`);
+            if (!response.ok) {
+              throw new Error("Product not found");
+            }
+            const productData = await response.json();
+            setProduct(productData);
+
+            // Redirect to details page for form completion
+            router.push(`/shop/${itemId}`);
+          } catch (error) {
+            console.error("Error loading product:", error);
+            throw error;
+          }
         }
       } catch (error) {
         console.error("Error loading data:", error);
@@ -79,7 +76,34 @@ const CheckoutPage: React.FC = () => {
     };
 
     loadData();
-  }, [searchParams]);
+  }, [searchParams, router]);
+
+  // If accessed directly without form data, show redirect message
+  if (!loading && !formData && product) {
+    return (
+      <div className="min-h-screen flex flex-col">
+        <Navbar />
+        <div className="flex-1 flex items-center justify-center">
+          <div className="text-center max-w-md mx-auto p-6 border rounded-lg">
+            <h1 className="text-2xl font-bold mb-4">
+              Complete Your Order Details
+            </h1>
+            <p className="text-gray-600 mb-6">
+              To proceed with your purchase, we need some additional
+              information.
+            </p>
+            <Link
+              href={`/shop/${product.id}`}
+              className="inline-block px-6 py-3 bg-orange-500 text-white rounded-md hover:bg-orange-600"
+            >
+              Continue to Order Details
+            </Link>
+          </div>
+        </div>
+        <Footer />
+      </div>
+    );
+  }
 
   if (loading) {
     return (
