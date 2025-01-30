@@ -30,7 +30,7 @@ const CheckoutContent: React.FC = () => {
   const [isSuccess, setIsSuccess] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitError, setSubmitError] = useState("");
-
+  // In CheckoutContent component, modify the loadData function:
   useEffect(() => {
     const loadData = async () => {
       try {
@@ -58,8 +58,19 @@ const CheckoutContent: React.FC = () => {
             const productData = await response.json();
             setProduct(productData);
 
-            // Redirect to details page for form completion
-            router.push(`/shop/${itemId}`);
+            // Instead of redirecting, show the product in checkout
+            setFormData({
+              name: "",
+              email: "",
+              phone: "",
+              street: "",
+              state: "",
+              city: "",
+              zipCode: "",
+              paymentOption: "",
+              paymentMethod: "",
+              comments: "",
+            });
           } catch (error) {
             console.error("Error loading product:", error);
             throw error;
@@ -76,28 +87,56 @@ const CheckoutContent: React.FC = () => {
     };
 
     loadData();
-  }, [searchParams, router]);
-
-  // If accessed directly without form data, show redirect message
+  }, [searchParams]);
+  // Replace the current direct access view with this:
   if (!loading && !formData && product) {
     return (
       <div className="min-h-screen flex flex-col">
         <Navbar />
-        <div className="flex-1 flex items-center justify-center">
-          <div className="text-center max-w-md mx-auto p-6 border rounded-lg">
-            <h1 className="text-2xl font-bold mb-4">
-              Complete Your Order Details
-            </h1>
-            <p className="text-gray-600 mb-6">
-              To proceed with your purchase, we need some additional
-              information.
-            </p>
-            <Link
-              href={`/shop/${product.id}`}
-              className="inline-block px-6 py-3 bg-orange-500 text-white rounded-md hover:bg-orange-600"
-            >
-              Continue to Order Details
-            </Link>
+        <div className="max-w-[1300px] mx-auto px-4 py-8">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <div className="lg:col-span-2">
+              <div className="border rounded-lg p-6">
+                <h1 className="text-2xl font-bold mb-6">Checkout</h1>
+                <div className="space-y-6">
+                  {/* Product Information */}
+                  <div className="flex items-center gap-4 border-b pb-6">
+                    <img
+                      src={product.images[0].url}
+                      alt={product.name}
+                      className="w-24 h-24 object-cover rounded-lg"
+                    />
+                    <div>
+                      <h2 className="font-semibold">{product.name}</h2>
+                      <p className="text-gray-600">
+                        ${product.price.toLocaleString()}
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* Checkout Options */}
+                  <Link
+                    href={`/shop/${product.id}`}
+                    className="block w-full text-center px-6 py-3 bg-orange-500 text-white rounded-md hover:bg-orange-600"
+                  >
+                    Continue to Order Details
+                  </Link>
+                </div>
+              </div>
+            </div>
+
+            {/* Order Summary */}
+            <div className="hidden lg:block">
+              <div className="border rounded-lg p-6 sticky top-6">
+                <h2 className="text-xl font-bold mb-4">Order Summary</h2>
+                <div className="space-y-4">
+                  <div className="flex justify-between">
+                    <span>Product Price</span>
+                    <span>${product.price.toLocaleString()}</span>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
         <Footer />
