@@ -5,6 +5,7 @@ import { CheckCircle, ChevronRight, Loader2 } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Product } from "@/libs/products";
+import { useSearchParams } from "next/navigation";
 
 // Add interface for form data
 interface FormData {
@@ -21,6 +22,7 @@ interface FormData {
 }
 
 const CheckoutPage: React.FC = () => {
+  const searchParams = useSearchParams();
   const [product, setProduct] = useState<Product | null>(null);
   const [formData, setFormData] = useState<FormData | null>(null);
   const [loading, setLoading] = useState(true);
@@ -31,24 +33,53 @@ const CheckoutPage: React.FC = () => {
   useEffect(() => {
     const loadData = async () => {
       try {
-        const savedProduct = localStorage.getItem("checkoutProduct");
-        const savedFormData = localStorage.getItem("checkoutFormData");
+        // First check URL parameter
+        const itemId = searchParams.get("item_id");
 
-        if (savedProduct) {
-          setProduct(JSON.parse(savedProduct));
+        if (itemId) {
+          // If URL has item_id, fetch product data
+          const response = await fetch(`/api/products/${itemId}`);
+          if (!response.ok) {
+            throw new Error("Product not found");
+          }
+          const productData = await response.json();
+
+          if (productData) {
+            setProduct(productData);
+            // Save to localStorage for persistence
+            localStorage.setItem(
+              "checkoutProduct",
+              JSON.stringify(productData)
+            );
+          }
+        } else {
+          // If no URL parameter, try loading from localStorage
+          const savedProduct = localStorage.getItem("checkoutProduct");
+          if (savedProduct) {
+            setProduct(JSON.parse(savedProduct));
+          } else {
+            // No product found in URL or localStorage
+            throw new Error("No product selected");
+          }
         }
+
+        // Load form data if exists
+        const savedFormData = localStorage.getItem("checkoutFormData");
         if (savedFormData) {
           setFormData(JSON.parse(savedFormData));
         }
       } catch (error) {
         console.error("Error loading data:", error);
+        setSubmitError(
+          error instanceof Error ? error.message : "Failed to load product"
+        );
       } finally {
         setLoading(false);
       }
     };
 
     loadData();
-  }, []);
+  }, [searchParams]);
 
   if (loading) {
     return (
